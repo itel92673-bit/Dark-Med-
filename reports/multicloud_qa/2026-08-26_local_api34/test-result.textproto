@@ -1,0 +1,301 @@
+# proto-message: google.testing.platform.proto.api.core.TestSuiteResult
+# 2026-08-26T10:33:50.093912758Z:
+test_suite_meta_data {
+  scheduled_test_case_count: 5
+  device {
+    id: "emulator-5554"
+    friendly_name: "primary"
+  }
+}
+test_status: PASSED
+test_result {
+  test_case {
+    test_class: "DeviceCompatibilityInstrumentedTest"
+    test_package: "com.darkmed.app"
+    test_method: "snapshotContainsRequiredChecks"
+    start_time {
+      seconds: 1787740400
+      nanos: 21000000
+    }
+    end_time {
+      seconds: 1787740404
+      nanos: 103000000
+    }
+    device {
+      id: "emulator-5554"
+      friendly_name: "primary"
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/ubuntu/DarkMed/app/build/outputs/androidTest-results/connected/debug/darkmed_api34_default(AVD) - 14/logcat-com.darkmed.app.DeviceCompatibilityInstrumentedTest-snapshotContainsRequiredChecks.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/ubuntu/DarkMed/app/build/outputs/androidTest-results/connected/debug/darkmed_api34_default(AVD) - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/ubuntu/DarkMed/app/build/outputs/androidTest-results/connected/debug/darkmed_api34_default(AVD) - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/ubuntu/DarkMed/app/build/outputs/androidTest-results/connected/debug/darkmed_api34_default(AVD) - 14/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "PlatformSmokeTest"
+    test_package: "com.darkmed.app"
+    test_method: "packageAndLauncherAreDeclared"
+    start_time {
+      seconds: 1787740404
+      nanos: 205000000
+    }
+    end_time {
+      seconds: 1787740404
+      nanos: 683000000
+    }
+    device {
+      id: "emulator-5554"
+      friendly_name: "primary"
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/ubuntu/DarkMed/app/build/outputs/androidTest-results/connected/debug/darkmed_api34_default(AVD) - 14/logcat-com.darkmed.app.PlatformSmokeTest-packageAndLauncherAreDeclared.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/ubuntu/DarkMed/app/build/outputs/androidTest-results/connected/debug/darkmed_api34_default(AVD) - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/ubuntu/DarkMed/app/build/outputs/androidTest-results/connected/debug/darkmed_api34_default(AVD) - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/ubuntu/DarkMed/app/build/outputs/androidTest-results/connected/debug/darkmed_api34_default(AVD) - 14/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "PlatformSmokeTest"
+    test_package: "com.darkmed.app"
+    test_method: "vpnAndTorServicesAreDeclaredNonExported"
+    start_time {
+      seconds: 1787740404
+      nanos: 786000000
+    }
+    end_time {
+      seconds: 1787740405
+      nanos: 113000000
+    }
+    device {
+      id: "emulator-5554"
+      friendly_name: "primary"
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/ubuntu/DarkMed/app/build/outputs/androidTest-results/connected/debug/darkmed_api34_default(AVD) - 14/logcat-com.darkmed.app.PlatformSmokeTest-vpnAndTorServicesAreDeclaredNonExported.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/ubuntu/DarkMed/app/build/outputs/androidTest-results/connected/debug/darkmed_api34_default(AVD) - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/ubuntu/DarkMed/app/build/outputs/androidTest-results/connected/debug/darkmed_api34_default(AVD) - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/ubuntu/DarkMed/app/build/outputs/androidTest-results/connected/debug/darkmed_api34_default(AVD) - 14/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "PlatformSmokeTest"
+    test_package: "com.darkmed.app"
+    test_method: "fourBrowserActivitiesUseDedicatedProcesses"
+    start_time {
+      seconds: 1787740405
+      nanos: 190000000
+    }
+    end_time {
+      seconds: 1787740405
+      nanos: 341000000
+    }
+    device {
+      id: "emulator-5554"
+      friendly_name: "primary"
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/ubuntu/DarkMed/app/build/outputs/androidTest-results/connected/debug/darkmed_api34_default(AVD) - 14/logcat-com.darkmed.app.PlatformSmokeTest-fourBrowserActivitiesUseDedicatedProcesses.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/ubuntu/DarkMed/app/build/outputs/androidTest-results/connected/debug/darkmed_api34_default(AVD) - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/ubuntu/DarkMed/app/build/outputs/androidTest-results/connected/debug/darkmed_api34_default(AVD) - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/ubuntu/DarkMed/app/build/outputs/androidTest-results/connected/debug/darkmed_api34_default(AVD) - 14/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "PlatformSmokeTest"
+    test_package: "com.darkmed.app"
+    test_method: "securityRelevantApplicationFlagsArePresent"
+    start_time {
+      seconds: 1787740405
+      nanos: 418000000
+    }
+    end_time {
+      seconds: 1787740405
+      nanos: 520000000
+    }
+    device {
+      id: "emulator-5554"
+      friendly_name: "primary"
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/ubuntu/DarkMed/app/build/outputs/androidTest-results/connected/debug/darkmed_api34_default(AVD) - 14/logcat-com.darkmed.app.PlatformSmokeTest-securityRelevantApplicationFlagsArePresent.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/ubuntu/DarkMed/app/build/outputs/androidTest-results/connected/debug/darkmed_api34_default(AVD) - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/ubuntu/DarkMed/app/build/outputs/androidTest-results/connected/debug/darkmed_api34_default(AVD) - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/ubuntu/DarkMed/app/build/outputs/androidTest-results/connected/debug/darkmed_api34_default(AVD) - 14/cpuinfo"
+    }
+  }
+}
+output_artifact {
+  label {
+    label: "test-results.log"
+    namespace: "com.google.testing.platform.runtime.android.driver.AndroidInstrumentationDriver"
+  }
+  source_path {
+    path: "/home/ubuntu/DarkMed/app/build/outputs/androidTest-results/connected/debug/darkmed_api34_default(AVD) - 14/testlog/test-results.log"
+  }
+  type: TEST_DATA
+  mime_type: "text/plain"
+}

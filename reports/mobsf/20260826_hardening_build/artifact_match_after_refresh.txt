@@ -1,0 +1,1 @@
+artifact_matches_new_release=true

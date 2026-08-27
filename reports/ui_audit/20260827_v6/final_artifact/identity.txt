@@ -1,0 +1,9 @@
+release_equals_deliverable=0
+aapt_rc=0
+apksigner_verify_rc=0
+apksigner_certs_rc=0
+security_audit_qa_rc=0
+security_audit_production_required_rc=1
+mobsfscan_runner_rc=0
+apk_inventory_rc=0
+adb_preflight_rc=0

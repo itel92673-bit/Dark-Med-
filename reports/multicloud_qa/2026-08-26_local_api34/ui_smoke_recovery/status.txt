@@ -1,0 +1,11 @@
+reboot_rc=0
+wait_rc=0
+boot_completed_rc=0
+install_rc=1
+launch_rc=20
+screenshot_rc=0
+ui_dump_rc=137
+system_or_app_anr=1
+status=FAIL
+device=emulator-5554
+api=34

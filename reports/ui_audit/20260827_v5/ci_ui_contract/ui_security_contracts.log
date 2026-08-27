@@ -1,0 +1,17 @@
+main_secure_flag=PASS
+main_obscured_touch_filter=PASS
+startup_retry=PASS
+wipe_biometric_before_confirmation=PASS
+wipe_confirmation_before_coordinator=PASS
+wipe_success_relocks=PASS
+security_center_not_verified=PASS
+browser_secure_flag=PASS
+browser_obscured_touch_filter=PASS
+browser_no_file_access=PASS
+browser_no_universal_file_access=PASS
+browser_no_mixed_content=PASS
+browser_no_third_party_cookies=PASS
+launcher_task_affinity_empty=PASS
+launcher_single_instance=PASS
+cleartext_disabled=PASS
+backup_disabled=PASS

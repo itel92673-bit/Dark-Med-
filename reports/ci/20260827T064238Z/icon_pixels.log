@@ -1,0 +1,9 @@
+supplied_sha256=9d877c5adb06c57549d3680c8848ec7bc5c312b9c12009b619af60bd7c6e629d
+source_sha256=9d877c5adb06c57549d3680c8848ec7bc5c312b9c12009b619af60bd7c6e629d
+packaged_png_sha256=eea9332a86cea9728e0e93f44508de59bce8bbd52b402de0443eb0cd6d2d6c61
+supplied_size=(1254, 1254)
+source_size=(1254, 1254)
+packaged_size=(1254, 1254)
+supplied_source_pixels_equal=True
+supplied_packaged_pixels_equal=True
+source_packaged_pixels_equal=True

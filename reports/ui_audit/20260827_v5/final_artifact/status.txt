@@ -1,0 +1,5 @@
+artifact_matched_before_refresh=false
+mobsf_rc=0
+security_qa_rc=0
+production_required_rc=1
+icon_rc=0

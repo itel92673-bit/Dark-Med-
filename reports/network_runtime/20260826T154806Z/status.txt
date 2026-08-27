@@ -1,0 +1,2 @@
+status=BLOCKED
+blocker=no healthy adb device at emulator-5554

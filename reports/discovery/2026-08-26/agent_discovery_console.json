@@ -1,0 +1,110 @@
+{
+  "generated_at": "2026-08-26T15:35:02.764478+00:00",
+  "agents": {
+    "Code Agent": {
+      "type": "internal",
+      "availability": "AVAILABLE",
+      "permissions": "project-scoped"
+    },
+    "Security Agent": {
+      "type": "internal",
+      "availability": "AVAILABLE",
+      "permissions": "project-scoped"
+    },
+    "QA Agent": {
+      "type": "internal",
+      "availability": "AVAILABLE",
+      "permissions": "project-scoped"
+    },
+    "Device Compatibility Agent": {
+      "type": "internal",
+      "availability": "AVAILABLE",
+      "permissions": "project-scoped"
+    },
+    "Cloud Execution Agent": {
+      "type": "internal",
+      "availability": "AVAILABLE",
+      "permissions": "project-scoped"
+    },
+    "Evidence Agent": {
+      "type": "internal",
+      "availability": "AVAILABLE",
+      "permissions": "project-scoped"
+    },
+    "Claude Code": {
+      "provider": "Claude Code",
+      "connection_method": "official Claude Code CLI",
+      "authentication_method": "Claude.ai/Console OAuth or ANTHROPIC_API_KEY, according to official configuration",
+      "capabilities": [
+        "review_files",
+        "analyze_failure",
+        "propose_patch",
+        "write_tests",
+        "review_architecture",
+        "analyze_logs"
+      ],
+      "model": "provider-selected",
+      "context_limits": "provider-defined; verify at runtime",
+      "execution_permissions": [
+        "read_project",
+        "propose_patch",
+        "run_read_only_analysis"
+      ],
+      "filesystem_permissions": [
+        "read_project",
+        "write_only_after_master_review"
+      ],
+      "network_permissions": [
+        "none_by_default"
+      ],
+      "cost": "account/subscription or API billing; verify before use",
+      "availability": "DISCOVERED_OFFICIAL_NOT_LOCAL",
+      "timeout_seconds": 600,
+      "failure_behavior": "BLOCKED on missing CLI/auth; no unrestricted write; preserve evidence",
+      "preflight": {
+        "provider": "Claude Code",
+        "status": "BLOCKED",
+        "operation": "preflight",
+        "reason": "DISCOVERED_OFFICIAL_NOT_LOCAL",
+        "evidence": []
+      }
+    },
+    "OX Alpha": {
+      "provider": "OX Alpha",
+      "connection_method": "UNKNOWN",
+      "authentication_method": "UNKNOWN",
+      "capabilities": [
+        "architecture_review",
+        "code_review",
+        "alternative_implementation",
+        "debugging",
+        "test_generation",
+        "security_reasoning"
+      ],
+      "model": "OX Alpha",
+      "context_limits": "UNKNOWN",
+      "execution_permissions": [
+        "read_project",
+        "propose_patch"
+      ],
+      "filesystem_permissions": [
+        "read_project",
+        "write_only_after_master_review"
+      ],
+      "network_permissions": [
+        "none_by_default"
+      ],
+      "cost": "UNKNOWN",
+      "availability": "BLOCKED_NO_OFFICIAL_EXECUTABLE_OR_INTEGRATION_CONFIRMED",
+      "timeout_seconds": 600,
+      "failure_behavior": "BLOCKED; never guess provider endpoint, credentials, model access, or connection state",
+      "preflight": {
+        "provider": "OX Alpha",
+        "status": "BLOCKED",
+        "operation": "preflight",
+        "reason": "BLOCKED_NO_OFFICIAL_EXECUTABLE_OR_INTEGRATION_CONFIRMED",
+        "evidence": []
+      }
+    }
+  }
+}

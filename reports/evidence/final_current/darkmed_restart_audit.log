@@ -1,0 +1,32 @@
+=== PROJECT ===
+/home/ubuntu/DarkMed
+BiometricGate.kt
+BrowserSessionActivity.kt
+ClearAllDataCoordinator.kt
+DataWiper.kt
+EngineeringContracts.kt
+FailureInjectionMatrix.kt
+TorConfigWriter.kt
+TorForegroundService.kt
+
+=== UI RESOURCES ===
+app/src/main/res/values-ar/strings.xml
+app/src/main/res/values-en/strings.xml
+app/src/main/res/values/strings.xml
+
+=== QA FILES ===
+PRESENT tools/darkmed_security_audit.sh
+PRESENT reports/DARK_MED_FORENSIC_BASELINE.md
+PRESENT DARK_MED_MASTER_ENGINEERING_REPORT.md
+PRESENT DARK_MED_FINAL_ENGINEERING_STATUS.md
+PRESENT DarkMed_Cycle_Report.md
+
+=== ARTIFACTS ===
+deliverables/DarkMed_QA_AndroidTest.apk 952939 bytes
+deliverables/DarkMed_QA_Debug.apk 109818689 bytes
+deliverables/DarkMed_QA_Release_DebugSigned.apk 93673874 bytes
+
+=== DEVICE ===
+bash: adb: command not found
+/dev/kvm=ABSENT
+bash: /home/ubuntu/android-sdk/emulator/emulator: No such file or directory

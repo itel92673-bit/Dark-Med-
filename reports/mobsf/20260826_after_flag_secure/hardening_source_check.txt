@@ -1,0 +1,4 @@
+app/src/main/java/com/darkmed/app/core/BrowserSessionActivity.kt:44:        window.addFlags(WindowManager.LayoutParams.FLAG_SECURE)
+app/src/main/java/com/darkmed/app/core/BrowserSessionActivity.kt:45:        window.decorView.filterTouchesWhenObscured = true
+app/src/main/java/com/darkmed/app/MainActivity.kt:64:        window.addFlags(WindowManager.LayoutParams.FLAG_SECURE)
+app/src/main/java/com/darkmed/app/MainActivity.kt:65:        window.decorView.filterTouchesWhenObscured = true

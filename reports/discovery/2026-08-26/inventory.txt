@@ -1,0 +1,160 @@
+=== filesystem top-level ===
+./.gradle/file-system.probe
+./DARK_MED_FINAL_ENGINEERING_STATUS.md
+./DARK_MED_MASTER_ENGINEERING_REPORT.md
+./DarkMed_Cycle_Report.md
+./app/build.gradle.kts
+./build.gradle.kts
+./config/multicloud_device_matrix_plan.json
+./deliverables/Dark Med f.apk
+./deliverables/DarkMed_Final_Reports_2026-08-25.zip
+./deliverables/DarkMed_QA_AndroidTest.apk
+./deliverables/DarkMed_QA_Debug.apk
+./deliverables/DarkMed_QA_Release_DebugSigned.apk
+./gradle.properties
+./gradlew
+./gradlew.bat
+./local.properties
+./reports/ATTACHMENTS_COMPLIANCE_MATRIX.md
+./reports/CROSS_PROVIDER_RESULTS.md
+./reports/DARKMED_QA_FINAL_DELIVERY_AR.md
+./reports/DARK_MED_ACTUAL_BASELINE_2026-08-24.md
+./reports/DARK_MED_FAILURE_INJECTION_2026-08-24.md
+./reports/DARK_MED_FORENSIC_BASELINE.md
+./reports/DEVICE_COMPATIBILITY_SCORE.md
+./reports/FINAL_AGENT_REPORT.md
+./reports/FINAL_DEVICE_COMPATIBILITY.md
+./reports/FINAL_FEATURE_TRUTH_AUDIT.md
+./reports/FINAL_FORENSIC_AUDIT.md
+./reports/FINAL_RELEASE_READINESS.md
+./reports/FINAL_SECURITY_AUDIT.md
+./reports/FINAL_TEST_MATRIX.md
+./reports/MULTICLOUD_REQUIREMENTS_COMPLIANCE.md
+./reports/MULTI_CLOUD_QA_FINAL_REPORT.md
+./reports/NETWORK_SECURITY_RUNTIME_REPORT.md
+./reports/REAL_DEVICE_MATRIX.md
+./reports/RELEASE_READINESS_FINAL.md
+./reports/RESEARCH_ANDROID_FGS_2026-08-24.md
+./reports/RESEARCH_ANDROID_SECURITY_2026-08-24.md
+./reports/RESEARCH_NETWORK_COMPONENTS_2026-08-24.md
+./reports/RESEARCH_SIGNING_TRANSPORTS_2026-08-24.md
+./reports/STRESS_TEST_REPORT.md
+./reports/TOR_RUNTIME_REPORT.md
+./reports/VPN_TUN_RUNTIME_REPORT.md
+./settings.gradle.kts
+./tools/collect_crash_anr_evidence.sh
+./tools/collect_device_smoke.sh
+./tools/collect_network_runtime_evidence.sh
+./tools/compare_icon_pixels.py
+./tools/darkmed_security_audit.sh
+./tools/merge_qa_results.py
+./tools/multicloud_qa.py
+./tools/run_aws_device_farm.sh
+./tools/run_browserstack_real_device.sh
+./tools/run_firebase_test_lab.sh
+./tools/run_kobiton_real_device.sh
+./tools/run_mobsf_static.sh
+./tools/run_perfecto_real_device.sh
+./tools/run_sauce_labs_real_device.sh
+./tools/run_universal_appium_suite.sh
+=== git/repo state ===
+fatal: not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
+=== APK/test APK ===
+app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk 956963 bytes
+app/build/outputs/apk/debug/app-debug.apk 109802037 bytes
+app/build/outputs/apk/release/app-release.apk 93673594 bytes
+deliverables/Dark Med f.apk 93673594 bytes
+deliverables/DarkMed_QA_AndroidTest.apk 956963 bytes
+deliverables/DarkMed_QA_Debug.apk 109801977 bytes
+deliverables/DarkMed_QA_Release_DebugSigned.apk 93624958 bytes
+809739611738d0bb8cb7dcc4cb7cacd67afd8cff75f1bf5019759e2754cf34df  deliverables/Dark Med f.apk
+=== tools/adapters ===
+config/multicloud_device_matrix_plan.json
+qa/appium/__pycache__/universal_appium_suite.cpython-312.pyc
+qa/appium/universal_appium_suite.py
+tools/__pycache__/merge_qa_results.cpython-312.pyc
+tools/__pycache__/multicloud_qa.cpython-312.pyc
+tools/collect_crash_anr_evidence.sh
+tools/collect_device_smoke.sh
+tools/collect_network_runtime_evidence.sh
+tools/compare_icon_pixels.py
+tools/darkmed_security_audit.sh
+tools/merge_qa_results.py
+tools/multicloud_qa.py
+tools/run_aws_device_farm.sh
+tools/run_browserstack_real_device.sh
+tools/run_firebase_test_lab.sh
+tools/run_kobiton_real_device.sh
+tools/run_mobsf_static.sh
+tools/run_perfecto_real_device.sh
+tools/run_sauce_labs_real_device.sh
+tools/run_universal_appium_suite.sh
+=== reports ===
+reports/ATTACHMENTS_COMPLIANCE_MATRIX.md
+reports/CROSS_PROVIDER_RESULTS.md
+reports/DARKMED_QA_FINAL_DELIVERY_AR.md
+reports/DARK_MED_ACTUAL_BASELINE_2026-08-24.md
+reports/DARK_MED_FAILURE_INJECTION_2026-08-24.md
+reports/DARK_MED_FORENSIC_BASELINE.md
+reports/DEVICE_COMPATIBILITY_SCORE.md
+reports/FINAL_AGENT_REPORT.md
+reports/FINAL_DEVICE_COMPATIBILITY.md
+reports/FINAL_FEATURE_TRUTH_AUDIT.md
+reports/FINAL_FORENSIC_AUDIT.md
+reports/FINAL_RELEASE_READINESS.md
+reports/FINAL_SECURITY_AUDIT.md
+reports/FINAL_TEST_MATRIX.md
+reports/MULTICLOUD_REQUIREMENTS_COMPLIANCE.md
+reports/MULTI_CLOUD_QA_FINAL_REPORT.md
+reports/NETWORK_SECURITY_RUNTIME_REPORT.md
+reports/REAL_DEVICE_MATRIX.md
+reports/RELEASE_READINESS_FINAL.md
+reports/RESEARCH_ANDROID_FGS_2026-08-24.md
+reports/RESEARCH_ANDROID_SECURITY_2026-08-24.md
+reports/RESEARCH_NETWORK_COMPONENTS_2026-08-24.md
+reports/RESEARCH_SIGNING_TRANSPORTS_2026-08-24.md
+reports/STRESS_TEST_REPORT.md
+reports/TOR_RUNTIME_REPORT.md
+reports/VPN_TUN_RUNTIME_REPORT.md
+reports/agents/README.md
+reports/evidence/deliverables.sha256
+reports/evidence/final_apk_forensics.log
+reports/evidence/security_audit_debug_apk.log
+reports/multicloud_qa/2026-08-26_expanded_matrix.console.json
+reports/multicloud_qa/2026-08-26_expanded_matrix_v2.console.json
+reports/multicloud_qa/2026-08-26_final_matrix.console.json
+reports/multicloud_qa/2026-08-26_mobsfscan_install.log
+=== CI/CD candidates ===
+=== SDK/runtime ===
+java=openjdk version "21.0.11" 2026-04-21
+python=Python 3.12.3
+gcloud=aws=/usr/local/bin/aws
+adb==== connectors (names only) ===
+Config loaded for non-project session.
+Config file: /home/ubuntu/.manus/config/config.json
+Baseline file: /home/ubuntu/.manus/config/baseline/config.json
+
+Search results for "claude" in config.json:
+No matches for "claude"
+Next step: edit config.json and run `manus-config config save`
+Config loaded for non-project session.
+Config file: /home/ubuntu/.manus/config/config.json
+Baseline file: /home/ubuntu/.manus/config/baseline/config.json
+
+Search results for "alpha" in config.json:
+102:    {
+103:      "uid": "9d600184-8bda-4b60-96d4-9e8e1a11b641",
+104:      "name": "Alpha Vantage",
+105:      "brief": "Access real-time and historical stock market data and technical indicators",
+106:      "enabled": false,
+107:      "tokenReplacementEnabled": true
+108:    }
+Next step: edit config.json and run `manus-config config save`
+Config loaded for non-project session.
+Config file: /home/ubuntu/.manus/config/config.json
+Baseline file: /home/ubuntu/.manus/config/baseline/config.json
+
+Search results for "firebase" in config.json:
+No matches for "firebase"
+Next step: edit config.json and run `manus-config config save`

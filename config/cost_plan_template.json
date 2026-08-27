@@ -1,0 +1,9 @@
+{
+  "provider": "REPLACE_WITH_ONE_PROVIDER",
+  "device": "REPLACE_WITH_EXACT_CATALOG_DEVICE",
+  "estimated_duration_minutes": 0,
+  "estimated_cost": "REPLACE_WITH_PROVIDER_QUOTE",
+  "quota": "REPLACE_WITH_CURRENT_QUOTA",
+  "runs": 1,
+  "approval": "WAITING_FOR_COST_APPROVAL"
+}

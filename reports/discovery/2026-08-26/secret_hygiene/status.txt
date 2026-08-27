@@ -1,0 +1,2 @@
+grep_rc=1
+secret_pattern_status=CLEAN

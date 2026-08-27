@@ -1,0 +1,6 @@
+agent_contract_tests=10
+invalid_pass_rejected=true
+blocked_and_not_tested_preserved=true
+valid_pass_requires_evidence=true
+malformed_empty_huge_input_rejected=true
+invalid_timeout_rejected=true

@@ -1,0 +1,52 @@
+## APK XML manifest security attributes
+      A: android:allowBackup(0x01010280)=(type 0x12)0x0
+      A: android:usesCleartextTraffic(0x010104ec)=(type 0x12)0x0
+        A: android:permission(0x01010006)="android.permission.BIND_VPN_SERVICE" (Raw: "android.permission.BIND_VPN_SERVICE")
+        A: android:foregroundServiceType(0x01010599)=(type 0x11)0x40000000
+          A: android:name(0x01010003)="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE" (Raw: "android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE")
+        A: android:permission(0x01010006)="android.permission.BIND_VPN_SERVICE" (Raw: "android.permission.BIND_VPN_SERVICE")
+        A: android:foregroundServiceType(0x01010599)=(type 0x11)0x40000000
+          A: android:name(0x01010003)="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE" (Raw: "android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE")
+        A: android:foregroundServiceType(0x01010599)=(type 0x11)0x40000000
+          A: android:name(0x01010003)="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE" (Raw: "android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE")
+
+## Certificate identity
+V2 Signer: certificate DN: C=US, O=Android, CN=Android Debug
+V2 Signer: certificate SHA-256 digest: c9e2b383d4d64b78d5e46318c7e9a1c2a55b6ee437d67bf606a137c1e57a7123
+V2 Signer: certificate SHA-1 digest: 7b2114b864bf6045c2488e4666174a5ed2072468
+V2 Signer: certificate MD5 digest: f4337f99610465a62e07a1c0449172c5
+V2 Signer: certificate DN: C=US, O=Android, CN=Android Debug
+V2 Signer: certificate SHA-256 digest: c9e2b383d4d64b78d5e46318c7e9a1c2a55b6ee437d67bf606a137c1e57a7123
+V2 Signer: certificate SHA-1 digest: 7b2114b864bf6045c2488e4666174a5ed2072468
+V2 Signer: certificate MD5 digest: f4337f99610465a62e07a1c0449172c5
+
+## Native ELF headers
+  Class:                             ELF64
+  Type:                              DYN (Shared object file)
+  Machine:                           AArch64
+  LOAD           0x000000 0x0000000000000000 0x0000000000000000 0x0015b0 0x0015b0 R E 0x4000
+  LOAD           0x0015b0 0x00000000000055b0 0x00000000000055b0 0x0002e8 0x000a50 RW  0x4000
+  LOAD           0x001898 0x0000000000009898 0x0000000000009898 0x000004 0x000040 RW  0x4000
+
+## Security auditor release
+PASS  cleartext traffic disabled
+PASS  backup disabled
+PASS  VPN binding declared
+PASS  special-use FGS declared
+PASS  notification permission declared
+PASS  official icon referenced
+PASS  no hardcoded private key material
+PASS  no obvious API key literals
+PASS  no direct sensitive logging
+PASS  no placeholder screen in app-owned source
+PASS  no misleading Tor running notification
+PASS  APK exists: app/build/outputs/apk/release/app-release.apk
+PASS  APK contains arm64-v8a/libtor.so
+PASS  APK contains arm64-v8a/libwg-go.so
+PASS  APK contains arm64-v8a/libwg.so
+PASS  APK contains arm64-v8a/libwg-quick.so
+PASS  APK contains arm64-v8a/libhev-socks5-tunnel.so
+PASS  APK contains arm64-v8a/libdarkmed-tun2socks-jni.so
+WARN  No obfs4 asset found; pluggable transport remains unverified
+WARN  No snowflake asset found; pluggable transport remains unverified
+SUMMARY failures=0 warnings=2

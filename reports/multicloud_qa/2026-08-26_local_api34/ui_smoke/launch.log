@@ -1,0 +1,6 @@
+Starting: Intent { cmp=com.darkmed.app/.MainActivity }
+Status: timeout
+LaunchState: UNKNOWN (-1)
+Activity: com.darkmed.app/.MainActivity
+WaitTime: 19986
+Complete

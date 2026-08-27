@@ -1,0 +1,2 @@
+adb_devices_rc=127
+state=NO_USABLE_ADB_DEVICE

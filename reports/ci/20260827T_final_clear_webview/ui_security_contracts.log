@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/ubuntu/DarkMed/tools/test_ui_security_contracts.py", line 12, in <module>
+    "wipe_biometric_before_confirmation": main.index("BiometricGate(fragmentActivity).authenticate") < main.index("showConfirmation = true"),
+                                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: substring not found

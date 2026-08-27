@@ -1,0 +1,2 @@
+compile_rc=0
+strict_template_rc=20

@@ -1,0 +1,22 @@
+--------- beginning of main
+08-26 10:46:14.894 14806 14806 I AndroidRuntime: VM exiting with result code 0, cleanup skipped.
+08-26 10:46:16.101 14866 14866 W com.darkmed.app: Verification of int androidx.activity.result.ActivityResultRegistry.generateRandomNumber() took 169.250ms (360.41 bytecodes/s) (2640B approximate peak alloc)
+08-26 10:46:17.930 14866 14866 W com.darkmed.app: Verification of void kotlin.jvm.internal.ClassReference.<clinit>() took 140.821ms (1668.78 bytecodes/s) (7200B approximate peak alloc)
+08-26 10:46:21.221 14866 14873 I com.darkmed.app: Background concurrent copying GC freed 3242(398KB) AllocSpace objects, 0(0B) LOS objects, 49% free, 2415KB/4831KB, paused 1.454ms,962us total 2.652s
+08-26 10:46:29.168 14866 14866 W com.darkmed.app: Verification of void androidx.compose.ui.platform.AndroidComposeView.<init>(android.content.Context, kotlin.coroutines.CoroutineContext) took 157.938ms (5312.18 bytecodes/s) (29880B approximate peak alloc)
+08-26 10:46:40.936 14866 14866 W com.darkmed.app: Verification of void androidx.compose.ui.platform.CompositionLocalsKt.<clinit>() took 110.014ms (1845.21 bytecodes/s) (4016B approximate peak alloc)
+08-26 10:46:44.781 14866 14866 W com.darkmed.app: Verification of void androidx.compose.foundation.text.BasicTextKt.BasicText-RWo7tUw(androidx.compose.ui.text.AnnotatedString, androidx.compose.ui.Modifier, androidx.compose.ui.text.TextStyle, kotlin.jvm.functions.Function1, int, boolean, int, int, java.util.Map, androidx.compose.ui.graphics.ColorProducer, androidx.compose.runtime.Composer, int, int) took 105.141ms (13600.76 bytecodes/s) (39560B approximate peak alloc)
+08-26 10:46:50.950 14936 14936 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+08-26 10:46:51.240 14936 14936 I AndroidRuntime: Using default boot image
+08-26 10:46:51.242 14936 14936 I AndroidRuntime: Leaving lock profiling enabled
+08-26 10:46:56.565 14866 14943 W com.darkmed.app: Verification of androidx.emoji2.text.EmojiCompat$Config androidx.emoji2.text.DefaultEmojiCompatConfig$DefaultEmojiCompatConfigFactory.configOrNull(android.content.Context, androidx.core.provider.FontRequest) took 106.570ms (93.83 bytecodes/s) (1728B approximate peak alloc)
+08-26 10:46:57.176 14866 14944 W com.darkmed.app: Verification of void androidx.profileinstaller.ProfileInstaller.diagnostic(java.util.concurrent.Executor, androidx.profileinstaller.ProfileInstaller$DiagnosticsCallback, int, java.lang.Object) took 357.035ms (25.21 bytecodes/s) (1576B approximate peak alloc)
+08-26 10:46:57.352 14866 14944 W com.darkmed.app: Verification of void androidx.profileinstaller.ProfileInstaller.result(java.util.concurrent.Executor, androidx.profileinstaller.ProfileInstaller$DiagnosticsCallback, int, java.lang.Object) took 121.754ms (73.92 bytecodes/s) (1576B approximate peak alloc)
+08-26 10:46:57.588 14866 14944 W com.darkmed.app: Verification of void androidx.profileinstaller.ProfileInstaller.writeSkipFile(android.content.Context, java.util.concurrent.Executor, androidx.profileinstaller.ProfileInstaller$DiagnosticsCallback) took 157.139ms (241.82 bytecodes/s) (2248B approximate peak alloc)
+08-26 10:46:58.176 14866 14944 W com.darkmed.app: Verification of byte[] androidx.profileinstaller.DeviceProfileWriter.desiredVersion() took 105.013ms (457.08 bytecodes/s) (2272B approximate peak alloc)
+08-26 10:46:58.754 14866 14944 W com.darkmed.app: Verification of void androidx.concurrent.futures.AbstractResolvableFuture.<clinit>() took 147.011ms (775.45 bytecodes/s) (3448B approximate peak alloc)
+08-26 10:46:58.932 14866 14944 W com.darkmed.app: Verification of androidx.concurrent.futures.AbstractResolvableFuture$Listener androidx.concurrent.futures.AbstractResolvableFuture.clearListeners(androidx.concurrent.futures.AbstractResolvableFuture$Listener) took 104.863ms (228.87 bytecodes/s) (1944B approximate peak alloc)
+08-26 10:46:59.332 14866 14944 W com.darkmed.app: Verification of java.lang.Object androidx.concurrent.futures.AbstractResolvableFuture.get(long, java.util.concurrent.TimeUnit) took 158.533ms (3097.13 bytecodes/s) (13560B approximate peak alloc)
+08-26 10:46:59.786 14866 14944 W com.darkmed.app: Verification of boolean androidx.profileinstaller.ProfileVerifier$Cache.equals(java.lang.Object) took 119.251ms (394.13 bytecodes/s) (2368B approximate peak alloc)
+08-26 10:47:02.543 14936 14936 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+08-26 10:47:07.082 14936 14936 D AndroidRuntime: Shutting down VM

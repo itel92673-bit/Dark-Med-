@@ -1,0 +1,10 @@
+install_rc=0
+launch_rc=0
+screenshot_rc=0
+ui_dump_rc=0
+crash_or_anr=0
+system_dialog_detected=Process system isn't responding
+device=emulator-5554
+api=34
+status=FAIL
+blocker=Android system-server/UI responsiveness failure; app launch timed out and screenshot showed system ANR dialog

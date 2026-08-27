@@ -1,0 +1,28 @@
+=== CURRENT TESTS ===
+app/src/androidTest/java/com/darkmed/app/PlatformSmokeTest.kt
+app/src/test/java/com/darkmed/app/core/EngineeringContractsTest.kt
+app/src/test/java/com/darkmed/app/core/FailureInjectionMatrixTest.kt
+app/src/test/java/com/darkmed/app/core/TorConfigRendererTest.kt
+unit_testcases=16
+unit_failures=0
+=== CURRENT BUILD ===
+assembleDebug: BUILD SUCCESSFUL in 1m 21s
+assembleDebugAndroidTest: BUILD SUCCESSFUL in 20s
+assembleRelease: BUILD SUCCESSFUL in 2m 36s
+clean: BUILD SUCCESSFUL in 12s
+current_evidence: clean: BUILD SUCCESSFUL in 12s
+lintDebug: BUILD SUCCESSFUL in 52s
+lintRelease: BUILD SUCCESSFUL in 55s
+unit: BUILD SUCCESSFUL in 29s
+=== AVD ===
+List of devices attached
+emulator-5554          device product:sdk_phone64_x86_64 model:Android_SDK_built_for_x86_64 device:emu64x transport_id:1
+
+
+cmd: Can't find service: settings
+Service package: not found
+KVM_ABSENT
+=== INSTALL LOG ===
+/tmp/DarkMed_QA_x86_64.apk: 1 file pushed, 0 skipped. 41.0 MB/s (73794988 bytes in 1.718s)
+cmd: Can't find service: package
+Performing Push Install

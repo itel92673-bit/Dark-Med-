@@ -1,0 +1,4 @@
+path=deliverables/Dark Med f.apk
+size=93792902
+sha256=b8938f37c8afc747f7afe69b1e0f28a7ff05e5311695dd509326cdac357abc55
+manifest_entry=AndroidManifest.xml

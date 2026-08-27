@@ -1,0 +1,9 @@
+:app:clean=0
+:app:testDebugUnitTest=0
+:app:lintDebug=0
+:app:lintRelease=0
+:app:assembleDebug=0
+:app:assembleDebugAndroidTest=0
+:app:assembleRelease=0
+overall_rc=0
+security_audit_rc=0

@@ -1,0 +1,27 @@
+{
+  "created_at": "2026-08-27T14:56:09.337074+00:00",
+  "apk": "/home/ubuntu/DarkMed/deliverables/Dark Med f.apk",
+  "apk_sha256": "b8938f37c8afc747f7afe69b1e0f28a7ff05e5311695dd509326cdac357abc55",
+  "test_apk": "/home/ubuntu/DarkMed/deliverables/DarkMed_QA_AndroidTest.apk",
+  "test_apk_sha256": "73d7ca3ed079896628f2b391f91288161ebe40c92e7a60ac8c5297b12dc83070",
+  "providers": [
+    "Firebase Test Lab",
+    "AWS Device Farm",
+    "BrowserStack Real Device Cloud",
+    "Kobiton Real Device Cloud",
+    "Sauce Labs Real Device Cloud",
+    "Perfecto Real Device Cloud"
+  ],
+  "provider_ids": [
+    "firebase",
+    "aws",
+    "browserstack",
+    "kobiton",
+    "sauce",
+    "perfecto"
+  ],
+  "execution_requested": false,
+  "plan_config": "/home/ubuntu/DarkMed/config/multicloud_device_matrix_plan.json",
+  "planned_matrix_rows": 126,
+  "source": "Dark Med current artifact; no simulated test results; planned rows are not tested"
+}

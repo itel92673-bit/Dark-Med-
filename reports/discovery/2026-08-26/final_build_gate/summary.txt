@@ -1,0 +1,14 @@
+=== clean ===
+clean=0
+=== unit_test ===
+unit_test=0
+=== lint_debug ===
+lint_debug=0
+=== lint_release ===
+lint_release=0
+=== assemble_debug ===
+assemble_debug=0
+=== assemble_android_test ===
+assemble_android_test=0
+=== assemble_release ===
+assemble_release=0

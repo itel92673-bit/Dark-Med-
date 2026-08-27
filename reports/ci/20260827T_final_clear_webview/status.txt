@@ -1,0 +1,12 @@
+clean=PASS
+unit_test=PASS
+lint_debug=PASS
+lint_release=PASS
+assemble_debug=PASS
+assemble_android_test=PASS
+assemble_release=PASS
+python_compile=PASS
+bash_syntax=PASS
+agent_contracts=PASS
+cost_guard_contracts=PASS
+task_orchestrator_contracts=PASS

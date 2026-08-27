@@ -1,0 +1,8 @@
+finding_count= 6
+severity_counts= {'INFO': 6}
+android_certificate_transparency INFO
+android_prevent_screenshot INFO
+android_root_detection INFO
+android_safetynet INFO
+android_ssl_pinning INFO
+android_tapjacking INFO

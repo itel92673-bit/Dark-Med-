@@ -1,0 +1,8 @@
+instrumentation_tests=5
+fails=0
+errors=0
+skipped=0
+status=PASS
+device=darkmed_api34_default(AVD)
+api=34
+evidence=xml,test-result.textproto,device-info.pb,logcat,meminfo,cpuinfo

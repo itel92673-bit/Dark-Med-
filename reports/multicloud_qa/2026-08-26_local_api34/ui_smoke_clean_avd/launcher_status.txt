@@ -1,0 +1,2 @@
+emulator_pid=76366
+boot_timeout

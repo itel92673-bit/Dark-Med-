@@ -1,0 +1,215 @@
+{'name': 'classes.dex', 'size': 31098944, 'urls': ['https://issuetracker.google.com/issues/297974033', 'https://issuetracker.google.com/issues/300280216'], 'markers': ['tor']}
+{'name': 'classes3.dex', 'size': 10080628, 'urls': ['http://schemas.android.com/apk/res/android', 'http://www.w3.org/2000/svg', 'https://goo.gle/compose-feedback', 'https://youtrack.jetbrains.com/issue/KT-55980', 'https://youtrack.jetbrains.com/issue/KT-67202'], 'markers': ['obfs4', 'snowflake', 'tor', 'wireguard']}
+{'name': 'lib/arm64-v8a/libandroidx.graphics.path.so', 'size': 10096, 'urls': ['https://android.googlesource.com/toolchain/llvm-project'], 'markers': ['tor']}
+{'name': 'lib/arm64-v8a/libc++_shared.so', 'size': 1292904, 'urls': ['https://android.googlesource.com/toolchain/llvm-project'], 'markers': ['tor']}
+{'name': 'lib/arm64-v8a/libdarkmed-tun2socks-jni.so', 'size': 34008, 'urls': ['https://android.googlesource.com/toolchain/llvm-project'], 'markers': ['tor', 'hev-socks5']}
+{'name': 'lib/arm64-v8a/libhev-socks5-tunnel.so', 'size': 344056, 'urls': ['https://android.googlesource.com/toolchain/llvm-project'], 'markers': ['tor', 'hev-socks5']}
+{'name': 'lib/arm64-v8a/libtor.so', 'size': 7576992, 'urls': ['http://%s', 'http://%s:%d', 'http://%s@%s:%d', 'https://2019.www.torproject.org/docs/faq.html.en#WarningsAboutSOCKSandDNSInformationLeaks.%s%s', 'https://blog.torproject.org/lifecycle-of-a-new-relay', 'https://blog.torproject.org/v2-deprecation-timeline', 'https://bugs.torproject.org/tpo/core/tor/14917.', 'https://bugs.torproject.org/tpo/core/tor/21155.', 'https://freehaven.net/anonbib/#hs-attack06', 'https://support.torproject.org/faq/staying-anonymous/', 'https://www.gnu.org/licenses/gpl-3.0.en.html)', 'https://www.torproject.org/', 'https://www.torproject.org/documentation.html'], 'markers': ['snowflake', 'tor']}
+{'name': 'lib/arm64-v8a/libwg-go.so', 'size': 3365264, 'urls': ['https://android.googlesource.com/toolchain/llvm-project', 'https://go.dev/issue/66821):'], 'markers': ['tor', 'wireguard']}
+{'name': 'lib/arm64-v8a/libwg-quick.so', 'size': 29952, 'urls': ['https://android.googlesource.com/toolchain/llvm-project'], 'markers': ['wireguard']}
+{'name': 'lib/arm64-v8a/libwg.so', 'size': 81704, 'urls': ['https://android.googlesource.com/toolchain/llvm-project', 'https://git.zx2c4.com/wireguard-tools/\n'], 'markers': ['wireguard']}
+{'name': 'lib/armeabi-v7a/libandroidx.graphics.path.so', 'size': 7252, 'urls': ['https://android.googlesource.com/toolchain/llvm-project'], 'markers': ['tor']}
+{'name': 'lib/armeabi-v7a/libc++_shared.so', 'size': 872872, 'urls': ['https://android.googlesource.com/toolchain/llvm-project'], 'markers': ['tor']}
+{'name': 'lib/armeabi-v7a/libdarkmed-tun2socks-jni.so', 'size': 7040, 'urls': ['https://android.googlesource.com/toolchain/llvm-project'], 'markers': ['tor', 'hev-socks5']}
+{'name': 'lib/armeabi-v7a/libhev-socks5-tunnel.so', 'size': 234596, 'urls': ['https://android.googlesource.com/toolchain/llvm-project'], 'markers': ['tor', 'hev-socks5']}
+{'name': 'lib/armeabi-v7a/libtor.so', 'size': 6749420, 'urls': ['http://%s', 'http://%s:%d', 'http://%s@%s:%d', 'https://2019.www.torproject.org/docs/faq.html.en#WarningsAboutSOCKSandDNSInformationLeaks.%s%s', 'https://blog.torproject.org/lifecycle-of-a-new-relay', 'https://blog.torproject.org/v2-deprecation-timeline', 'https://bugs.torproject.org/tpo/core/tor/14917.', 'https://bugs.torproject.org/tpo/core/tor/21155.', 'https://freehaven.net/anonbib/#hs-attack06', 'https://support.torproject.org/faq/staying-anonymous/', 'https://www.gnu.org/licenses/gpl-3.0.en.html)', 'https://www.torproject.org/', 'https://www.torproject.org/documentation.html'], 'markers': ['snowflake', 'tor']}
+{'name': 'lib/armeabi-v7a/libwg-go.so', 'size': 3174788, 'urls': ['https://android.googlesource.com/toolchain/llvm-project', 'https://go.dev/issue/66821):'], 'markers': ['tor', 'wireguard']}
+{'name': 'lib/armeabi-v7a/libwg-quick.so', 'size': 22736, 'urls': ['https://android.googlesource.com/toolchain/llvm-project'], 'markers': ['wireguard']}
+{'name': 'lib/armeabi-v7a/libwg.so', 'size': 47076, 'urls': ['https://android.googlesource.com/toolchain/llvm-project', 'https://git.zx2c4.com/wireguard-tools/\n'], 'markers': ['wireguard']}
+{'name': 'lib/x86/libandroidx.graphics.path.so', 'size': 9284, 'urls': ['https://android.googlesource.com/toolchain/llvm-project'], 'markers': ['tor']}
+{'name': 'lib/x86/libc++_shared.so', 'size': 1254988, 'urls': ['https://android.googlesource.com/toolchain/llvm-project'], 'markers': ['tor']}
+{'name': 'lib/x86/libdarkmed-tun2socks-jni.so', 'size': 33544, 'urls': ['https://android.googlesource.com/toolchain/llvm-project'], 'markers': ['tor', 'hev-socks5']}
+{'name': 'lib/x86/libhev-socks5-tunnel.so', 'size': 363028, 'urls': ['https://android.googlesource.com/toolchain/llvm-project'], 'markers': ['tor', 'hev-socks5']}
+{'name': 'lib/x86/libtor.so', 'size': 7224368, 'urls': ['http://%s', 'http://%s:%d', 'http://%s@%s:%d', 'https://2019.www.torproject.org/docs/faq.html.en#WarningsAboutSOCKSandDNSInformationLeaks.%s%s', 'https://blog.torproject.org/lifecycle-of-a-new-relay', 'https://blog.torproject.org/v2-deprecation-timeline', 'https://bugs.torproject.org/tpo/core/tor/14917.', 'https://bugs.torproject.org/tpo/core/tor/21155.', 'https://freehaven.net/anonbib/#hs-attack06', 'https://support.torproject.org/faq/staying-anonymous/', 'https://www.gnu.org/licenses/gpl-3.0.en.html)', 'https://www.torproject.org/', 'https://www.torproject.org/documentation.html'], 'markers': ['snowflake', 'tor']}
+{'name': 'lib/x86/libwg-go.so', 'size': 3197504, 'urls': ['https://android.googlesource.com/toolchain/llvm-project', 'https://go.dev/issue/66821):'], 'markers': ['tor', 'wireguard']}
+{'name': 'lib/x86/libwg-quick.so', 'size': 31820, 'urls': ['https://android.googlesource.com/toolchain/llvm-project'], 'markers': ['wireguard']}
+{'name': 'lib/x86/libwg.so', 'size': 70896, 'urls': ['https://android.googlesource.com/toolchain/llvm-project', 'https://git.zx2c4.com/wireguard-tools/\n'], 'markers': ['wireguard']}
+{'name': 'lib/x86_64/libandroidx.graphics.path.so', 'size': 10760, 'urls': ['https://android.googlesource.com/toolchain/llvm-project'], 'markers': ['tor']}
+{'name': 'lib/x86_64/libc++_shared.so', 'size': 1252080, 'urls': ['https://android.googlesource.com/toolchain/llvm-project'], 'markers': ['tor']}
+{'name': 'lib/x86_64/libdarkmed-tun2socks-jni.so', 'size': 33656, 'urls': ['https://android.googlesource.com/toolchain/llvm-project'], 'markers': ['tor', 'hev-socks5']}
+{'name': 'lib/x86_64/libhev-socks5-tunnel.so', 'size': 345192, 'urls': ['https://android.googlesource.com/toolchain/llvm-project'], 'markers': ['tor', 'hev-socks5']}
+{'name': 'lib/x86_64/libtor.so', 'size': 8453072, 'urls': ['http://%s', 'http://%s:%d', 'http://%s@%s:%d', 'https://2019.www.torproject.org/docs/faq.html.en#WarningsAboutSOCKSandDNSInformationLeaks.%s%s', 'https://blog.torproject.org/lifecycle-of-a-new-relay', 'https://blog.torproject.org/v2-deprecation-timeline', 'https://bugs.torproject.org/tpo/core/tor/14917.', 'https://bugs.torproject.org/tpo/core/tor/21155.', 'https://freehaven.net/anonbib/#hs-attack06', 'https://support.torproject.org/faq/staying-anonymous/', 'https://www.gnu.org/licenses/gpl-3.0.en.html)', 'https://www.torproject.org/', 'https://www.torproject.org/documentation.html'], 'markers': ['snowflake', 'tor']}
+{'name': 'lib/x86_64/libwg-go.so', 'size': 3606928, 'urls': ['https://android.googlesource.com/toolchain/llvm-project', 'https://go.dev/issue/66821):'], 'markers': ['tor', 'wireguard']}
+{'name': 'lib/x86_64/libwg-quick.so', 'size': 31504, 'urls': ['https://android.googlesource.com/toolchain/llvm-project'], 'markers': ['wireguard']}
+{'name': 'lib/x86_64/libwg.so', 'size': 93248, 'urls': ['https://android.googlesource.com/toolchain/llvm-project', 'https://git.zx2c4.com/wireguard-tools/\n'], 'markers': ['wireguard']}
+{'name': 'META-INF/androidx/annotation/annotation/LICENSE.txt', 'size': 10175, 'urls': ['http://www.apache.org/licenses/\n\n'], 'markers': ['tor']}
+{'name': 'META-INF/androidx/collection/collection-ktx/LICENSE.txt', 'size': 10175, 'urls': ['http://www.apache.org/licenses/\n\n'], 'markers': ['tor']}
+{'name': 'META-INF/androidx/collection/collection/LICENSE.txt', 'size': 10175, 'urls': ['http://www.apache.org/licenses/\n\n'], 'markers': ['tor']}
+{'name': 'META-INF/services/kotlinx.coroutines.internal.MainDispatcherFactory', 'size': 52, 'urls': [], 'markers': ['tor']}
+{'name': 'kotlin/annotation/annotation.kotlin_builtins', 'size': 1006, 'urls': [], 'markers': ['tor']}
+{'name': 'kotlin/collections/collections.kotlin_builtins', 'size': 8308, 'urls': [], 'markers': ['tor']}
+{'name': 'kotlin/concurrent/atomics/atomics.kotlin_builtins', 'size': 2674, 'urls': [], 'markers': ['tor']}
+{'name': 'kotlin/internal/internal.kotlin_builtins', 'size': 590, 'urls': [], 'markers': ['tor']}
+{'name': 'kotlin/kotlin.kotlin_builtins', 'size': 29399, 'urls': ['https://youtrack.jetbrains.com/issue/KT-46465'], 'markers': ['tor']}
+{'name': 'kotlin/ranges/ranges.kotlin_builtins', 'size': 4184, 'urls': [], 'markers': ['tor']}
+{'name': 'res/0M.xml', 'size': 1064, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/27.xml', 'size': 336, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/2f.xml', 'size': 1916, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/2j.xml', 'size': 2072, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/3A.xml', 'size': 1056, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/46.xml', 'size': 684, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/4_.xml', 'size': 692, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/4u.xml', 'size': 756, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/4z.xml', 'size': 876, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/5T.xml', 'size': 852, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/6Q.xml', 'size': 688, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/7G.xml', 'size': 1116, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/7H.xml', 'size': 464, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/7N.xml', 'size': 372, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/80.xml', 'size': 2688, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/8t.xml', 'size': 1356, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/9T.xml', 'size': 932, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/9T1.xml', 'size': 1656, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/9T2.xml', 'size': 1028, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/9V.xml', 'size': 1560, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/9m.xml', 'size': 304, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/9r.xml', 'size': 1076, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/9z.xml', 'size': 388, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/A1.xml', 'size': 872, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/A2.xml', 'size': 3612, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/A4.xml', 'size': 680, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/Ac.xml', 'size': 772, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/BJ.xml', 'size': 640, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/Bd.xml', 'size': 388, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/Be.xml', 'size': 2476, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/CS.xml', 'size': 1076, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/Cg.xml', 'size': 424, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/D-.xml', 'size': 1528, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/D5.xml', 'size': 812, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/DV.xml', 'size': 792, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/DZ.xml', 'size': 320, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/EZ.xml', 'size': 396, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/Eg.xml', 'size': 1716, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/F8.xml', 'size': 1684, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/FT.xml', 'size': 1304, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/Fu.xml', 'size': 1352, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/G2.xml', 'size': 736, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/GC.xml', 'size': 828, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/GF.xml', 'size': 440, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/GK.xml', 'size': 1172, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/GR.xml', 'size': 1208, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/Gt.xml', 'size': 1012, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/Hd.xml', 'size': 464, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/IN.xml', 'size': 1912, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/In.xml', 'size': 468, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/Jl.xml', 'size': 464, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/K5.xml', 'size': 1656, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/Ke.xml', 'size': 2360, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/LD.xml', 'size': 388, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/L_.xml', 'size': 1064, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/Lf.xml', 'size': 1656, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/M7.xml', 'size': 1196, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/MO.xml', 'size': 424, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/Mp.xml', 'size': 792, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/NF.xml', 'size': 328, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/NM.xml', 'size': 484, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/Nu.xml', 'size': 1728, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/Ol.xml', 'size': 1656, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/QZ.xml', 'size': 704, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/RD.xml', 'size': 396, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/RH.xml', 'size': 832, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/S8.xml', 'size': 1052, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/Tl.xml', 'size': 1320, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/Tn.xml', 'size': 768, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/U8.xml', 'size': 2660, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/UX.xml', 'size': 508, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/V1.xml', 'size': 864, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/V7.xml', 'size': 304, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/VM.xml', 'size': 328, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/VN.xml', 'size': 684, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/VT.xml', 'size': 640, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/Ws.xml', 'size': 1180, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/XK.xml', 'size': 516, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/XW.xml', 'size': 704, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/XY.xml', 'size': 264, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/Xx.xml', 'size': 516, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/YW.xml', 'size': 372, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/ZN.xml', 'size': 1000, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/Zg.xml', 'size': 1028, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/_G.xml', 'size': 484, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/_H.xml', 'size': 1492, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/_o.xml', 'size': 316, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/_y.xml', 'size': 612, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/a0.xml', 'size': 1228, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/aG.xml', 'size': 532, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/aM.xml', 'size': 852, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/aW.xml', 'size': 704, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/ak.xml', 'size': 2656, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/bL.xml', 'size': 1408, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/bb.xml', 'size': 516, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/bt.xml', 'size': 840, 'urls': ['http://schemas.android.com/apk/res-auto', 'http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/c5.xml', 'size': 316, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/c6.xml', 'size': 372, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/cV.xml', 'size': 440, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/color-v23/abc_btn_colored_borderless_text_material.xml', 'size': 500, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/color-v23/abc_btn_colored_text_material.xml', 'size': 500, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/color-v23/abc_color_highlight_material.xml', 'size': 544, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/color-v23/abc_tint_btn_checkable.xml', 'size': 624, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/color-v23/abc_tint_default.xml', 'size': 1120, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/color-v23/abc_tint_edittext.xml', 'size': 668, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/color-v23/abc_tint_seek_thumb.xml', 'size': 500, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/color-v23/abc_tint_spinner.xml', 'size': 668, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/color-v23/abc_tint_switch_track.xml', 'size': 664, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/color-v26/biometric_error_color.xml', 'size': 464, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/color/abc_background_cache_hint_selector_material_dark.xml', 'size': 468, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/color/abc_background_cache_hint_selector_material_light.xml', 'size': 468, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/color/abc_hint_foreground_material_dark.xml', 'size': 564, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/color/abc_hint_foreground_material_light.xml', 'size': 564, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/color/abc_primary_text_disable_only_material_dark.xml', 'size': 464, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/color/abc_primary_text_disable_only_material_light.xml', 'size': 464, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/color/abc_primary_text_material_dark.xml', 'size': 464, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/color/abc_primary_text_material_light.xml', 'size': 464, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/color/abc_search_url_text.xml', 'size': 588, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/color/abc_secondary_text_material_dark.xml', 'size': 464, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/color/abc_secondary_text_material_light.xml', 'size': 464, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/color/switch_thumb_material_dark.xml', 'size': 464, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/color/switch_thumb_material_light.xml', 'size': 464, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/color/vector_tint_color.xml', 'size': 340, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/color/vector_tint_theme_color.xml', 'size': 340, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/cr.xml', 'size': 364, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/dO.xml', 'size': 3472, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/df.xml', 'size': 532, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/eA.xml', 'size': 1868, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/gR.xml', 'size': 388, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/h4.xml', 'size': 2124, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/hP.xml', 'size': 864, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/hP1.xml', 'size': 1584, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/hq.xml', 'size': 612, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/iQ.xml', 'size': 988, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/j3.xml', 'size': 1100, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/k8.xml', 'size': 1560, 'urls': ['http://schemas.android.com/apk/res-auto', 'http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/k_.xml', 'size': 508, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/kj.xml', 'size': 2520, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/kn.xml', 'size': 816, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/lN.xml', 'size': 320, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/lR.xml', 'size': 440, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/mG.xml', 'size': 1120, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/nT.xml', 'size': 1160, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/ng.xml', 'size': 388, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/nz.xml', 'size': 532, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/oP.xml', 'size': 816, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/pU.xml', 'size': 364, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/qx.xml', 'size': 2780, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/qz.xml', 'size': 1656, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/rW.xml', 'size': 688, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/rY.xml', 'size': 548, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/rx.xml', 'size': 680, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/rz.xml', 'size': 396, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/sA.xml', 'size': 464, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/sn.xml', 'size': 400, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/t8.xml', 'size': 1012, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/tL.xml', 'size': 716, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/u0.xml', 'size': 1196, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/uD.xml', 'size': 1076, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/uJ.xml', 'size': 848, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/vG.xml', 'size': 1396, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/vJ.xml', 'size': 528, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/vZ.xml', 'size': 388, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/vq.xml', 'size': 1020, 'urls': ['http://schemas.android.com/apk/res-auto', 'http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/xN.xml', 'size': 2456, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/xj.xml', 'size': 588, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/y-.xml', 'size': 396, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/y4.xml', 'size': 388, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': ['tor']}
+{'name': 'res/yV.xml', 'size': 576, 'urls': ['http://schemas.android.com/apk/res-auto', 'http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'res/zq.xml', 'size': 464, 'urls': ['http://schemas.android.com/apk/res/android'], 'markers': []}
+{'name': 'resources.arsc', 'size': 747380, 'urls': [], 'markers': ['tor', 'wireguard']}

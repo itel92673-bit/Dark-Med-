@@ -1,0 +1,2 @@
+a05a4a33263fd75909484387262b1bd64bd76932fb469a85058ba1eacaab3c5f  deliverables/Dark Med f.apk
+a05a4a33263fd75909484387262b1bd64bd76932fb469a85058ba1eacaab3c5f  app/build/outputs/apk/release/app-release.apk

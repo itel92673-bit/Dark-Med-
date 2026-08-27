@@ -1,0 +1,5 @@
+mobsf_rc=0
+security_audit_rc=0
+production_required_rc=0
+icon_rc=0
+artifact_matches_ci_release=true

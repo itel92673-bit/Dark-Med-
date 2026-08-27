@@ -1,0 +1,3 @@
+apk=deliverables/Dark Med f.apk
+apk_sha256=e61ce5e72273f680888a4026a83846fd65b5066cdb7bc1d5ba71be4bcfbd276f
+started_at=2026-08-27T15:04:33Z

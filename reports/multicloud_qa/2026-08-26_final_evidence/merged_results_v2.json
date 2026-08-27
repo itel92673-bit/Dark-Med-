@@ -1,0 +1,258 @@
+{
+  "artifact": "/home/ubuntu/DarkMed/deliverables/Dark Med f.apk",
+  "apk_sha256": "809739611738d0bb8cb7dcc4cb7cacd67afd8cff75f1bf5019759e2754cf34df",
+  "record_count": 27,
+  "status_counts": {
+    "NOT_TESTED": 14,
+    "PASS": 2,
+    "FAIL": 2,
+    "BLOCKED": 9
+  },
+  "real_device_passes": 0,
+  "records": [
+    {
+      "source": "/home/ubuntu/DarkMed/reports/multicloud_qa/2026-08-26_local_api34/status.txt",
+      "provider": "2026-08-26_local_api34",
+      "status": "NOT_TESTED",
+      "apk_sha256": "",
+      "device_name": "",
+      "platform_version": "",
+      "artifacts": []
+    },
+    {
+      "source": "/home/ubuntu/DarkMed/reports/multicloud_qa/2026-08-26_security_audit/status.txt",
+      "provider": "2026-08-26_security_audit",
+      "status": "NOT_TESTED",
+      "apk_sha256": "",
+      "device_name": "",
+      "platform_version": "",
+      "artifacts": []
+    },
+    {
+      "source": "/home/ubuntu/DarkMed/reports/multicloud_qa/2026-08-26_full_clean_gates/status.txt",
+      "provider": "2026-08-26_full_clean_gates",
+      "status": "NOT_TESTED",
+      "apk_sha256": "",
+      "device_name": "",
+      "platform_version": "",
+      "artifacts": []
+    },
+    {
+      "source": "/home/ubuntu/DarkMed/reports/multicloud_qa/2026-08-26_mobsfscan/status.txt",
+      "provider": "2026-08-26_mobsfscan",
+      "status": "NOT_TESTED",
+      "apk_sha256": "",
+      "device_name": "",
+      "platform_version": "",
+      "artifacts": []
+    },
+    {
+      "source": "/home/ubuntu/DarkMed/reports/multicloud_qa/2026-08-26_manifest_fix_regression/status.txt",
+      "provider": "2026-08-26_manifest_fix_regression",
+      "status": "NOT_TESTED",
+      "apk_sha256": "",
+      "device_name": "",
+      "platform_version": "",
+      "artifacts": []
+    },
+    {
+      "source": "/home/ubuntu/DarkMed/reports/multicloud_qa/2026-08-26_mobsfscan_after_fix/status.txt",
+      "provider": "2026-08-26_mobsfscan_after_fix",
+      "status": "NOT_TESTED",
+      "apk_sha256": "",
+      "device_name": "",
+      "platform_version": "",
+      "artifacts": []
+    },
+    {
+      "source": "/home/ubuntu/DarkMed/reports/multicloud_qa/2026-08-26_mobsf_task_hijacking_fix/status.txt",
+      "provider": "2026-08-26_mobsf_task_hijacking_fix",
+      "status": "NOT_TESTED",
+      "apk_sha256": "",
+      "device_name": "",
+      "platform_version": "",
+      "artifacts": []
+    },
+    {
+      "source": "/home/ubuntu/DarkMed/reports/multicloud_qa/2026-08-26_evidence_layers/status.txt",
+      "provider": "2026-08-26_evidence_layers",
+      "status": "NOT_TESTED",
+      "apk_sha256": "",
+      "device_name": "",
+      "platform_version": "",
+      "artifacts": []
+    },
+    {
+      "source": "/home/ubuntu/DarkMed/reports/multicloud_qa/2026-08-26_final_artifact_refresh/status.txt",
+      "provider": "2026-08-26_final_artifact_refresh",
+      "status": "NOT_TESTED",
+      "apk_sha256": "",
+      "device_name": "",
+      "platform_version": "",
+      "artifacts": []
+    },
+    {
+      "source": "/home/ubuntu/DarkMed/reports/multicloud_qa/2026-08-26_universal_appium_gate/status.txt",
+      "provider": "2026-08-26_universal_appium_gate",
+      "status": "PASS",
+      "apk_sha256": "",
+      "device_name": "",
+      "platform_version": "",
+      "artifacts": []
+    },
+    {
+      "source": "/home/ubuntu/DarkMed/reports/multicloud_qa/2026-08-26_final_evidence/status.txt",
+      "provider": "2026-08-26_final_evidence",
+      "status": "NOT_TESTED",
+      "apk_sha256": "",
+      "device_name": "",
+      "platform_version": "",
+      "artifacts": []
+    },
+    {
+      "source": "/home/ubuntu/DarkMed/reports/multicloud_qa/2026-08-26_adapters/firebase/status.txt",
+      "provider": "firebase",
+      "status": "NOT_TESTED",
+      "apk_sha256": "",
+      "device_name": "",
+      "platform_version": "",
+      "artifacts": []
+    },
+    {
+      "source": "/home/ubuntu/DarkMed/reports/multicloud_qa/2026-08-26_adapters/aws/status.txt",
+      "provider": "aws",
+      "status": "NOT_TESTED",
+      "apk_sha256": "",
+      "device_name": "",
+      "platform_version": "",
+      "artifacts": []
+    },
+    {
+      "source": "/home/ubuntu/DarkMed/reports/multicloud_qa/2026-08-26_adapters/browserstack/status.txt",
+      "provider": "browserstack",
+      "status": "NOT_TESTED",
+      "apk_sha256": "",
+      "device_name": "",
+      "platform_version": "",
+      "artifacts": []
+    },
+    {
+      "source": "/home/ubuntu/DarkMed/reports/multicloud_qa/2026-08-26_local_api34/ui_smoke/status.txt",
+      "provider": "ui_smoke",
+      "status": "FAIL",
+      "apk_sha256": "",
+      "device_name": "emulator-5554",
+      "platform_version": "34",
+      "artifacts": []
+    },
+    {
+      "source": "/home/ubuntu/DarkMed/reports/multicloud_qa/2026-08-26_local_api34/ui_smoke_recovery/status.txt",
+      "provider": "ui_smoke_recovery",
+      "status": "FAIL",
+      "apk_sha256": "",
+      "device_name": "emulator-5554",
+      "platform_version": "34",
+      "artifacts": []
+    },
+    {
+      "source": "/home/ubuntu/DarkMed/reports/multicloud_qa/2026-08-26_local_api34/arm64_avd/status.txt",
+      "provider": "arm64_avd",
+      "status": "NOT_TESTED",
+      "apk_sha256": "",
+      "device_name": "emulator-5556",
+      "platform_version": "",
+      "artifacts": []
+    },
+    {
+      "source": "/home/ubuntu/DarkMed/reports/multicloud_qa/2026-08-26_local_api34/collector_after_avd_failure/status.txt",
+      "provider": "collector_after_avd_failure",
+      "status": "BLOCKED",
+      "apk_sha256": "",
+      "device_name": "",
+      "platform_version": "",
+      "artifacts": []
+    },
+    {
+      "source": "/home/ubuntu/DarkMed/reports/multicloud_qa/2026-08-26_expanded_adapters/firebase/status.txt",
+      "provider": "firebase",
+      "status": "BLOCKED",
+      "apk_sha256": "",
+      "device_name": "",
+      "platform_version": "",
+      "artifacts": []
+    },
+    {
+      "source": "/home/ubuntu/DarkMed/reports/multicloud_qa/2026-08-26_expanded_adapters/aws/status.txt",
+      "provider": "aws",
+      "status": "BLOCKED",
+      "apk_sha256": "",
+      "device_name": "",
+      "platform_version": "",
+      "artifacts": []
+    },
+    {
+      "source": "/home/ubuntu/DarkMed/reports/multicloud_qa/2026-08-26_expanded_adapters/browserstack/status.txt",
+      "provider": "browserstack",
+      "status": "BLOCKED",
+      "apk_sha256": "",
+      "device_name": "",
+      "platform_version": "",
+      "artifacts": []
+    },
+    {
+      "source": "/home/ubuntu/DarkMed/reports/multicloud_qa/2026-08-26_expanded_adapters/kobiton/status.txt",
+      "provider": "kobiton",
+      "status": "BLOCKED",
+      "apk_sha256": "",
+      "device_name": "",
+      "platform_version": "",
+      "artifacts": []
+    },
+    {
+      "source": "/home/ubuntu/DarkMed/reports/multicloud_qa/2026-08-26_expanded_adapters/sauce/status.txt",
+      "provider": "sauce",
+      "status": "BLOCKED",
+      "apk_sha256": "",
+      "device_name": "",
+      "platform_version": "",
+      "artifacts": []
+    },
+    {
+      "source": "/home/ubuntu/DarkMed/reports/multicloud_qa/2026-08-26_expanded_adapters/perfecto/status.txt",
+      "provider": "perfecto",
+      "status": "BLOCKED",
+      "apk_sha256": "",
+      "device_name": "",
+      "platform_version": "",
+      "artifacts": []
+    },
+    {
+      "source": "/home/ubuntu/DarkMed/reports/multicloud_qa/2026-08-26_evidence_layers/network/status.txt",
+      "provider": "network",
+      "status": "BLOCKED",
+      "apk_sha256": "",
+      "device_name": "",
+      "platform_version": "",
+      "artifacts": []
+    },
+    {
+      "source": "/home/ubuntu/DarkMed/reports/multicloud_qa/2026-08-26_evidence_layers/crash_anr/status.txt",
+      "provider": "crash_anr",
+      "status": "BLOCKED",
+      "apk_sha256": "",
+      "device_name": "",
+      "platform_version": "",
+      "artifacts": []
+    },
+    {
+      "source": "/home/ubuntu/DarkMed/reports/multicloud_qa/2026-08-26_final_evidence/mobsf/status.txt",
+      "provider": "mobsf",
+      "status": "PASS",
+      "apk_sha256": "809739611738d0bb8cb7dcc4cb7cacd67afd8cff75f1bf5019759e2754cf34df",
+      "device_name": "",
+      "platform_version": "",
+      "artifacts": []
+    }
+  ],
+  "no_false_pass_rule": "PASS requires exact SHA and real device metadata; missing/unknown fields remain NOT_TESTED or BLOCKED"
+}

@@ -1,0 +1,198 @@
+Dark Med API34 UI smoke recovery diagnosis
+The observed dialog was Process system isn.t responding; it is an Android system dialog, not a Dark Med app label.
+adb reboot completed but post-reboot settings service returned Broken pipe/Can.t find service, APK install returned 1, launch returned 20, uiautomator dump returned 137.
+Logcat evidence:
+08-26 10:57:31.658  1533  1554 W system_server: Long monitor contention with owner main (1533) at void com.android.server.wm.ActivityTaskManagerService.setWindowManager(com.android.server.wm.WindowManagerService)(ActivityTaskManagerService.java:1042) waiters=0 in void com.android.server.wm.WindowAnimator.lambda$new$1(long) for 945ms
+08-26 10:57:31.659  1533  1554 I dvm_lock_sample: [system_server,1,android.anim,945,WindowAnimator.java,97,void com.android.server.wm.WindowAnimator.lambda$new$1(long),ActivityTaskManagerService.java,1042,void com.android.server.wm.ActivityTaskManagerService.setWindowManager(com.android.server.wm.WindowManagerService),100]
+08-26 10:57:31.954  1533  1557 W system_server: android.frameworks.schedulerservice@1.0::ISchedulingPolicyService is deprecated. Skipping registration.
+08-26 10:57:34.641  1533  1553 W system_server: Long monitor contention with owner main (1533) at void com.android.server.wm.WindowManagerService.displayReady()(WindowManagerService.java:5221) waiters=1 in void com.android.server.wm.WindowManagerService.notifyHardKeyboardStatusChange() for 328ms
+08-26 10:57:34.643  1533  1553 I dvm_lock_sample: [system_server,1,android.display,328,WindowManagerService.java,5107,void com.android.server.wm.WindowManagerService.notifyHardKeyboardStatusChange(),-,5221,void com.android.server.wm.WindowManagerService.displayReady(),65]
+08-26 10:57:34.651  1533  1533 D SystemServerTiming: StartStorageManagerService
+08-26 10:57:34.674  1533  1533 I SystemServiceManager: Starting com.android.server.StorageManagerService$Lifecycle
+08-26 10:57:34.686  1533  1551 I dvm_lock_sample: [system_server,1,android.ui,383,RootWindowContainer.java,2602,void com.android.server.wm.RootWindowContainer.onDisplayChanged(int),,0,null,76]
+08-26 10:57:35.007  1533  1639 D StorageManagerService: Thinking about reset, mBootCompleted=false, mDaemonConnected=true
+08-26 10:57:35.039  1533  1533 D StorageManagerService: CE storage for users [0] is already unlocked
+08-26 10:57:35.066  1533  1639 D StorageManagerService: Thinking about reset, mBootCompleted=false, mDaemonConnected=true
+08-26 10:57:35.072  1533  1533 W SystemServiceManager: Service com.android.server.StorageManagerService$Lifecycle took 397 ms in onStart
+08-26 10:57:35.082  1533  1533 V SystemServerTiming: StartStorageManagerService took to complete: 430ms
+08-26 10:57:35.544     0     0 I init    : Control message: Processed ctl.stop for 'idmap2d' from pid: 1533 (system_server)
+08-26 10:57:40.345  1533  1542 W system_server: Suspending all threads took: 20.088ms
+08-26 10:57:40.622  1533  1542 I system_server: Background young concurrent copying GC freed 79440(4623KB) AllocSpace objects, 31(796KB) LOS objects, 34% free, 9702KB/14MB, paused 1.348ms,25.815ms total 2.012s
+08-26 10:57:46.894  1533  1533 W system_server: Core platform API violation: Llibcore/io/Memory;->pokeByte(JB)V from Landroid/net/connectivity/com/google/protobuf/UnsafeUtil; using reflection
+08-26 10:57:46.895  1533  1533 W system_server: Core platform API violation: Llibcore/io/Memory;->peekByte(J)B from Landroid/net/connectivity/com/google/protobuf/UnsafeUtil; using reflection
+08-26 10:57:49.275  1533  1595 W StorageManagerService: No primary storage defined yet; hacking together a stub
+08-26 10:57:51.738  1626  1626 E AndroidRuntime: FATAL EXCEPTION: main
+08-26 10:57:52.497  1533  1561 W system_server: Long monitor contention with owner binder:1533_2 (1547) at void com.android.server.accessibility.AbstractAccessibilityServiceConnection.onDisplayRemoved(int)(AbstractAccessibilityServiceConnection.java:1512) waiters=0 in void com.android.server.accessibility.UiAutomationManager.destroyUiAutomationService() for 475ms
+08-26 10:57:52.498  1533  1561 I dvm_lock_sample: [system_server,0,binder:1533_3,475,UiAutomationManager.java,222,void com.android.server.accessibility.UiAutomationManager.destroyUiAutomationService(),AbstractAccessibilityServiceConnection.java,1512,void com.android.server.accessibility.AbstractAccessibilityServiceConnection.onDisplayRemoved(int),95]
+08-26 10:57:53.391  1533  1542 I system_server: Background concurrent copying GC freed 84681(4244KB) AllocSpace objects, 5(148KB) LOS objects, 49% free, 10MB/21MB, paused 9.082ms,1.892ms total 3.149s
+AVD configuration:
+PlayStore.enabled=no
+abi.type=x86_64
+avd.id=<build>
+avd.ini.encoding=UTF-8
+avd.name=<build>
+disk.cachePartition=yes
+disk.cachePartition.size=66MB
+disk.dataPartition.path=<temp>
+disk.dataPartition.size=10G
+disk.systemPartition.size=0
+disk.vendorPartition.size=0
+environment.height=0
+environment.width=0
+fastboot.forceChosenSnapshotBoot=no
+fastboot.forceColdBoot=no
+fastboot.forceFastBoot=yes
+firstboot.bootFromDownloadableSnapshot=yes
+firstboot.bootFromLocalSnapshot=yes
+firstboot.saveToLocalSnapshot=yes
+hw.accelerometer=yes
+hw.accelerometer_uncalibrated=yes
+hw.arc=false
+hw.audioInput=yes
+hw.audioOutput=yes
+hw.battery=yes
+hw.camera.back=emulated
+hw.camera.back.orientation=90
+hw.camera.front=none
+hw.camera.front.orientation=90
+hw.cpu.arch=x86_64
+hw.cpu.ncore=3
+hw.dPad=no
+hw.device.hash2=MD5:914a6a50cd5dbc5e6c0c5ec988ac20fa
+hw.device.manufacturer=Google
+hw.device.name=pixel_2
+hw.display1.density=0
+hw.display1.flag=0
+hw.display1.height=0
+hw.display1.width=0
+hw.display1.xOffset=-1
+hw.display1.yOffset=-1
+hw.display2.density=0
+hw.display2.flag=0
+hw.display2.height=0
+hw.display2.width=0
+hw.display2.xOffset=-1
+hw.display2.yOffset=-1
+hw.display3.density=0
+hw.display3.flag=0
+hw.display3.height=0
+hw.display3.width=0
+hw.display3.xOffset=-1
+hw.display3.yOffset=-1
+hw.displayRegion.0.1.height=0
+hw.displayRegion.0.1.width=0
+hw.displayRegion.0.1.xOffset=-1
+hw.displayRegion.0.1.yOffset=-1
+hw.displayRegion.0.2.height=0
+hw.displayRegion.0.2.width=0
+hw.displayRegion.0.2.xOffset=-1
+hw.displayRegion.0.2.yOffset=-1
+hw.displayRegion.0.3.height=0
+hw.displayRegion.0.3.width=0
+hw.displayRegion.0.3.xOffset=-1
+hw.displayRegion.0.3.yOffset=-1
+hw.gltransport=pipe
+hw.gltransport.asg.dataRingSize=32768
+hw.gltransport.asg.writeBufferSize=1048576
+hw.gltransport.asg.writeStepSize=4096
+hw.gltransport.drawFlushInterval=800
+hw.gps=yes
+hw.gpu.enabled=no
+hw.gpu.mode=auto
+hw.gsmModem=yes
+hw.gyroscope=yes
+hw.hotplug_multi_display=no
+hw.initialOrientation=portrait
+hw.keyboard=no
+hw.keyboard.charmap=qwerty2
+hw.keyboard.lid=yes
+hw.lcd.backlight=yes
+hw.lcd.circular=false
+hw.lcd.density=420
+hw.lcd.depth=32
+hw.lcd.height=1920
+hw.lcd.transparent=false
+hw.lcd.vsync=60
+hw.lcd.width=1080
+hw.mainKeys=no
+hw.multi_display_window=no
+hw.ramSize=2G
+hw.rotaryInput=no
+hw.screen=multi-touch
+hw.sdCard=yes
+hw.sensor.hinge=no
+hw.sensor.hinge.count=0
+hw.sensor.hinge.fold_to_displayRegion.0.1_at_posture=1
+hw.sensor.hinge.resizable.config=1
+hw.sensor.hinge.sub_type=0
+hw.sensor.hinge.type=0
+hw.sensor.roll=no
+hw.sensor.roll.count=0
+hw.sensor.roll.resize_to_displayRegion.0.1_at_posture=6
+hw.sensor.roll.resize_to_displayRegion.0.2_at_posture=6
+hw.sensor.roll.resize_to_displayRegion.0.3_at_posture=6
+hw.sensors.gyroscope_uncalibrated=yes
+hw.sensors.heading=no
+hw.sensors.heart_rate=no
+hw.sensors.humidity=yes
+hw.sensors.light=yes
+hw.sensors.magnetic_field=yes
+hw.sensors.magnetic_field_uncalibrated=yes
+hw.sensors.orientation=yes
+hw.sensors.pressure=yes
+hw.sensors.proximity=yes
+hw.sensors.rgbclight=no
+hw.sensors.temperature=yes
+hw.sensors.wrist_tilt=no
+hw.touchpad0=no
+hw.touchpad0.height=400
+hw.touchpad0.width=600
+hw.trackBall=no
+hw.useext4=yes
+image.sysdir.1=system-images/android-34/default/x86_64/
+kernel.newDeviceNaming=autodetect
+kernel.supportsYaffs2=autodetect
+runtime.network.latency=none
+runtime.network.speed=full
+sdcard.size=512 MB
+showDeviceFrame=yes
+tag.display=Default Android System Image
+tag.displaynames=Default Android System Image
+tag.id=default
+tag.ids=default
+target=android-34
+test.delayAdbTillBootComplete=0
+test.monitorAdb=0
+test.quitAfterBootTimeOut=-1
+userdata.useQcow2=no
+vm.heapSize=228M
+Acceleration:
+bash: /emulator/emulator: No such file or directory
+FATAL context:
+948-08-26 10:57:51.581  1533  1533 V SystemServerTiming: StartMediaSessionService took to complete: 160ms
+949-08-26 10:57:51.582  1533  1533 D SystemServerTiming: StartMediaResourceMonitor
+950-08-26 10:57:51.583  1533  1533 I SystemServiceManager: Starting com.android.server.media.MediaResourceMonitorService
+951-08-26 10:57:51.609  1533  1533 V SystemServerTiming: StartMediaResourceMonitor took to complete: 26ms
+952-08-26 10:57:51.611  1533  1533 D SystemServerTiming: StartMediaRouterService
+953-08-26 10:57:51.701  1626  1626 D AndroidRuntime: Shutting down VM
+954-08-26 10:57:51.718  1533  1533 V HistoricalRegistry: Interaction before persistence initialized
+955---------- beginning of crash
+956:08-26 10:57:51.738  1626  1626 E AndroidRuntime: FATAL EXCEPTION: main
+957-08-26 10:57:51.738  1626  1626 E AndroidRuntime: PID: 1626
+958-08-26 10:57:51.738  1626  1626 E AndroidRuntime: java.lang.RuntimeException: java.util.concurrent.TimeoutException: Timeout while connecting UiAutomation@74507f2[id=-1, displayId=0, flags=0]
+959-08-26 10:57:51.738  1626  1626 E AndroidRuntime: 	at android.app.UiAutomation.connect(UiAutomation.java:328)
+960-08-26 10:57:51.738  1626  1626 E AndroidRuntime: 	at com.android.uiautomator.core.UiAutomationShellWrapper.connect(UiAutomationShellWrapper.java:31)
+961-08-26 10:57:51.738  1626  1626 E AndroidRuntime: 	at com.android.commands.uiautomator.DumpCommand.run(DumpCommand.java:78)
+962-08-26 10:57:51.738  1626  1626 E AndroidRuntime: 	at com.android.commands.uiautomator.Launcher.main(Launcher.java:83)
+963-08-26 10:57:51.738  1626  1626 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit.nativeFinishInit(Native Method)
+964-08-26 10:57:51.738  1626  1626 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit.main(RuntimeInit.java:359)
+965-08-26 10:57:51.738  1626  1626 E AndroidRuntime: Caused by: java.util.concurrent.TimeoutException: Timeout while connecting UiAutomation@74507f2[id=-1, displayId=0, flags=0]
+966-08-26 10:57:51.738  1626  1626 E AndroidRuntime: 	at android.app.UiAutomation.connectWithTimeout(UiAutomation.java:405)
+967-08-26 10:57:51.738  1626  1626 E AndroidRuntime: 	at android.app.UiAutomation.connect(UiAutomation.java:326)
+968-08-26 10:57:51.738  1626  1626 E AndroidRuntime: 	... 5 more
+969-08-26 10:57:51.747  1626  1626 E IPCThreadState: Failed to get extended error: Bad file descriptor
+970-08-26 10:57:51.788  1626  1626 E AndroidRuntime: Error reporting crash
+971-08-26 10:57:51.788  1626  1626 E AndroidRuntime: java.lang.RuntimeException: Bad file descriptor
+972-08-26 10:57:51.788  1626  1626 E AndroidRuntime: 	at android.os.BinderProxy.transactNative(Native Method)
+973-08-26 10:57:51.788  1626  1626 E AndroidRuntime: 	at android.os.BinderProxy.transact(BinderProxy.java:584)
+974-08-26 10:57:51.788  1626  1626 E AndroidRuntime: 	at android.os.IServiceManager$Stub$Proxy.checkService(IServiceManager.java:443)

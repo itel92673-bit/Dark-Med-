@@ -1,0 +1,4 @@
+agent_contract_tests=4
+invalid_pass_rejected=true
+blocked_and_not_tested_preserved=true
+valid_pass_requires_evidence=true

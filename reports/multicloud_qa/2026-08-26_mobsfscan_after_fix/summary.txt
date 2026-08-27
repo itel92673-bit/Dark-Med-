@@ -1,0 +1,10 @@
+finding_count= 8
+android_certificate_transparency	INFO
+android_prevent_screenshot	INFO
+android_root_detection	INFO
+android_safetynet	INFO
+android_ssl_pinning	INFO
+android_tapjacking	INFO
+android_task_hijacking1	ERROR
+android_task_hijacking2	ERROR
+severity_counts= {'INFO': 6, 'ERROR': 2}

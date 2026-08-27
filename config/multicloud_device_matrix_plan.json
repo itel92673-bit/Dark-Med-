@@ -1,0 +1,57 @@
+{
+  "scope": {
+    "android_versions": [10, 11, 12, 13, 14, 15, 16],
+    "primary_reference": 14,
+    "target_model_priority": "Infinix SMART 9",
+    "target_family_priority": "Infinix SMART series",
+    "coverage_claim_rule": "Only executed real-device configurations count as tested; planned rows never count as coverage"
+  },
+  "providers": [
+    "Firebase Test Lab",
+    "AWS Device Farm",
+    "BrowserStack Real Device Cloud",
+    "Kobiton Real Device Cloud",
+    "Sauce Labs Real Device Cloud",
+    "Perfecto Real Device Cloud"
+  ],
+  "priority_weights": {
+    "target_model": 5.0,
+    "target_family": 4.0,
+    "tier_1_oem": 3.0,
+    "tier_2_oem": 2.0,
+    "tier_3_oem": 1.0
+  },
+  "tier_1_oems": ["Infinix", "Samsung", "Xiaomi", "Redmi", "POCO", "Google", "Motorola", "OnePlus"],
+  "tier_2_oems": ["OPPO", "Realme", "Vivo", "Tecno", "Nokia", "Sony", "ASUS", "Honor"],
+  "tier_3_oems": ["Huawei", "ZTE"],
+  "target_models": ["Infinix SMART 9"],
+  "matrix_dimensions": ["provider", "manufacturer", "model", "android_version", "sdk", "ram", "abi", "screen", "resolution", "dpi"],
+  "universal_suite": {
+    "name": "Dark Med Universal Appium Suite",
+    "protocol": "W3C WebDriver",
+    "automation": "UiAutomator2",
+    "package": "com.darkmed.app",
+    "evidence_required": ["exact_apk_sha256", "device_metadata", "test_output", "logs", "screenshots", "video_when_provider_supports", "crash_data", "anr_data", "timestamp"],
+    "status_values": ["PASS", "FAIL", "BLOCKED", "CRASH", "ANR", "NOT_TESTED", "BLOCKED_BY_PLATFORM"]
+  },
+  "coverage_layers": {
+    "general_compatibility": ["install", "launch", "permissions", "navigation", "profiles", "security_center", "compatibility_center", "restart", "state_persistence"],
+    "network_runtime": ["wifi", "4g", "5g", "ipv4", "ipv6", "dual_stack", "dns", "network_switch", "airplane_mode", "connection_loss", "recovery"],
+    "vpn_tun_tor": ["vpn_consent", "tun_lifecycle", "packet_route", "dns_leak", "tor_bootstrap", "circuit", "onion", "kill_switch", "service_death", "background_restriction"],
+    "stress_resilience": ["crash", "anr", "memory_pressure", "battery_optimization", "force_stop", "cold_restart"]
+  },
+  "provider_limitations": {
+    "cloud_network_features": "Must be labeled BLOCKED_BY_PLATFORM when provider sandbox restricts VPN/TUN/raw network behavior",
+    "appium_ui_pass": "Does not prove full-device routing, Tor, DNS leak protection, kill switch, or Infinix behavior",
+    "model_identity": "Device model and Android version must be captured from provider metadata, not inferred from requested capability"
+  },
+  "coverage_policy": {
+    "android_14": "required_reference",
+    "android_10_to_13": "broad_compatibility",
+    "android_15_to_16": "forward_compatibility_where_provider_device_exists",
+    "unsupported_provider_model": "BLOCKED_BY_PLATFORM",
+    "unlisted_model": "NOT_TESTED",
+    "network_features": "separate_runtime_gate",
+    "vpn_tun_tor": "never_inferred_from_ui_or_install"
+  }
+}

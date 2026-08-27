@@ -1,0 +1,8 @@
+service_passes_protector=PASS
+bridge_uses_vpnservice=PASS
+native_requires_protector=PASS
+native_calls_vpn_protect=PASS
+callback_registered=PASS
+socket_rejected_when_unprotected=PASS
+callback_api_declared=PASS
+callback_cleared_on_stop=PASS

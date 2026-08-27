@@ -1,0 +1,7 @@
+security_audit_qa_rc=0
+security_audit_production_required_rc=1
+mobsf_static_rc=0
+icon_pixel_rc=0
+device_smoke_rc=20
+network_evidence_rc=20
+crash_anr_rc=20

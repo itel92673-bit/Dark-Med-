@@ -1,0 +1,420 @@
+=== SOURCE FILES ===
+app/src/main/java/com/darkmed/app/MainActivity.kt
+app/src/main/java/com/darkmed/app/core/BiometricGate.kt
+app/src/main/java/com/darkmed/app/core/BrowserSessionActivity.kt
+app/src/main/java/com/darkmed/app/core/BrowserSessionIsolation.kt
+app/src/main/java/com/darkmed/app/core/ClearAllDataCoordinator.kt
+app/src/main/java/com/darkmed/app/core/DarkMedVpnService.kt
+app/src/main/java/com/darkmed/app/core/DataWiper.kt
+app/src/main/java/com/darkmed/app/core/DeviceCompatibility.kt
+app/src/main/java/com/darkmed/app/core/EngineeringContracts.kt
+app/src/main/java/com/darkmed/app/core/FailureInjectionMatrix.kt
+app/src/main/java/com/darkmed/app/core/HevTun2Socks.kt
+app/src/main/java/com/darkmed/app/core/SecurityState.kt
+app/src/main/java/com/darkmed/app/core/TorConfigWriter.kt
+app/src/main/java/com/darkmed/app/core/TorForegroundService.kt
+app/src/main/res/drawable-nodpi/dark_med_icon.png
+app/src/main/res/values-ar/strings.xml
+app/src/main/res/values-en/strings.xml
+app/src/main/res/values/strings.xml
+app/src/main/res/values/styles.xml
+app/src/main/res/xml/backup_rules.xml
+app/src/main/res/xml/backup_rules_legacy.xml
+=== COMPOSABLES ===
+app/src/main/java/com/darkmed/app/core/TorConfigWriter.kt:11:    fun write(config: TorLocalConfig): Result<File> {
+app/src/main/java/com/darkmed/app/core/TorConfigWriter.kt:23:    fun render(config: TorLocalConfig, dataDirectory: String): String {
+app/src/main/java/com/darkmed/app/core/BrowserSessionActivity.kt:28:        override fun onReceive(context: Context?, intent: Intent?) {
+app/src/main/java/com/darkmed/app/core/BrowserSessionActivity.kt:35:    override fun onCreate(savedInstanceState: Bundle?) {
+app/src/main/java/com/darkmed/app/core/BrowserSessionActivity.kt:60:    private fun configure(settings: WebSettings) {
+app/src/main/java/com/darkmed/app/core/BrowserSessionActivity.kt:69:    override fun onSaveInstanceState(outState: Bundle) {
+app/src/main/java/com/darkmed/app/core/BrowserSessionActivity.kt:74:    override fun onDestroy() {
+app/src/main/java/com/darkmed/app/core/BrowserSessionActivity.kt:85:    private fun clearPrivateData() {
+app/src/main/java/com/darkmed/app/core/DataWiper.kt:13:    fun wipeAll(): DataWipeResult {
+app/src/main/java/com/darkmed/app/core/DataWiper.kt:50:    private fun wipeDirectoryContents(directory: File): Boolean {
+app/src/main/java/com/darkmed/app/core/DataWiper.kt:58:    private fun keyExists(alias: String): Boolean {
+app/src/main/java/com/darkmed/app/core/DataWiper.kt:63:    private fun deleteKey(alias: String) {
+app/src/main/java/com/darkmed/app/core/TorForegroundService.kt:19:        override fun onServiceConnected(name: ComponentName, service: IBinder) {
+app/src/main/java/com/darkmed/app/core/TorForegroundService.kt:23:        override fun onServiceDisconnected(name: ComponentName) {
+app/src/main/java/com/darkmed/app/core/TorForegroundService.kt:28:    override fun onCreate() {
+app/src/main/java/com/darkmed/app/core/TorForegroundService.kt:38:    override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+app/src/main/java/com/darkmed/app/core/TorForegroundService.kt:53:    override fun onDestroy() {
+app/src/main/java/com/darkmed/app/core/TorForegroundService.kt:58:    override fun onBind(intent: Intent?): IBinder? = null
+app/src/main/java/com/darkmed/app/core/TorForegroundService.kt:60:    private fun stopTor() {
+app/src/main/java/com/darkmed/app/core/TorForegroundService.kt:68:    private fun createChannel() {
+app/src/main/java/com/darkmed/app/core/TorForegroundService.kt:82:    private fun notification(): Notification {
+app/src/main/java/com/darkmed/app/core/EngineeringContracts.kt:121:    fun definition(id: EngineeringAgentId): AgentDefinition = definitions.first { it.id == id }
+app/src/main/java/com/darkmed/app/core/EngineeringContracts.kt:164:    fun submit(agent: EngineeringAgentId, tool: EngineeringTool, evidence: EvidenceRecord): AgentSubmission {
+app/src/main/java/com/darkmed/app/core/EngineeringContracts.kt:210:    fun releaseGate(): ReleaseDecision {
+app/src/main/java/com/darkmed/app/core/BiometricGate.kt:17:    fun status(): BiometricStatus {
+app/src/main/java/com/darkmed/app/core/BiometricGate.kt:26:    fun authenticate(
+app/src/main/java/com/darkmed/app/core/BiometricGate.kt:35:            override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
+app/src/main/java/com/darkmed/app/core/BiometricGate.kt:39:            override fun onAuthenticationError(errorCode: Int, errString: CharSequence) {
+app/src/main/java/com/darkmed/app/core/BiometricGate.kt:43:            override fun onAuthenticationFailed() {
+app/src/main/java/com/darkmed/app/core/FailureInjectionMatrix.kt:68:    fun evaluate(scenario: FailureScenario): FailureInjectionOutcome {
+app/src/main/java/com/darkmed/app/core/FailureInjectionMatrix.kt:86:    fun all(): List<FailureInjectionOutcome> = FailureScenario.entries.map(::evaluate)
+app/src/main/java/com/darkmed/app/core/ClearAllDataCoordinator.kt:9:    fun wipeAfterAuthorization(): DataWipeResult {
+app/src/main/java/com/darkmed/app/core/ClearAllDataCoordinator.kt:14:    private fun stopProtectedServices() {
+app/src/main/java/com/darkmed/app/core/BrowserSessionIsolation.kt:18:    fun initialize(session: BrowserSession) {
+app/src/main/java/com/darkmed/app/core/HevTun2Socks.kt:8:    fun start(configPath: String, tunFd: Int): Boolean = startNative(configPath, tunFd)
+app/src/main/java/com/darkmed/app/core/HevTun2Socks.kt:10:    fun stop(): Boolean = stopNative()
+app/src/main/java/com/darkmed/app/core/HevTun2Socks.kt:12:    fun isRunning(): Boolean = isRunningNative()
+app/src/main/java/com/darkmed/app/core/HevTun2Socks.kt:14:    fun stats(): Tun2SocksStats {
+app/src/main/java/com/darkmed/app/core/HevTun2Socks.kt:23:    private external fun startNative(configPath: String, tunFd: Int): Boolean
+app/src/main/java/com/darkmed/app/core/HevTun2Socks.kt:24:    private external fun stopNative(): Boolean
+app/src/main/java/com/darkmed/app/core/HevTun2Socks.kt:25:    private external fun isRunningNative(): Boolean
+app/src/main/java/com/darkmed/app/core/HevTun2Socks.kt:26:    private external fun statsNative(): LongArray
+app/src/main/java/com/darkmed/app/core/DarkMedVpnService.kt:18:    override fun onCreate() {
+app/src/main/java/com/darkmed/app/core/DarkMedVpnService.kt:28:    override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+app/src/main/java/com/darkmed/app/core/DarkMedVpnService.kt:40:    override fun onRevoke() {
+app/src/main/java/com/darkmed/app/core/DarkMedVpnService.kt:46:    override fun onDestroy() {
+app/src/main/java/com/darkmed/app/core/DarkMedVpnService.kt:51:    override fun onBind(intent: Intent?): IBinder? = super.onBind(intent)
+app/src/main/java/com/darkmed/app/core/DarkMedVpnService.kt:53:    private fun startTunnel(configPath: String?) {
+app/src/main/java/com/darkmed/app/core/DarkMedVpnService.kt:91:    private fun stopTunnel() {
+app/src/main/java/com/darkmed/app/core/DarkMedVpnService.kt:97:    private fun createNotificationChannel() {
+app/src/main/java/com/darkmed/app/core/DarkMedVpnService.kt:102:    private fun notification(): Notification = Notification.Builder(this, CHANNEL_ID)
+app/src/main/java/com/darkmed/app/core/DarkMedVpnService.kt:116:        fun startIntent(context: Context, configPath: String): Intent = Intent(context, DarkMedVpnService::class.java)
+app/src/main/java/com/darkmed/app/core/DeviceCompatibility.kt:43:    fun snapshot(): DeviceCompatibilitySnapshot {
+app/src/main/java/com/darkmed/app/core/DeviceCompatibility.kt:82:    private fun biometricStatus(): CompatibilityStatus {
+app/src/main/java/com/darkmed/app/core/DeviceCompatibility.kt:93:    private fun notificationStatus(): CompatibilityStatus {
+app/src/main/java/com/darkmed/app/core/DeviceCompatibility.kt:102:    private fun batteryStatus(powerManager: PowerManager?): CompatibilityStatus {
+app/src/main/java/com/darkmed/app/core/DeviceCompatibility.kt:107:    private fun backgroundStatus(activityManager: ActivityManager?): CompatibilityStatus {
+app/src/main/java/com/darkmed/app/core/DeviceCompatibility.kt:112:    private fun storageStatus(): CompatibilityStatus {
+app/src/main/java/com/darkmed/app/core/DeviceCompatibility.kt:116:    private fun biometricDetail(status: CompatibilityStatus): String = when (status) {
+app/src/main/java/com/darkmed/app/core/DeviceCompatibility.kt:123:    private fun storageDetail(status: CompatibilityStatus): String = when (status) {
+app/src/main/java/com/darkmed/app/MainActivity.kt:62:    override fun onCreate(savedInstanceState: Bundle?) {
+app/src/main/java/com/darkmed/app/MainActivity.kt:70:@Composable
+app/src/main/java/com/darkmed/app/MainActivity.kt:71:private fun LockedDarkMedApp() {
+app/src/main/java/com/darkmed/app/MainActivity.kt:99:@Composable
+app/src/main/java/com/darkmed/app/MainActivity.kt:100:private fun LockedScreen(message: String) {
+app/src/main/java/com/darkmed/app/MainActivity.kt:109:@Composable
+app/src/main/java/com/darkmed/app/MainActivity.kt:110:private fun DarkMedApp() {
+app/src/main/java/com/darkmed/app/MainActivity.kt:159:@Composable
+app/src/main/java/com/darkmed/app/MainActivity.kt:160:private fun DashboardScreen(modifier: Modifier = Modifier) {
+app/src/main/java/com/darkmed/app/MainActivity.kt:196:@Composable
+app/src/main/java/com/darkmed/app/MainActivity.kt:197:private fun RouteCard() {
+app/src/main/java/com/darkmed/app/MainActivity.kt:208:@Composable
+app/src/main/java/com/darkmed/app/MainActivity.kt:209:private fun LayerRow(name: String) {
+app/src/main/java/com/darkmed/app/MainActivity.kt:221:@Composable
+app/src/main/java/com/darkmed/app/MainActivity.kt:222:private fun BrowserScreen(modifier: Modifier = Modifier) {
+app/src/main/java/com/darkmed/app/MainActivity.kt:234:@Composable
+app/src/main/java/com/darkmed/app/MainActivity.kt:235:private fun SettingsScreen(modifier: Modifier = Modifier) {
+app/src/main/java/com/darkmed/app/MainActivity.kt:300:@Composable
+app/src/main/java/com/darkmed/app/MainActivity.kt:301:private fun ProfilesScreen(modifier: Modifier = Modifier) {
+app/src/main/java/com/darkmed/app/MainActivity.kt:328:@Composable
+app/src/main/java/com/darkmed/app/MainActivity.kt:329:private fun SecurityCenterScreen(modifier: Modifier = Modifier) {
+app/src/main/java/com/darkmed/app/MainActivity.kt:363:@Composable
+app/src/main/java/com/darkmed/app/MainActivity.kt:364:private fun DeviceCompatibilityCard() {
+app/src/main/java/com/darkmed/app/MainActivity.kt:384:@Composable
+app/src/main/java/com/darkmed/app/MainActivity.kt:385:private fun compatibilityStatusLabel(status: CompatibilityStatus): String = when (status) {
+app/src/main/java/com/darkmed/app/MainActivity.kt:392:private fun compatibilityStatusColor(status: CompatibilityStatus): Color = when (status) {
+app/src/main/java/com/darkmed/app/MainActivity.kt:399:@Composable
+app/src/main/java/com/darkmed/app/MainActivity.kt:400:private fun UnavailableScreen(name: String, modifier: Modifier = Modifier) {
+=== INTERACTION CALLS ===
+app/src/main/java/com/darkmed/app/core/TorForegroundService.kt:48:        startService(torIntent)
+app/src/main/java/com/darkmed/app/core/TorForegroundService.kt:65:        stopService(Intent(this, TorService::class.java))
+app/src/main/java/com/darkmed/app/core/ClearAllDataCoordinator.kt:18:        appContext.stopService(Intent(appContext, TorForegroundService::class.java))
+app/src/main/java/com/darkmed/app/core/ClearAllDataCoordinator.kt:19:        appContext.stopService(Intent(appContext, DarkMedVpnService::class.java))
+app/src/main/java/com/darkmed/app/core/ClearAllDataCoordinator.kt:20:        appContext.stopService(
+app/src/main/java/com/darkmed/app/MainActivity.kt:25:import androidx.compose.material3.AlertDialog
+app/src/main/java/com/darkmed/app/MainActivity.kt:128:                                onClick = { selected = key },
+app/src/main/java/com/darkmed/app/MainActivity.kt:258:                Button(onClick = { showConfirmation = true }) {
+app/src/main/java/com/darkmed/app/MainActivity.kt:269:        AlertDialog(
+app/src/main/java/com/darkmed/app/MainActivity.kt:273:            dismissButton = { TextButton(onClick = { showConfirmation = false }) { Text(stringResource(R.string.cancel)) } },
+app/src/main/java/com/darkmed/app/MainActivity.kt:275:                TextButton(onClick = {
+=== MANIFEST COMPONENTS ===
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <application
+        android:allowBackup="false"
+        android:fullBackupContent="@xml/backup_rules_legacy"
+        android:dataExtractionRules="@xml/backup_rules"
+        android:usesCleartextTraffic="false"
+        android:icon="@drawable/dark_med_icon"
+        android:label="Dark Med"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.DarkMed">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleInstance"
+            android:taskAffinity="">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".core.BrowserSession1Activity" android:exported="false" android:process=":browser_session_1" />
+        <activity android:name=".core.BrowserSession2Activity" android:exported="false" android:process=":browser_session_2" />
+        <activity android:name=".core.BrowserSession3Activity" android:exported="false" android:process=":browser_session_3" />
+        <activity android:name=".core.BrowserSession4Activity" android:exported="false" android:process=":browser_session_4" />
+        <service
+            android:name=".core.DarkMedVpnService"
+            android:exported="false"
+            android:permission="android.permission.BIND_VPN_SERVICE"
+            android:foregroundServiceType="specialUse">
+            <property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE" android:value="User-initiated TUN to local SOCKS privacy routing" />
+            <intent-filter>
+                <action android:name="android.net.VpnService" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.wireguard.android.backend.GoBackend$VpnService"
+            android:exported="false"
+            android:permission="android.permission.BIND_VPN_SERVICE"
+            android:foregroundServiceType="specialUse">
+            <property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE" android:value="User-initiated privacy routing with local VPN and Tor components" />
+            <intent-filter>
+                <action android:name="android.net.VpnService" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".core.TorForegroundService"
+            android:exported="false"
+            android:foregroundServiceType="specialUse">
+            <property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE" android:value="User-initiated local Tor privacy engine" />
+        </service>
+    </application>
+</manifest>
+=== STRINGS ===
+app/src/main/res/values/strings.xml:2:    <string name="app_name">دارك ميد</string>
+app/src/main/res/values/strings.xml:3:    <string name="brand_name">DARK MED</string>
+app/src/main/res/values/strings.xml:4:    <string name="fingerprint_required">المصادقة البيومترية القوية مطلوبة</string>
+app/src/main/res/values/strings.xml:5:    <string name="activity_unavailable">شاشة Dark Med غير متاحة</string>
+app/src/main/res/values/strings.xml:6:    <string name="enroll_biometric">سجّل بصمة قوية قبل استخدام Dark Med</string>
+app/src/main/res/values/strings.xml:7:    <string name="biometric_unavailable">المصادقة البيومترية القوية غير متاحة على هذا الجهاز</string>
+app/src/main/res/values/strings.xml:8:    <string name="nav_dashboard">لوحة التحكم</string>
+app/src/main/res/values/strings.xml:9:    <string name="nav_browser">المتصفح</string>
+app/src/main/res/values/strings.xml:10:    <string name="nav_profiles">الملفات الشخصية</string>
+app/src/main/res/values/strings.xml:11:    <string name="nav_privacy">مركز الخصوصية</string>
+app/src/main/res/values/strings.xml:12:    <string name="nav_settings">الإعدادات</string>
+app/src/main/res/values/strings.xml:13:    <string name="privacy_control_center">مركز التحكم بالخصوصية</string>
+app/src/main/res/values/strings.xml:14:    <string name="unprotected">غير محمي</string>
+app/src/main/res/values/strings.xml:15:    <string name="no_verified_route">لا يوجد مسار موثّق نشط</string>
+app/src/main/res/values/strings.xml:16:    <string name="connect_disconnect">الاتصال / الفصل</string>
+app/src/main/res/values/strings.xml:17:    <string name="connection_unavailable">تبقى عمليات الاتصال غير متاحة حتى إنشاء ملف شخصي موثّق.</string>
+app/src/main/res/values/strings.xml:18:    <string name="route_current">المسار الحالي</string>
+app/src/main/res/values/strings.xml:19:    <string name="route_blocked">الجهاز ← محجوب</string>
+app/src/main/res/values/strings.xml:20:    <string name="route_ready_requirement">يصبح المسار جاهزًا فقط بعد التحقق الحقيقي.</string>
+app/src/main/res/values/strings.xml:21:    <string name="layer_status">حالة الطبقات</string>
+app/src/main/res/values/strings.xml:22:    <string name="not_configured">غير مُهيّأ</string>
+app/src/main/res/values/strings.xml:23:    <string name="fail_closed_policy">سياسة الإغلاق عند الفشل</string>
+app/src/main/res/values/strings.xml:24:    <string name="direct_traffic_not_protected">لا يتم اعتبار الاتصال المباشر محميًا.</string>
+app/src/main/res/values/strings.xml:25:    <string name="browser_title">المتصفح</string>
+app/src/main/res/values/strings.xml:26:    <string name="browser_disclaimer">تستخدم الجلسات عمليات Android ومجلدات بيانات معزولة. لم تثبت بعد سرية الشبكة أو الوصول إلى .onion.</string>
+app/src/main/res/values/strings.xml:27:    <string name="browser_requires_protection">يفتح بعد تفعيل مسار حماية موثّق</string>
+app/src/main/res/values/strings.xml:28:    <string name="profiles_title">الملفات الشخصية</string>
+app/src/main/res/values/strings.xml:29:    <string name="privacy_title">مركز الخصوصية</string>
+app/src/main/res/values/strings.xml:30:    <string name="module_unavailable">هذا المكوّن غير متاح حتى تنفيذ وظيفته الحقيقية واجتياز اختبارات القبول.</string>
+app/src/main/res/values/strings.xml:31:    <string name="settings_title">الإعدادات</string>
+app/src/main/res/values/strings.xml:32:    <string name="sensitive_actions_biometric">تتطلب العمليات الحساسة مصادقة بيومترية قوية. لا يوجد PIN أو فتح بالوجه أو بديل ببيانات الجهاز.</string>
+app/src/main/res/values/strings.xml:33:    <string name="clear_all_data">مسح كل البيانات</string>
+app/src/main/res/values/strings.xml:34:    <string name="clear_all_data_description">يحذف الملفات الشخصية والجلسات وبيانات Tor والذاكرة المؤقتة والسجلات والتفضيلات ومفتاح Keystore المحلي. لا يمكن التراجع عن هذا الإجراء.</string>
+app/src/main/res/values/strings.xml:35:    <string name="authenticate_and_clear">المصادقة ثم المسح</string>
+app/src/main/res/values/strings.xml:36:    <string name="confirm_clear_title">تأكيد مسح كل البيانات</string>
+app/src/main/res/values/strings.xml:37:    <string name="confirm_clear_message">سيتم حذف البيانات المحلية بعد مصادقة بيومترية ناجحة. هل تريد المتابعة؟</string>
+app/src/main/res/values/strings.xml:38:    <string name="cancel">إلغاء</string>
+app/src/main/res/values/strings.xml:39:    <string name="confirm">تأكيد</string>
+app/src/main/res/values/strings.xml:40:    <string name="strong_biometric_required">المصادقة البيومترية القوية مطلوبة</string>
+app/src/main/res/values/strings.xml:41:    <string name="fragment_activity_unavailable">محجوب: FragmentActivity غير متاحة</string>
+app/src/main/res/values/strings.xml:42:    <string name="wipe_completed">اكتمل المسح وتم التحقق من البيانات المحلية</string>
+app/src/main/res/values/strings.xml:43:    <string name="wipe_failed">فشل المسح: %1$s</string>
+app/src/main/res/values/strings.xml:44:    <string name="wipe_not_deleted">لم تُحذف البيانات: %1$s</string>
+app/src/main/res/values/strings.xml:45:    <string name="biometric_prompt_title">فتح Dark Med</string>
+app/src/main/res/values/strings.xml:46:    <string name="biometric_prompt_subtitle">المصادقة البيومترية القوية مطلوبة</string>
+app/src/main/res/values/strings.xml:47:    <string name="biometric_failed">فشل التحقق البيومتري</string>
+app/src/main/res/values/strings.xml:48:    <string name="device_compatibility">توافق الجهاز</string>
+app/src/main/res/values/strings.xml:49:    <string name="device_profile">ملف الجهاز</string>
+app/src/main/res/values/strings.xml:50:    <string name="api_level">إصدار Android</string>
+app/src/main/res/values/strings.xml:51:    <string name="manufacturer_model">الشركة والطراز</string>
+app/src/main/res/values/strings.xml:52:    <string name="cpu_abi">معمارية المعالج</string>
+app/src/main/res/values/strings.xml:53:    <string name="webview_version">إصدار WebView</string>
+app/src/main/res/values/strings.xml:54:    <string name="available_ram">الذاكرة الكلية</string>
+app/src/main/res/values/strings.xml:55:    <string name="compatibility_ready">جاهز</string>
+app/src/main/res/values/strings.xml:56:    <string name="compatibility_warning">تحذير</string>
+app/src/main/res/values/strings.xml:57:    <string name="compatibility_action">يتطلب إجراء</string>
+app/src/main/res/values/strings.xml:58:    <string name="compatibility_unsupported">غير مدعوم</string>
+app/src/main/res/values/strings.xml:59:    <string name="compatibility_runtime_note">هذه قراءة محلية للقدرات؛ لا تثبت حماية الشبكة أو توافق XOS runtime.</string>
+app/src/main/res/values/strings.xml:60:    <string name="security_center_title">مركز الأمان</string>
+app/src/main/res/values/strings.xml:61:    <string name="security_center_note">كل الحالات التالية غير موثّقة runtime حاليًا؛ لذلك تبقى الحماية في وضع الإغلاق.</string>
+app/src/main/res/values/strings.xml:62:    <string name="why_not_protected">لماذا لست محميًا؟</string>
+app/src/main/res/values/strings.xml:63:    <string name="not_verified">غير موثّق</string>
+app/src/main/res/values/strings.xml:64:    <string name="protection_locked">الحماية مقفلة حتى اكتمال التحقق الحقيقي</string>
+app/src/main/res/values/strings.xml:65:    <string name="profile_maximum_privacy">أقصى خصوصية</string>
+app/src/main/res/values/strings.xml:66:    <string name="profile_tor">Tor</string>
+app/src/main/res/values/strings.xml:67:    <string name="profile_wireguard">WireGuard</string>
+app/src/main/res/values/strings.xml:68:    <string name="profile_custom">مخصص</string>
+app/src/main/res/values/strings.xml:69:    <string name="profile_activation_blocked">التفعيل محجوب حتى التحقق من VPN وTor وDNS والمسار.</string>
+app/src/main/res/values/strings.xml:70:    <string name="status_vpn">VPN</string>
+app/src/main/res/values/strings.xml:71:    <string name="status_tor">Tor</string>
+app/src/main/res/values/strings.xml:72:    <string name="status_socks">SOCKS</string>
+app/src/main/res/values/strings.xml:73:    <string name="status_dns">DNS</string>
+app/src/main/res/values/strings.xml:74:    <string name="status_ipv4">IPv4</string>
+app/src/main/res/values/strings.xml:75:    <string name="status_ipv6">IPv6</string>
+app/src/main/res/values/strings.xml:76:    <string name="status_routing">التوجيه</string>
+app/src/main/res/values/strings.xml:77:    <string name="status_kill_switch">مفتاح الإغلاق</string>
+app/src/main/res/values/strings.xml:78:    <string name="status_browser_isolation">عزل المتصفح</string>
+app/src/main/res/values/strings.xml:79:    <string name="status_biometric">المصادقة البيومترية</string>
+app/src/main/res/values/strings.xml:80:    <string name="status_storage">التخزين</string>
+app/src/main/res/values-ar/strings.xml:2:    <string name="app_name">دارك ميد</string>
+app/src/main/res/values-ar/strings.xml:3:    <string name="brand_name">DARK MED</string>
+app/src/main/res/values-ar/strings.xml:4:    <string name="fingerprint_required">المصادقة البيومترية القوية مطلوبة</string>
+app/src/main/res/values-ar/strings.xml:5:    <string name="activity_unavailable">شاشة Dark Med غير متاحة</string>
+app/src/main/res/values-ar/strings.xml:6:    <string name="enroll_biometric">سجّل بصمة قوية قبل استخدام Dark Med</string>
+app/src/main/res/values-ar/strings.xml:7:    <string name="biometric_unavailable">المصادقة البيومترية القوية غير متاحة على هذا الجهاز</string>
+app/src/main/res/values-ar/strings.xml:8:    <string name="nav_dashboard">لوحة التحكم</string>
+app/src/main/res/values-ar/strings.xml:9:    <string name="nav_browser">المتصفح</string>
+app/src/main/res/values-ar/strings.xml:10:    <string name="nav_profiles">الملفات الشخصية</string>
+app/src/main/res/values-ar/strings.xml:11:    <string name="nav_privacy">مركز الخصوصية</string>
+app/src/main/res/values-ar/strings.xml:12:    <string name="nav_settings">الإعدادات</string>
+app/src/main/res/values-ar/strings.xml:13:    <string name="privacy_control_center">مركز التحكم بالخصوصية</string>
+app/src/main/res/values-ar/strings.xml:14:    <string name="unprotected">غير محمي</string>
+app/src/main/res/values-ar/strings.xml:15:    <string name="no_verified_route">لا يوجد مسار موثّق نشط</string>
+app/src/main/res/values-ar/strings.xml:16:    <string name="connect_disconnect">الاتصال / الفصل</string>
+app/src/main/res/values-ar/strings.xml:17:    <string name="connection_unavailable">تبقى عمليات الاتصال غير متاحة حتى إنشاء ملف شخصي موثّق.</string>
+app/src/main/res/values-ar/strings.xml:18:    <string name="route_current">المسار الحالي</string>
+app/src/main/res/values-ar/strings.xml:19:    <string name="route_blocked">الجهاز ← محجوب</string>
+app/src/main/res/values-ar/strings.xml:20:    <string name="route_ready_requirement">يصبح المسار جاهزًا فقط بعد التحقق الحقيقي.</string>
+app/src/main/res/values-ar/strings.xml:21:    <string name="layer_status">حالة الطبقات</string>
+app/src/main/res/values-ar/strings.xml:22:    <string name="not_configured">غير مُهيّأ</string>
+app/src/main/res/values-ar/strings.xml:23:    <string name="fail_closed_policy">سياسة الإغلاق عند الفشل</string>
+app/src/main/res/values-ar/strings.xml:24:    <string name="direct_traffic_not_protected">لا يتم اعتبار الاتصال المباشر محميًا.</string>
+app/src/main/res/values-ar/strings.xml:25:    <string name="browser_title">المتصفح</string>
+app/src/main/res/values-ar/strings.xml:26:    <string name="browser_disclaimer">تستخدم الجلسات عمليات Android ومجلدات بيانات معزولة. لم تثبت بعد سرية الشبكة أو الوصول إلى .onion.</string>
+app/src/main/res/values-ar/strings.xml:27:    <string name="browser_requires_protection">يفتح بعد تفعيل مسار حماية موثّق</string>
+app/src/main/res/values-ar/strings.xml:28:    <string name="profiles_title">الملفات الشخصية</string>
+app/src/main/res/values-ar/strings.xml:29:    <string name="privacy_title">مركز الخصوصية</string>
+app/src/main/res/values-ar/strings.xml:30:    <string name="module_unavailable">هذا المكوّن غير متاح حتى تنفيذ وظيفته الحقيقية واجتياز اختبارات القبول.</string>
+app/src/main/res/values-ar/strings.xml:31:    <string name="settings_title">الإعدادات</string>
+app/src/main/res/values-ar/strings.xml:32:    <string name="sensitive_actions_biometric">تتطلب العمليات الحساسة مصادقة بيومترية قوية. لا يوجد PIN أو فتح بالوجه أو بديل ببيانات الجهاز.</string>
+app/src/main/res/values-ar/strings.xml:33:    <string name="clear_all_data">مسح كل البيانات</string>
+app/src/main/res/values-ar/strings.xml:34:    <string name="clear_all_data_description">يحذف الملفات الشخصية والجلسات وبيانات Tor والذاكرة المؤقتة والسجلات والتفضيلات ومفتاح Keystore المحلي. لا يمكن التراجع عن هذا الإجراء.</string>
+app/src/main/res/values-ar/strings.xml:35:    <string name="authenticate_and_clear">المصادقة ثم المسح</string>
+app/src/main/res/values-ar/strings.xml:36:    <string name="confirm_clear_title">تأكيد مسح كل البيانات</string>
+app/src/main/res/values-ar/strings.xml:37:    <string name="confirm_clear_message">سيتم حذف البيانات المحلية بعد مصادقة بيومترية ناجحة. هل تريد المتابعة؟</string>
+app/src/main/res/values-ar/strings.xml:38:    <string name="cancel">إلغاء</string>
+app/src/main/res/values-ar/strings.xml:39:    <string name="confirm">تأكيد</string>
+app/src/main/res/values-ar/strings.xml:40:    <string name="strong_biometric_required">المصادقة البيومترية القوية مطلوبة</string>
+app/src/main/res/values-ar/strings.xml:41:    <string name="fragment_activity_unavailable">محجوب: FragmentActivity غير متاحة</string>
+app/src/main/res/values-ar/strings.xml:42:    <string name="wipe_completed">اكتمل المسح وتم التحقق من البيانات المحلية</string>
+app/src/main/res/values-ar/strings.xml:43:    <string name="wipe_failed">فشل المسح: %1$s</string>
+app/src/main/res/values-ar/strings.xml:44:    <string name="wipe_not_deleted">لم تُحذف البيانات: %1$s</string>
+app/src/main/res/values-ar/strings.xml:45:    <string name="biometric_prompt_title">فتح Dark Med</string>
+app/src/main/res/values-ar/strings.xml:46:    <string name="biometric_prompt_subtitle">المصادقة البيومترية القوية مطلوبة</string>
+app/src/main/res/values-ar/strings.xml:47:    <string name="biometric_failed">فشل التحقق البيومتري</string>
+app/src/main/res/values-ar/strings.xml:48:    <string name="device_compatibility">توافق الجهاز</string>
+app/src/main/res/values-ar/strings.xml:49:    <string name="device_profile">ملف الجهاز</string>
+app/src/main/res/values-ar/strings.xml:50:    <string name="api_level">إصدار Android</string>
+app/src/main/res/values-ar/strings.xml:51:    <string name="manufacturer_model">الشركة والطراز</string>
+app/src/main/res/values-ar/strings.xml:52:    <string name="cpu_abi">معمارية المعالج</string>
+app/src/main/res/values-ar/strings.xml:53:    <string name="webview_version">إصدار WebView</string>
+app/src/main/res/values-ar/strings.xml:54:    <string name="available_ram">الذاكرة الكلية</string>
+app/src/main/res/values-ar/strings.xml:55:    <string name="compatibility_ready">جاهز</string>
+app/src/main/res/values-ar/strings.xml:56:    <string name="compatibility_warning">تحذير</string>
+app/src/main/res/values-ar/strings.xml:57:    <string name="compatibility_action">يتطلب إجراء</string>
+app/src/main/res/values-ar/strings.xml:58:    <string name="compatibility_unsupported">غير مدعوم</string>
+app/src/main/res/values-ar/strings.xml:59:    <string name="compatibility_runtime_note">هذه قراءة محلية للقدرات؛ لا تثبت حماية الشبكة أو توافق XOS runtime.</string>
+app/src/main/res/values-ar/strings.xml:60:    <string name="security_center_title">مركز الأمان</string>
+app/src/main/res/values-ar/strings.xml:61:    <string name="security_center_note">كل الحالات التالية غير موثّقة runtime حاليًا؛ لذلك تبقى الحماية في وضع الإغلاق.</string>
+app/src/main/res/values-ar/strings.xml:62:    <string name="why_not_protected">لماذا لست محميًا؟</string>
+app/src/main/res/values-ar/strings.xml:63:    <string name="not_verified">غير موثّق</string>
+app/src/main/res/values-ar/strings.xml:64:    <string name="protection_locked">الحماية مقفلة حتى اكتمال التحقق الحقيقي</string>
+app/src/main/res/values-ar/strings.xml:65:    <string name="profile_maximum_privacy">أقصى خصوصية</string>
+app/src/main/res/values-ar/strings.xml:66:    <string name="profile_tor">Tor</string>
+app/src/main/res/values-ar/strings.xml:67:    <string name="profile_wireguard">WireGuard</string>
+app/src/main/res/values-ar/strings.xml:68:    <string name="profile_custom">مخصص</string>
+app/src/main/res/values-ar/strings.xml:69:    <string name="profile_activation_blocked">التفعيل محجوب حتى التحقق من VPN وTor وDNS والمسار.</string>
+app/src/main/res/values-ar/strings.xml:70:    <string name="status_vpn">VPN</string>
+app/src/main/res/values-ar/strings.xml:71:    <string name="status_tor">Tor</string>
+app/src/main/res/values-ar/strings.xml:72:    <string name="status_socks">SOCKS</string>
+app/src/main/res/values-ar/strings.xml:73:    <string name="status_dns">DNS</string>
+app/src/main/res/values-ar/strings.xml:74:    <string name="status_ipv4">IPv4</string>
+app/src/main/res/values-ar/strings.xml:75:    <string name="status_ipv6">IPv6</string>
+app/src/main/res/values-ar/strings.xml:76:    <string name="status_routing">التوجيه</string>
+app/src/main/res/values-ar/strings.xml:77:    <string name="status_kill_switch">مفتاح الإغلاق</string>
+app/src/main/res/values-ar/strings.xml:78:    <string name="status_browser_isolation">عزل المتصفح</string>
+app/src/main/res/values-ar/strings.xml:79:    <string name="status_biometric">المصادقة البيومترية</string>
+app/src/main/res/values-ar/strings.xml:80:    <string name="status_storage">التخزين</string>
+app/src/main/res/values-en/strings.xml:2:    <string name="app_name">Dark Med</string>
+app/src/main/res/values-en/strings.xml:3:    <string name="brand_name">DARK MED</string>
+app/src/main/res/values-en/strings.xml:4:    <string name="fingerprint_required">Strong biometric authentication required</string>
+app/src/main/res/values-en/strings.xml:5:    <string name="activity_unavailable">Dark Med activity is unavailable</string>
+app/src/main/res/values-en/strings.xml:6:    <string name="enroll_biometric">Enroll a strong biometric before using Dark Med</string>
+app/src/main/res/values-en/strings.xml:7:    <string name="biometric_unavailable">Strong biometric authentication is unavailable on this device</string>
+app/src/main/res/values-en/strings.xml:8:    <string name="nav_dashboard">Dashboard</string>
+app/src/main/res/values-en/strings.xml:9:    <string name="nav_browser">Browser</string>
+app/src/main/res/values-en/strings.xml:10:    <string name="nav_profiles">Profiles</string>
+app/src/main/res/values-en/strings.xml:11:    <string name="nav_privacy">Privacy Center</string>
+app/src/main/res/values-en/strings.xml:12:    <string name="nav_settings">Settings</string>
+app/src/main/res/values-en/strings.xml:13:    <string name="privacy_control_center">Privacy control center</string>
+app/src/main/res/values-en/strings.xml:14:    <string name="unprotected">UNPROTECTED</string>
+app/src/main/res/values-en/strings.xml:15:    <string name="no_verified_route">No verified route is active</string>
+app/src/main/res/values-en/strings.xml:16:    <string name="connect_disconnect">CONNECT / DISCONNECT</string>
+app/src/main/res/values-en/strings.xml:17:    <string name="connection_unavailable">Connection actions remain unavailable until a validated Profile exists.</string>
+app/src/main/res/values-en/strings.xml:18:    <string name="route_current">Current route</string>
+app/src/main/res/values-en/strings.xml:19:    <string name="route_blocked">DEVICE → BLOCKED</string>
+app/src/main/res/values-en/strings.xml:20:    <string name="route_ready_requirement">A route becomes READY only after real validation.</string>
+app/src/main/res/values-en/strings.xml:21:    <string name="layer_status">Layer status</string>
+app/src/main/res/values-en/strings.xml:22:    <string name="not_configured">NOT CONFIGURED</string>
+app/src/main/res/values-en/strings.xml:23:    <string name="fail_closed_policy">Fail-closed policy</string>
+app/src/main/res/values-en/strings.xml:24:    <string name="direct_traffic_not_protected">Direct traffic is not reported as protected.</string>
+app/src/main/res/values-en/strings.xml:25:    <string name="browser_title">Browser</string>
+app/src/main/res/values-en/strings.xml:26:    <string name="browser_disclaimer">WebView sessions use separate Android processes and isolated data directories. Network anonymity and .onion reachability remain unverified.</string>
+app/src/main/res/values-en/strings.xml:27:    <string name="browser_requires_protection">Available after a verified protection route is active</string>
+app/src/main/res/values-en/strings.xml:28:    <string name="profiles_title">Profiles</string>
+app/src/main/res/values-en/strings.xml:29:    <string name="privacy_title">Privacy Center</string>
+app/src/main/res/values-en/strings.xml:30:    <string name="module_unavailable">This module remains unavailable until its real implementation and acceptance tests pass.</string>
+app/src/main/res/values-en/strings.xml:31:    <string name="settings_title">Settings</string>
+app/src/main/res/values-en/strings.xml:32:    <string name="sensitive_actions_biometric">Sensitive actions require strong biometric confirmation. No PIN, face unlock, or device credential fallback is configured.</string>
+app/src/main/res/values-en/strings.xml:33:    <string name="clear_all_data">Clear All Data</string>
+app/src/main/res/values-en/strings.xml:34:    <string name="clear_all_data_description">Deletes local profiles, sessions, Tor data, caches, logs, preferences, and the app keystore alias. This action cannot be undone.</string>
+app/src/main/res/values-en/strings.xml:35:    <string name="authenticate_and_clear">Authenticate and Clear</string>
+app/src/main/res/values-en/strings.xml:36:    <string name="confirm_clear_title">Confirm Clear All Data</string>
+app/src/main/res/values-en/strings.xml:37:    <string name="confirm_clear_message">Local data will be deleted after successful biometric authentication. Continue?</string>
+app/src/main/res/values-en/strings.xml:38:    <string name="cancel">Cancel</string>
+app/src/main/res/values-en/strings.xml:39:    <string name="confirm">Confirm</string>
+app/src/main/res/values-en/strings.xml:40:    <string name="strong_biometric_required">Strong biometric authentication is required</string>
+app/src/main/res/values-en/strings.xml:41:    <string name="fragment_activity_unavailable">Blocked: FragmentActivity is unavailable</string>
+app/src/main/res/values-en/strings.xml:42:    <string name="wipe_completed">Completed: local data wipe verified</string>
+app/src/main/res/values-en/strings.xml:43:    <string name="wipe_failed">Failed: %1$s</string>
+app/src/main/res/values-en/strings.xml:44:    <string name="wipe_not_deleted">Not deleted: %1$s</string>
+app/src/main/res/values-en/strings.xml:45:    <string name="biometric_prompt_title">Unlock Dark Med</string>
+app/src/main/res/values-en/strings.xml:46:    <string name="biometric_prompt_subtitle">Strong biometric authentication required</string>
+app/src/main/res/values-en/strings.xml:47:    <string name="biometric_failed">Biometric verification failed</string>
+app/src/main/res/values-en/strings.xml:48:    <string name="device_compatibility">Device Compatibility</string>
+app/src/main/res/values-en/strings.xml:49:    <string name="device_profile">Device profile</string>
+app/src/main/res/values-en/strings.xml:50:    <string name="api_level">Android version</string>
+app/src/main/res/values-en/strings.xml:51:    <string name="manufacturer_model">Manufacturer and model</string>
+app/src/main/res/values-en/strings.xml:52:    <string name="cpu_abi">CPU ABI</string>
+app/src/main/res/values-en/strings.xml:53:    <string name="webview_version">WebView version</string>
+app/src/main/res/values-en/strings.xml:54:    <string name="available_ram">Total memory</string>
+app/src/main/res/values-en/strings.xml:55:    <string name="compatibility_ready">Ready</string>
+app/src/main/res/values-en/strings.xml:56:    <string name="compatibility_warning">Warning</string>
+app/src/main/res/values-en/strings.xml:57:    <string name="compatibility_action">Requires action</string>
+app/src/main/res/values-en/strings.xml:58:    <string name="compatibility_unsupported">Unsupported</string>
+app/src/main/res/values-en/strings.xml:59:    <string name="compatibility_runtime_note">This is a local capability readout; it does not prove network protection or XOS runtime compatibility.</string>
+app/src/main/res/values-en/strings.xml:60:    <string name="security_center_title">Security Center</string>
+app/src/main/res/values-en/strings.xml:61:    <string name="security_center_note">These states are not runtime-verified currently; protection therefore remains fail-closed.</string>
+app/src/main/res/values-en/strings.xml:62:    <string name="why_not_protected">Why am I not protected?</string>
+app/src/main/res/values-en/strings.xml:63:    <string name="not_verified">NOT VERIFIED</string>
+app/src/main/res/values-en/strings.xml:64:    <string name="protection_locked">Protection is locked until real verification completes</string>
+app/src/main/res/values-en/strings.xml:65:    <string name="profile_maximum_privacy">Maximum Privacy</string>
+app/src/main/res/values-en/strings.xml:66:    <string name="profile_tor">Tor</string>
+app/src/main/res/values-en/strings.xml:67:    <string name="profile_wireguard">WireGuard</string>
+app/src/main/res/values-en/strings.xml:68:    <string name="profile_custom">Custom</string>
+app/src/main/res/values-en/strings.xml:69:    <string name="profile_activation_blocked">Activation is blocked until VPN, Tor, DNS, and route verification completes.</string>
+app/src/main/res/values-en/strings.xml:70:    <string name="status_vpn">VPN</string>
+app/src/main/res/values-en/strings.xml:71:    <string name="status_tor">Tor</string>
+app/src/main/res/values-en/strings.xml:72:    <string name="status_socks">SOCKS</string>
+app/src/main/res/values-en/strings.xml:73:    <string name="status_dns">DNS</string>
+app/src/main/res/values-en/strings.xml:74:    <string name="status_ipv4">IPv4</string>
+app/src/main/res/values-en/strings.xml:75:    <string name="status_ipv6">IPv6</string>
+app/src/main/res/values-en/strings.xml:76:    <string name="status_routing">Routing</string>
+app/src/main/res/values-en/strings.xml:77:    <string name="status_kill_switch">Kill Switch</string>
+app/src/main/res/values-en/strings.xml:78:    <string name="status_browser_isolation">Browser Isolation</string>
+app/src/main/res/values-en/strings.xml:79:    <string name="status_biometric">Biometric</string>
+app/src/main/res/values-en/strings.xml:80:    <string name="status_storage">Storage</string>

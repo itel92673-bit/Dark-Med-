@@ -1,0 +1,7 @@
+status=PASS
+scanner=MobSFscan
+scanner_exit_code=0
+error_findings=0
+info_findings=4
+full_mobsf_apk_analysis=NOT_AVAILABLE
+blocker=full MobSF APK server analysis was not executed locally; this result is source MobSFscan only

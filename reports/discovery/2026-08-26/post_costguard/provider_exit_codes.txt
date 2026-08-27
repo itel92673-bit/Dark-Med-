@@ -1,0 +1,6 @@
+firebase_rc=20
+aws_rc=20
+browserstack_rc=20
+kobiton_rc=20
+sauce_rc=20
+perfecto_rc=20

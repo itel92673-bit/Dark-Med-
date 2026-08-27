@@ -1,0 +1,2 @@
+qa_rc=0
+production_required_rc=1

@@ -1,0 +1,3 @@
+git_repo=false
+git_diff_check=NOT_APPLICABLE
+reason=DarkMed is not a Git working tree; no whitespace verdict is inferred

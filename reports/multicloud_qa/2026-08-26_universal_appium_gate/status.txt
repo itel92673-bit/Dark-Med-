@@ -1,0 +1,3 @@
+exit_code=20
+expected=20
+status=PASS

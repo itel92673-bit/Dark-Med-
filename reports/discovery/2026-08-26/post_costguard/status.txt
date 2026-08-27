@@ -1,0 +1,3 @@
+python_compile_rc=0
+bash_syntax_rc=0
+cost_guard_rc=0

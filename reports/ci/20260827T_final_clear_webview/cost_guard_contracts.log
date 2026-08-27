@@ -1,0 +1,4 @@
+cost_guard_contract_tests=3
+waiting_rejected=true
+approved_matching_provider_accepted=true
+provider_mismatch_rejected=true

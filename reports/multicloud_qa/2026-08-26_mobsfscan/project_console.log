@@ -1,0 +1,5 @@
+[33mFailed to parse XML: reports/multicloud_qa/2026-08-26_local_api34/ui_smoke_recovery/window.xml[0m
+[33mFailed to parse XML: reports/multicloud_qa/2026-08-26_local_api34/ui_smoke_clean_avd/window.xml[0m
+[33mFailed to parse XML: app/build/intermediates/lint_partial_results/debug/lintAnalyzeDebug/out/lint-resources.xml[0m
+[33mFailed to parse XML: app/build/intermediates/lint_partial_results/release/lintAnalyzeRelease/out/lint-resources.xml[0m
+[33mFailed to parse XML: app/build/intermediates/lint_vital_partial_results/release/lintVitalAnalyzeRelease/out/lint-resources.xml[0m

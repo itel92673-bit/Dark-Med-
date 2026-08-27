@@ -1,0 +1,32 @@
+=== local command availability ===
+claude=NOT_FOUND
+claude-code=NOT_FOUND
+ant=NOT_FOUND
+aider=NOT_FOUND
+opencode=NOT_FOUND
+codex=NOT_FOUND
+cursor-agent=NOT_FOUND
+gemini=NOT_FOUND
+qwen-code=NOT_FOUND
+openai=NOT_FOUND
+ollama=NOT_FOUND
+=== environment variable names only ===
+OPENAI_API_BASE
+OPENAI_API_KEY
+OPENAI_BASE_URL
+=== connector searches ===
+--claude
+Search results for "claude" in config.json:
+No matches for "claude"
+--anthropic
+Search results for "anthropic" in config.json:
+131:      "uid": "815b5a30-463e-4662-8da7-081e3b5dfc7d",
+132:      "name": "Anthropic",
+134:      "enabled": false,
+135:      "tokenReplacementEnabled": true
+--ox-alpha
+Search results for "ox-alpha" in config.json:
+No matches for "ox-alpha"
+--opencode
+Search results for "opencode" in config.json:
+No matches for "opencode"

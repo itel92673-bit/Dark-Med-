@@ -1,0 +1,3 @@
+b8938f37c8afc747f7afe69b1e0f28a7ff05e5311695dd509326cdac357abc55  app/build/outputs/apk/release/app-release.apk
+b8938f37c8afc747f7afe69b1e0f28a7ff05e5311695dd509326cdac357abc55  deliverables/Dark Med f.apk
+73d7ca3ed079896628f2b391f91288161ebe40c92e7a60ac8c5297b12dc83070  deliverables/DarkMed_QA_AndroidTest.apk

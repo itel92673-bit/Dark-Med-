@@ -1,0 +1,4 @@
+create_rc=0
+emulator_pid=77741
+boot_completed_rc=1
+serial=emulator-5556

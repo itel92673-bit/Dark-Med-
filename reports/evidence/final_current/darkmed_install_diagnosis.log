@@ -1,0 +1,53 @@
+=== services ===
+Service package: not found
+=== package path ===
+cmd: Can't find service: package
+=== memory ===
+MemTotal:        2534768 kB
+MemFree:          655176 kB
+MemAvailable:    2017400 kB
+Buffers:           16756 kB
+Cached:          1517284 kB
+SwapCached:            0 kB
+Active:          1352176 kB
+Inactive:         339852 kB
+Active(anon):     162628 kB
+Inactive(anon):     1296 kB
+Active(file):    1189548 kB
+Inactive(file):   338556 kB
+Unevictable:        4056 kB
+Mlocked:            4056 kB
+SwapTotal:       1901072 kB
+SwapFree:        1900816 kB
+Dirty:               224 kB
+Writeback:             0 kB
+AnonPages:        161612 kB
+Mapped:           196760 kB
+Shmem:              2856 kB
+KReclaimable:      61368 kB
+Slab:             119668 kB
+SReclaimable:      61368 kB
+SUnreclaim:        58300 kB
+KernelStack:        6064 kB
+PageTables:        17248 kB
+SecPageTables:         0 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+=== system log errors ===
+08-24 15:37:29.993  1470  1483 W ActivityManager: Scheduling restart of crashed service com.google.android.inputmethod.latin/com.android.inputmethod.latin.LatinIME in 1000ms for connection
+08-24 15:37:30.009  1470  1483 W ActivityManager: Scheduling restart of crashed service com.google.android.inputmethod.latin/com.google.android.apps.inputmethod.libs.dataservice.superpacks.SuperpacksBackgroundJobService in 10985ms for connection
+08-24 15:37:38.987  1470  3142 W ActivityManager: Scheduling restart of crashed service com.google.android.providers.media.module/com.android.providers.media.fuse.ExternalStorageServiceImpl in 12050ms for connection
+08-24 15:37:46.052  1470  4724 E ActivityManager:   43% 1470/system_server: 27% user + 15% kernel / faults: 5924 minor 1 major
+08-24 15:37:51.811  1470  4807 I DropBoxManagerService: add tag=system_server_watchdog isTagEnabled=true flags=0x6
+08-24 15:37:52.678  1470  1495 W Watchdog:     at com.android.server.pm.PackageInstallerSession.write(PackageInstallerSession.java:5024)
+08-24 15:37:52.843  1470  1495 W Watchdog:     at com.android.server.pm.PackageInstallerService.writeSessionsLocked(PackageInstallerService.java:602)
+08-24 15:37:52.873  1470  1495 W Watchdog:     at com.android.server.pm.PackageInstallerService.lambda$new$0(PackageInstallerService.java:277)
+08-24 15:37:52.992  1470  1495 W Watchdog:     at com.android.server.pm.PackageInstallerService.$r8$lambda$in943Jz_1NraOIEhrFq2CMwr86w(PackageInstallerService.java:0)
+08-24 15:37:53.010  1470  1495 W Watchdog:     at com.android.server.pm.PackageInstallerService$$ExternalSyntheticLambda5.get(R8$$SyntheticClass:0)
+08-24 15:37:56.977  1418  1418 I wificond: Regulatory domain changed to country: 00 on wiphy_index: 1
+=== emulator log errors ===
+INFO         | Storing crashdata in: /tmp/android-root/emu-crash-37.1.11.db, detection is enabled for process: 8210
+INFO         | Using Vulkan externalMemoryMode: OpaqueFd for VkEmulation
+INFO         |     enableProtectedMemoryEmulation: false
+ERROR        | Setting read-only feature 'GLAsyncSwap' to '0'
+ERROR        | Failed to find ColorBuffer: 18

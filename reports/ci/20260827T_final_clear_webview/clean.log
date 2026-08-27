@@ -1,0 +1,28 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.5.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+
+> Task :app:externalNativeBuildCleanDebug
+Clean darkmed-tun2socks-jni-armeabi-v7a, hev-task-system-armeabi-v7a, lwip-armeabi-v7a, hev-socks5-tunnel-bin-armeabi-v7a, yaml-armeabi-v7a, hev-socks5-tunnel-armeabi-v7a
+C/C++: fatal: not a git repository (or any of the parent directories): .git
+Clean hev-socks5-tunnel-arm64-v8a, lwip-arm64-v8a, yaml-arm64-v8a, darkmed-tun2socks-jni-arm64-v8a, hev-socks5-tunnel-bin-arm64-v8a, hev-task-system-arm64-v8a
+C/C++: fatal: not a git repository (or any of the parent directories): .git
+Clean darkmed-tun2socks-jni-x86, hev-socks5-tunnel-bin-x86, hev-task-system-x86, yaml-x86, hev-socks5-tunnel-x86, lwip-x86
+C/C++: fatal: not a git repository (or any of the parent directories): .git
+Clean hev-task-system-x86_64, darkmed-tun2socks-jni-x86_64, hev-socks5-tunnel-bin-x86_64, hev-socks5-tunnel-x86_64, yaml-x86_64, lwip-x86_64
+C/C++: fatal: not a git repository (or any of the parent directories): .git
+
+> Task :app:externalNativeBuildCleanRelease
+Clean hev-task-system-armeabi-v7a, yaml-armeabi-v7a, darkmed-tun2socks-jni-armeabi-v7a, hev-socks5-tunnel-armeabi-v7a, hev-socks5-tunnel-bin-armeabi-v7a, lwip-armeabi-v7a
+C/C++: fatal: not a git repository (or any of the parent directories): .git
+Clean yaml-arm64-v8a, darkmed-tun2socks-jni-arm64-v8a, hev-socks5-tunnel-bin-arm64-v8a, lwip-arm64-v8a, hev-task-system-arm64-v8a, hev-socks5-tunnel-arm64-v8a
+C/C++: fatal: not a git repository (or any of the parent directories): .git
+Clean yaml-x86, darkmed-tun2socks-jni-x86, lwip-x86, hev-socks5-tunnel-x86, hev-socks5-tunnel-bin-x86, hev-task-system-x86
+C/C++: fatal: not a git repository (or any of the parent directories): .git
+Clean darkmed-tun2socks-jni-x86_64, yaml-x86_64, hev-socks5-tunnel-x86_64, hev-task-system-x86_64, hev-socks5-tunnel-bin-x86_64, lwip-x86_64
+C/C++: fatal: not a git repository (or any of the parent directories): .git
+
+> Task :app:clean
+
+BUILD SUCCESSFUL in 10s
+3 actionable tasks: 3 executed
+Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.5.1/userguide/configuration_cache_enabling.html

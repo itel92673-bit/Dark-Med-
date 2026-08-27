@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuites tests="5" failures="0" errors="0" skipped="0" time="30.028" timestamp="2026-08-26T10:33:50" hostname="localhost">
+  <testsuite name="com.darkmed.app.DeviceCompatibilityInstrumentedTest" tests="1" failures="0" errors="0" skipped="0" time="4.049" timestamp="2026-08-26T10:33:50" hostname="localhost">
+    <properties>
+      <property name="device" value="darkmed_api34_default(AVD) - 14" />
+      <property name="flavor" value="" />
+      <property name="project" value=":app" />
+    </properties>
+    <testcase name="snapshotContainsRequiredChecks" classname="com.darkmed.app.DeviceCompatibilityInstrumentedTest" time="4.049" />
+  </testsuite>
+  <testsuite name="com.darkmed.app.PlatformSmokeTest" tests="4" failures="0" errors="0" skipped="0" time="1.062" timestamp="2026-08-26T10:33:50" hostname="localhost">
+    <properties>
+      <property name="device" value="darkmed_api34_default(AVD) - 14" />
+      <property name="flavor" value="" />
+      <property name="project" value=":app" />
+    </properties>
+    <testcase name="packageAndLauncherAreDeclared" classname="com.darkmed.app.PlatformSmokeTest" time="0.48" />
+    <testcase name="vpnAndTorServicesAreDeclaredNonExported" classname="com.darkmed.app.PlatformSmokeTest" time="0.328" />
+    <testcase name="fourBrowserActivitiesUseDedicatedProcesses" classname="com.darkmed.app.PlatformSmokeTest" time="0.152" />
+    <testcase name="securityRelevantApplicationFlagsArePresent" classname="com.darkmed.app.PlatformSmokeTest" time="0.102" />
+  </testsuite>
+</testsuites>

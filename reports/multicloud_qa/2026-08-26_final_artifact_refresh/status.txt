@@ -1,0 +1,6 @@
+copy_rc=0
+sha256=809739611738d0bb8cb7dcc4cb7cacd67afd8cff75f1bf5019759e2754cf34df
+size_bytes=93673594
+aapt_rc=0
+apksigner_rc=0
+security_audit_rc=0

@@ -1,0 +1,6 @@
+testDebugUnitTest=0
+lintDebug=1
+lintRelease=1
+assembleDebug=0
+assembleAndroidTest=0
+assembleRelease=0

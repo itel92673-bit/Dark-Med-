@@ -1,0 +1,6 @@
+reports/MULTICLOUD_REQUIREMENTS_COMPLIANCE.md current_sha= True old_sha= False release_blocked= True
+reports/CROSS_PROVIDER_RESULTS.md current_sha= True old_sha= False release_blocked= False
+reports/REAL_DEVICE_MATRIX.md current_sha= True old_sha= False release_blocked= False
+reports/DEVICE_COMPATIBILITY_SCORE.md current_sha= True old_sha= False release_blocked= True
+reports/RELEASE_READINESS_FINAL.md current_sha= True old_sha= False release_blocked= True
+reports/MULTI_CLOUD_QA_FINAL_REPORT.md current_sha= True old_sha= False release_blocked= True

@@ -1,0 +1,13 @@
+emulator_preflight
+kvm=ABSENT
+emulator_cmd=/home/ubuntu/android-sdk/emulator/emulator
+waydroid_cmd=NOT_FOUND
+qemu_cmd=NOT_FOUND
+adb_device_lines=0
+vpn_protect_contract_rc=0
+security_qa_rc=0
+security_production_rc=1
+cloud_preflight_rc=0
+checklist_builder_rc=0
+logical_attached_lines=252
+checklist_rows=252

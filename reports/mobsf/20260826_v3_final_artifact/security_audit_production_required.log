@@ -1,0 +1,22 @@
+PASS  cleartext traffic disabled
+PASS  backup disabled
+PASS  VPN binding declared
+PASS  special-use FGS declared
+PASS  notification permission declared
+PASS  official icon referenced
+PASS  no hardcoded private key material
+PASS  no obvious API key literals
+PASS  no direct sensitive logging
+PASS  no placeholder screen in app-owned source
+PASS  no misleading Tor running notification
+PASS  APK exists: deliverables/Dark Med f.apk
+WARN  apksigner unavailable; APK certificate type not checked
+PASS  APK contains arm64-v8a/libtor.so
+PASS  APK contains arm64-v8a/libwg-go.so
+PASS  APK contains arm64-v8a/libwg.so
+PASS  APK contains arm64-v8a/libwg-quick.so
+PASS  APK contains arm64-v8a/libhev-socks5-tunnel.so
+PASS  APK contains arm64-v8a/libdarkmed-tun2socks-jni.so
+WARN  No obfs4 asset found; pluggable transport remains unverified
+WARN  No snowflake asset found; pluggable transport remains unverified
+SUMMARY failures=0 warnings=3

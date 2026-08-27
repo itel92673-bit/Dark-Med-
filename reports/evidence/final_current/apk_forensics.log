@@ -1,0 +1,108 @@
+=== artifact facts ===
+app/build/outputs/apk/debug/app-debug.apk 109737009 bytes 2026-08-24 16:13:54.142947642 +0000
+app/build/outputs/apk/release/app-release.apk 93624958 bytes 2026-08-24 16:16:03.734947672 +0000
+app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk 954723 bytes 2026-08-24 16:14:18.842947670 +0000
+c080d226f0a8bbe88f45bd6408196c63f351cc798dc2af71ad8b5b2817a5ff31  app/build/outputs/apk/debug/app-debug.apk
+15a3383a5edf498eafd095f14868bf7f76f048a4399f875045e47ff36c25a25c  app/build/outputs/apk/release/app-release.apk
+fdbf324fb7f52db4b528f15a4fa20d49d6def1064540e617b271ae9e7c76cc43  app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk
+=== verify ===
+Verifies
+Verified using v1 scheme (JAR signing): false
+Verified using v2 scheme (APK Signature Scheme v2): true
+Verified using v3 scheme (APK Signature Scheme v3): false
+Verified using v3.1 scheme (APK Signature Scheme v3.1): false
+Verified using v4 scheme (APK Signature Scheme v4): false
+Verified for SourceStamp: false
+Number of signers: 1
+Verifies
+Verified using v1 scheme (JAR signing): false
+Verified using v2 scheme (APK Signature Scheme v2): true
+Verified using v3 scheme (APK Signature Scheme v3): false
+Verified using v3.1 scheme (APK Signature Scheme v3.1): false
+Verified using v4 scheme (APK Signature Scheme v4): false
+Verified for SourceStamp: false
+Number of signers: 1
+Signer #1 certificate DN: C=US, O=Android, CN=Android Debug
+Signer #1 certificate SHA-256 digest: a4b04f78c7aefba840f4775336fda984720f1811830f907f05d8516143843d1f
+Signer #1 certificate SHA-1 digest: b8ff483ff4ac6aa2a4150c0eb45abd9309c7b588
+Signer #1 certificate MD5 digest: dc198444521b8e63ad33991a93aca295
+=== badging/permissions ===
+package: name='com.darkmed.app' versionCode='1' versionName='0.1.0' platformBuildVersionName='17' platformBuildVersionCode='37' compileSdkVersion='37' compileSdkVersionCodename='17'
+sdkVersion:'29'
+targetSdkVersion:'35'
+uses-permission: name='android.permission.INTERNET'
+uses-permission: name='android.permission.ACCESS_NETWORK_STATE'
+uses-permission: name='android.permission.FOREGROUND_SERVICE'
+uses-permission: name='android.permission.FOREGROUND_SERVICE_SPECIAL_USE'
+uses-permission: name='android.permission.POST_NOTIFICATIONS'
+uses-permission: name='android.permission.USE_BIOMETRIC'
+uses-permission: name='android.permission.USE_FINGERPRINT'
+uses-permission: name='com.darkmed.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION'
+application-label:'Dark Med'
+application-label-af:'Dark Med'
+application-label-am:'Dark Med'
+application-label-ar:'Dark Med'
+application-label-as:'Dark Med'
+application-label-az:'Dark Med'
+application-label-be:'Dark Med'
+application-label-bg:'Dark Med'
+application-label-bn:'Dark Med'
+package: com.darkmed.app
+uses-permission: name='android.permission.INTERNET'
+uses-permission: name='android.permission.ACCESS_NETWORK_STATE'
+uses-permission: name='android.permission.FOREGROUND_SERVICE'
+uses-permission: name='android.permission.FOREGROUND_SERVICE_SPECIAL_USE'
+uses-permission: name='android.permission.POST_NOTIFICATIONS'
+uses-permission: name='android.permission.USE_BIOMETRIC'
+uses-permission: name='android.permission.USE_FINGERPRINT'
+permission: com.darkmed.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+uses-permission: name='com.darkmed.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION'
+=== manifest attributes ===
+      A: android:allowBackup(0x01010280)=(type 0x12)0x0
+      A: android:usesCleartextTraffic(0x010104ec)=(type 0x12)0x0
+        A: android:permission(0x01010006)="android.permission.BIND_VPN_SERVICE" (Raw: "android.permission.BIND_VPN_SERVICE")
+        A: android:foregroundServiceType(0x01010599)=(type 0x11)0x40000000
+          A: android:name(0x01010003)="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE" (Raw: "android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE")
+        A: android:permission(0x01010006)="android.permission.BIND_VPN_SERVICE" (Raw: "android.permission.BIND_VPN_SERVICE")
+        A: android:foregroundServiceType(0x01010599)=(type 0x11)0x40000000
+          A: android:name(0x01010003)="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE" (Raw: "android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE")
+        A: android:foregroundServiceType(0x01010599)=(type 0x11)0x40000000
+          A: android:name(0x01010003)="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE" (Raw: "android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE")
+=== native entries ===
+lib/arm64-v8a/libandroidx.graphics.path.so
+lib/arm64-v8a/libc++_shared.so
+lib/arm64-v8a/libdarkmed-tun2socks-jni.so
+lib/arm64-v8a/libhev-socks5-tunnel.so
+lib/arm64-v8a/libtor.so
+lib/arm64-v8a/libwg-go.so
+lib/arm64-v8a/libwg-quick.so
+lib/arm64-v8a/libwg.so
+lib/armeabi-v7a/libandroidx.graphics.path.so
+lib/armeabi-v7a/libc++_shared.so
+lib/armeabi-v7a/libdarkmed-tun2socks-jni.so
+lib/armeabi-v7a/libhev-socks5-tunnel.so
+lib/armeabi-v7a/libtor.so
+lib/armeabi-v7a/libwg-go.so
+lib/armeabi-v7a/libwg-quick.so
+lib/armeabi-v7a/libwg.so
+lib/x86/libandroidx.graphics.path.so
+lib/x86/libc++_shared.so
+lib/x86/libdarkmed-tun2socks-jni.so
+lib/x86/libhev-socks5-tunnel.so
+lib/x86/libtor.so
+lib/x86/libwg-go.so
+lib/x86/libwg-quick.so
+lib/x86/libwg.so
+lib/x86_64/libandroidx.graphics.path.so
+lib/x86_64/libc++_shared.so
+lib/x86_64/libdarkmed-tun2socks-jni.so
+lib/x86_64/libhev-socks5-tunnel.so
+lib/x86_64/libtor.so
+lib/x86_64/libwg-go.so
+lib/x86_64/libwg-quick.so
+lib/x86_64/libwg.so
+=== ADB runtime ===
+List of devices attached
+emulator-5554          device product:sdk_phone64_x86_64 model:Android_SDK_built_for_x86_64 device:emu64x transport_id:1
+
+KVM_ABSENT
