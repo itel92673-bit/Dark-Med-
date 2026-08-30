@@ -19,7 +19,7 @@ import android.widget.FrameLayout
 /**
  * Real WebView host. Each manifest subclass is assigned a dedicated Android
  * process so WebView.setDataDirectorySuffix can provide process-level storage
- * separation. This does not claim fingerprint anonymity or network anonymity.
+ * separation. This does not claim anonymity or network anonymity.
  */
 open class BrowserSessionActivity : Activity() {
     protected open val sessionId: String = "session_1"

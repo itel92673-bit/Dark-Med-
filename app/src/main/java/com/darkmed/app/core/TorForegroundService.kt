@@ -14,14 +14,24 @@ import org.torproject.jni.TorService
 
 class TorForegroundService : Service() {
     private var torBound = false
+    private var socksPort: Int? = null
 
     private val torConnection = object : ServiceConnection {
         override fun onServiceConnected(name: ComponentName, service: IBinder) {
+            val binder = service as? TorService.LocalBinder ?: return
             torBound = true
+            socksPort = runCatching { binder.service.socksPort }.getOrNull()
+            sendBroadcast(
+                Intent(ACTION_READY)
+                    .setPackage(packageName)
+                    .putExtra(EXTRA_SOCKS_PORT, socksPort ?: -1)
+            )
         }
 
         override fun onServiceDisconnected(name: ComponentName) {
             torBound = false
+            socksPort = null
+            sendBroadcast(Intent(ACTION_STOPPED).setPackage(packageName))
         }
     }
 
@@ -38,6 +48,17 @@ class TorForegroundService : Service() {
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         if (intent?.action == ACTION_STOP) {
             stopTor()
+            stopForeground(STOP_FOREGROUND_REMOVE)
+            stopSelf()
+            return START_NOT_STICKY
+        }
+        val configResult = TorConfigWriter(this).write(TorLocalConfig())
+        if (configResult.isFailure) {
+            sendBroadcast(
+                Intent(ACTION_ERROR)
+                    .setPackage(packageName)
+                    .putExtra(EXTRA_ERROR, configResult.exceptionOrNull()?.message ?: "Tor configuration failed")
+            )
             stopForeground(STOP_FOREGROUND_REMOVE)
             stopSelf()
             return START_NOT_STICKY
@@ -62,6 +83,7 @@ class TorForegroundService : Service() {
             runCatching { unbindService(torConnection) }
             torBound = false
         }
+        socksPort = null
         stopService(Intent(this, TorService::class.java))
     }
 
@@ -90,6 +112,11 @@ class TorForegroundService : Service() {
 
     companion object {
         const val ACTION_STOP = "com.darkmed.app.action.STOP_TOR"
+        const val ACTION_READY = "com.darkmed.app.action.TOR_READY"
+        const val ACTION_STOPPED = "com.darkmed.app.action.TOR_STOPPED"
+        const val ACTION_ERROR = "com.darkmed.app.action.TOR_ERROR"
+        const val EXTRA_SOCKS_PORT = "com.darkmed.app.extra.TOR_SOCKS_PORT"
+        const val EXTRA_ERROR = "com.darkmed.app.extra.TOR_ERROR"
         private const val CHANNEL_ID = "darkmed_tor"
         private const val NOTIFICATION_ID = 901
     }

@@ -2,7 +2,6 @@ package com.darkmed.app.core
 
 enum class ClearAllDataPhase {
     Idle,
-    Authenticating,
     Confirmation,
     Wiping,
     Completed,
@@ -15,9 +14,7 @@ data class ClearAllDataState(
 )
 
 sealed interface ClearAllDataEvent {
-    data object StartAuthentication : ClearAllDataEvent
-    data object AuthenticationSucceeded : ClearAllDataEvent
-    data class AuthenticationFailed(val message: String) : ClearAllDataEvent
+    data object StartConfirmation : ClearAllDataEvent
     data object Cancelled : ClearAllDataEvent
     data object Dismissed : ClearAllDataEvent
     data object Confirmed : ClearAllDataEvent
@@ -29,12 +26,7 @@ object ClearAllDataReducer {
     fun reduce(state: ClearAllDataState, event: ClearAllDataEvent): ClearAllDataState {
         return when (state.phase) {
             ClearAllDataPhase.Idle -> when (event) {
-                ClearAllDataEvent.StartAuthentication -> ClearAllDataState(ClearAllDataPhase.Authenticating)
-                else -> state
-            }
-            ClearAllDataPhase.Authenticating -> when (event) {
-                ClearAllDataEvent.AuthenticationSucceeded -> ClearAllDataState(ClearAllDataPhase.Confirmation)
-                is ClearAllDataEvent.AuthenticationFailed -> ClearAllDataState(ClearAllDataPhase.Failed, event.message)
+                ClearAllDataEvent.StartConfirmation -> ClearAllDataState(ClearAllDataPhase.Confirmation)
                 else -> state
             }
             ClearAllDataPhase.Confirmation -> when (event) {
@@ -48,7 +40,7 @@ object ClearAllDataReducer {
                 else -> state
             }
             ClearAllDataPhase.Completed, ClearAllDataPhase.Failed -> when (event) {
-                ClearAllDataEvent.StartAuthentication -> ClearAllDataState(ClearAllDataPhase.Authenticating)
+                ClearAllDataEvent.StartConfirmation -> ClearAllDataState(ClearAllDataPhase.Confirmation)
                 else -> state
             }
         }

@@ -16,8 +16,6 @@ enum class FailureScenario {
     NetworkDisconnect,
     ServiceRestart,
     ProcessDeath,
-    BiometricFailure,
-    BiometricCancellation,
     StorageFailure,
     CorruptedConfig,
     MissingDependency,
@@ -66,8 +64,7 @@ object FailureInjectionMatrix {
     )
 
     fun evaluate(scenario: FailureScenario): FailureInjectionOutcome {
-        val biometricFailure = scenario == FailureScenario.BiometricFailure || scenario == FailureScenario.BiometricCancellation
-        val state = if (biometricFailure) SecurityState.Locked else SecurityState.Lockdown
+        val state = SecurityState.Lockdown
         val evidence = when {
             scenario == FailureScenario.NetworkDisconnect || scenario == FailureScenario.Ipv6Failure -> FailureEvidenceStatus.NETWORK_REQUIRED
             scenario in networkScenarios -> FailureEvidenceStatus.REAL_DEVICE_REQUIRED
@@ -77,8 +74,8 @@ object FailureInjectionMatrix {
             scenario = scenario,
             expectedState = state,
             actualPolicyState = state,
-            recovery = if (biometricFailure) "Explicit biometric retry" else "Explicit authenticated recovery or stop",
-            securityConsequence = if (biometricFailure) "Protected action is not executed" else "Unprotected traffic is blocked; no direct fallback",
+            recovery = "Explicit authenticated recovery or stop",
+            securityConsequence = "Unprotected traffic is blocked; no direct fallback",
             evidenceStatus = evidence
         )
     }

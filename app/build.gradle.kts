@@ -49,7 +49,6 @@ dependencies {
     implementation("androidx.compose.material3:material3")
     implementation("androidx.compose.material:material-icons-extended")
     implementation("androidx.lifecycle:lifecycle-runtime-compose:2.8.7")
-    implementation("androidx.biometric:biometric:1.1.0")
     implementation("com.wireguard.android:tunnel:1.0.20260102")
     implementation("info.guardianproject:tor-android:0.4.9.11")
     implementation("info.guardianproject:jtorctl:0.4.5.7")

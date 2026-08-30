@@ -6,7 +6,7 @@ import android.content.Intent
 class ClearAllDataCoordinator(context: Context) {
     private val appContext = context.applicationContext
 
-    fun wipeAfterAuthorization(): DataWipeResult {
+    fun wipeAfterConfirmation(): DataWipeResult {
         stopProtectedServices()
         return DataWiper(appContext).wipeAll()
     }

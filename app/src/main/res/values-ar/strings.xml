@@ -1,10 +1,7 @@
 <resources>
     <string name="app_name">دارك ميد</string>
     <string name="brand_name">DARK MED</string>
-    <string name="fingerprint_required">المصادقة البيومترية القوية مطلوبة</string>
     <string name="activity_unavailable">شاشة Dark Med غير متاحة</string>
-    <string name="enroll_biometric">سجّل بصمة قوية قبل استخدام Dark Med</string>
-    <string name="biometric_unavailable">المصادقة البيومترية القوية غير متاحة على هذا الجهاز</string>
     <string name="nav_dashboard">لوحة التحكم</string>
     <string name="nav_browser">المتصفح</string>
     <string name="nav_profiles">الملفات الشخصية</string>
@@ -29,22 +26,16 @@
     <string name="privacy_title">مركز الخصوصية</string>
     <string name="module_unavailable">هذا المكوّن غير متاح حتى تنفيذ وظيفته الحقيقية واجتياز اختبارات القبول.</string>
     <string name="settings_title">الإعدادات</string>
-    <string name="sensitive_actions_biometric">تتطلب العمليات الحساسة مصادقة بيومترية قوية. لا يوجد PIN أو فتح بالوجه أو بديل ببيانات الجهاز.</string>
     <string name="clear_all_data">مسح كل البيانات</string>
     <string name="clear_all_data_description">يحذف الملفات الشخصية والجلسات وبيانات Tor والذاكرة المؤقتة والسجلات والتفضيلات ومفتاح Keystore المحلي. لا يمكن التراجع عن هذا الإجراء.</string>
-    <string name="authenticate_and_clear">المصادقة ثم المسح</string>
     <string name="confirm_clear_title">تأكيد مسح كل البيانات</string>
     <string name="confirm_clear_message">سيتم حذف البيانات المحلية بعد مصادقة بيومترية ناجحة. هل تريد المتابعة؟</string>
     <string name="cancel">إلغاء</string>
     <string name="confirm">تأكيد</string>
-    <string name="strong_biometric_required">المصادقة البيومترية القوية مطلوبة</string>
     <string name="fragment_activity_unavailable">محجوب: FragmentActivity غير متاحة</string>
     <string name="wipe_completed">اكتمل المسح وتم التحقق من البيانات المحلية</string>
     <string name="wipe_failed">فشل المسح: %1$s</string>
     <string name="wipe_not_deleted">لم تُحذف البيانات: %1$s</string>
-    <string name="biometric_prompt_title">فتح Dark Med</string>
-    <string name="biometric_prompt_subtitle">المصادقة البيومترية القوية مطلوبة</string>
-    <string name="biometric_failed">فشل التحقق البيومتري</string>
     <string name="retry">إعادة المحاولة</string>
     <string name="device_compatibility">توافق الجهاز</string>
     <string name="device_profile">ملف الجهاز</string>
@@ -77,7 +68,6 @@
     <string name="status_routing">التوجيه</string>
     <string name="status_kill_switch">مفتاح الإغلاق</string>
     <string name="status_browser_isolation">عزل المتصفح</string>
-    <string name="status_biometric">المصادقة البيومترية</string>
     <string name="status_storage">التخزين</string>
     <string name="profile_add">إضافة ملف</string>
     <string name="profile_edit">تعديل</string>

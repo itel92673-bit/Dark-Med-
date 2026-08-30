@@ -6,8 +6,8 @@ import org.junit.Test
 
 class EngineeringContractsTest {
     @Test
-    fun registryContainsAllTwentyTwoSpecializedAgents() {
-        assertEquals(22, AgentRegistry.definitions.size)
+    fun registryContainsAllTwentyOneSpecializedAgents() {
+        assertEquals(21, AgentRegistry.definitions.size)
         assertEquals(EngineeringAgentId.entries.toSet(), AgentRegistry.definitions.map { it.id }.toSet())
         assertEquals(EngineeringArea.entries.toSet(), AgentRegistry.definitions.map { it.area }.toSet())
         assertTrue(AgentRegistry.definitions.all { it.allowedTools.isNotEmpty() })
@@ -61,17 +61,6 @@ class EngineeringContractsTest {
     @Test
     fun emptyProjectCannotPassReleaseGate() {
         assertEquals(ReleaseDecision.RELEASE_BLOCKED, MasterEngineeringOrchestrator().releaseGate())
-    }
-
-    @Test
-    fun runtimePassRequiresExplicitRuntimeEvidence() {
-        val orchestrator = MasterEngineeringOrchestrator()
-        val result = orchestrator.submit(
-            EngineeringAgentId.BIOMETRIC,
-            EngineeringTool.RUN_DEVICE_TEST,
-            evidence(EngineeringAgentId.BIOMETRIC, EngineeringStatus.PASS)
-        )
-        assertEquals(OrchestratorDecision.REJECTED_INVALID_EVIDENCE, result.decision)
     }
 
     @Test

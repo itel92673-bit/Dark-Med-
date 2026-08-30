@@ -5,10 +5,7 @@ import android.content.Context
 import android.net.VpnService
 import android.os.Build
 import android.os.PowerManager
-import android.provider.Settings
 import android.webkit.WebView
-import androidx.biometric.BiometricManager
-
 
 enum class CompatibilityStatus {
     READY,
@@ -31,7 +28,6 @@ data class DeviceCompatibilitySnapshot(
     val ramBytes: Long,
     val webViewVersion: String,
     val vpnPermissionRequired: Boolean,
-    val biometricStatus: CompatibilityStatus,
     val notificationStatus: CompatibilityStatus,
     val batteryOptimizationStatus: CompatibilityStatus,
     val backgroundExecutionStatus: CompatibilityStatus,
@@ -47,7 +43,6 @@ class DeviceCompatibilityCenter(private val context: Context) {
         activityManager?.getMemoryInfo(memoryInfo)
         val webViewVersion = runCatching { WebView.getCurrentWebViewPackage()?.versionName ?: "unavailable" }.getOrDefault("unavailable")
         val vpnPermissionRequired = runCatching { VpnService.prepare(context) != null }.getOrDefault(true)
-        val biometric = biometricStatus()
         val notification = notificationStatus()
         val battery = batteryStatus(powerManager)
         val background = backgroundStatus(activityManager)
@@ -58,7 +53,6 @@ class DeviceCompatibilityCenter(private val context: Context) {
             CompatibilityCheck("Battery optimization", battery, if (battery == CompatibilityStatus.WARNING) "Review OEM battery restrictions" else "Battery state checked"),
             CompatibilityCheck("Background execution", background, if (background == CompatibilityStatus.WARNING) "Background execution is restricted" else "Background state checked"),
             CompatibilityCheck("WebView", if (webViewVersion == "unavailable") CompatibilityStatus.UNSUPPORTED else CompatibilityStatus.READY, webViewVersion),
-            CompatibilityCheck("Biometric", biometric, biometricDetail(biometric)),
             CompatibilityCheck("Storage", storage, storageDetail(storage)),
             CompatibilityCheck("Tor capability", CompatibilityStatus.READY, "Bundled Tor component requires runtime bootstrap verification")
         )
@@ -70,24 +64,12 @@ class DeviceCompatibilityCenter(private val context: Context) {
             ramBytes = memoryInfo.totalMem,
             webViewVersion = webViewVersion,
             vpnPermissionRequired = vpnPermissionRequired,
-            biometricStatus = biometric,
             notificationStatus = notification,
             batteryOptimizationStatus = battery,
             backgroundExecutionStatus = background,
             storageStatus = storage,
             checks = checks
         )
-    }
-
-    private fun biometricStatus(): CompatibilityStatus {
-        val result = BiometricManager.from(context).canAuthenticate(BiometricManager.Authenticators.BIOMETRIC_STRONG)
-        return when (result) {
-            BiometricManager.BIOMETRIC_SUCCESS -> CompatibilityStatus.READY
-            BiometricManager.BIOMETRIC_ERROR_NONE_ENROLLED -> CompatibilityStatus.REQUIRES_ACTION
-            BiometricManager.BIOMETRIC_ERROR_NO_HARDWARE,
-            BiometricManager.BIOMETRIC_ERROR_HW_UNAVAILABLE -> CompatibilityStatus.UNSUPPORTED
-            else -> CompatibilityStatus.WARNING
-        }
     }
 
     private fun notificationStatus(): CompatibilityStatus {
@@ -111,13 +93,6 @@ class DeviceCompatibilityCenter(private val context: Context) {
 
     private fun storageStatus(): CompatibilityStatus {
         return if (context.filesDir.usableSpace >= MIN_USABLE_STORAGE_BYTES) CompatibilityStatus.READY else CompatibilityStatus.WARNING
-    }
-
-    private fun biometricDetail(status: CompatibilityStatus): String = when (status) {
-        CompatibilityStatus.READY -> "Strong biometric available"
-        CompatibilityStatus.REQUIRES_ACTION -> "Enroll a strong biometric"
-        CompatibilityStatus.UNSUPPORTED -> "Strong biometric unavailable"
-        CompatibilityStatus.WARNING -> "Biometric capability needs review"
     }
 
     private fun storageDetail(status: CompatibilityStatus): String = when (status) {

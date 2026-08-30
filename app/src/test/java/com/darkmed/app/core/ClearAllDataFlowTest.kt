@@ -6,20 +6,18 @@ import org.junit.Test
 
 class ClearAllDataFlowTest {
     @Test
-    fun authenticationMustPrecedeConfirmationAndWipe() {
+    fun confirmationPrecedesWipeWithoutAuthenticationPhase() {
         val initial = ClearAllDataState()
-        val beforeAuth = ClearAllDataReducer.reduce(initial, ClearAllDataEvent.Confirmed)
-        val afterAuth = ClearAllDataReducer.reduce(initial, ClearAllDataEvent.StartAuthentication)
-        val confirmation = ClearAllDataReducer.reduce(afterAuth, ClearAllDataEvent.AuthenticationSucceeded)
+        val beforeConfirmation = ClearAllDataReducer.reduce(initial, ClearAllDataEvent.Confirmed)
+        val confirmation = ClearAllDataReducer.reduce(initial, ClearAllDataEvent.StartConfirmation)
         val wiping = ClearAllDataReducer.reduce(confirmation, ClearAllDataEvent.Confirmed)
-        assertEquals(ClearAllDataPhase.Idle, beforeAuth.phase)
-        assertEquals(ClearAllDataPhase.Authenticating, afterAuth.phase)
+        assertEquals(ClearAllDataPhase.Idle, beforeConfirmation.phase)
         assertEquals(ClearAllDataPhase.Confirmation, confirmation.phase)
         assertEquals(ClearAllDataPhase.Wiping, wiping.phase)
     }
 
     @Test
-    fun cancelAndOutsideDismissInvalidateAuthorization() {
+    fun cancelAndOutsideDismissReturnToIdle() {
         val confirmation = ClearAllDataState(ClearAllDataPhase.Confirmation)
         assertEquals(ClearAllDataPhase.Idle, ClearAllDataReducer.reduce(confirmation, ClearAllDataEvent.Cancelled).phase)
         assertEquals(ClearAllDataPhase.Idle, ClearAllDataReducer.reduce(confirmation, ClearAllDataEvent.Dismissed).phase)
@@ -44,13 +42,13 @@ class ClearAllDataFlowTest {
     }
 
     @Test
-    fun completedWipeIsDistinctAndCanBeFollowedByNewAuthentication() {
+    fun completedWipeCanBeFollowedByNewConfirmation() {
         val completed = ClearAllDataReducer.reduce(
             ClearAllDataState(ClearAllDataPhase.Wiping),
             ClearAllDataEvent.WipeCompleted
         )
-        val next = ClearAllDataReducer.reduce(completed, ClearAllDataEvent.StartAuthentication)
+        val next = ClearAllDataReducer.reduce(completed, ClearAllDataEvent.StartConfirmation)
         assertEquals(ClearAllDataPhase.Completed, completed.phase)
-        assertEquals(ClearAllDataPhase.Authenticating, next.phase)
+        assertEquals(ClearAllDataPhase.Confirmation, next.phase)
     }
 }

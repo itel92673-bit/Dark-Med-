@@ -40,7 +40,6 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -51,9 +50,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.platform.LocalContext
+import androidx.activity.ComponentActivity
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.fragment.app.FragmentActivity
 import com.darkmed.app.core.CompatibilityStatus
 import com.darkmed.app.core.DeviceCompatibilityCenter
 import com.darkmed.app.core.ClearAllDataEvent
@@ -70,65 +69,17 @@ private val Accent = Color(0xFFFF3D5A)
 private val Violet = Color(0xFF8B5CFF)
 private val Muted = Color(0xFF9A9AA6)
 
-class MainActivity : FragmentActivity() {
+class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         window.addFlags(WindowManager.LayoutParams.FLAG_SECURE)
         window.decorView.setFilterTouchesWhenObscured(true)
-        setContent { LockedDarkMedApp() }
+        setContent { DarkMedApp() }
     }
 }
 
 @Composable
-private fun LockedDarkMedApp() {
-    var unlocked by remember { mutableStateOf(false) }
-    var retryRequest by remember { mutableStateOf(0) }
-    val initialMessage = stringResource(R.string.fingerprint_required)
-    var message by remember { mutableStateOf(initialMessage) }
-    val activity = LocalActivity.current
-    val fragmentActivity = activity as? FragmentActivity
-    val activityUnavailable = stringResource(R.string.activity_unavailable)
-    val enrollBiometric = stringResource(R.string.enroll_biometric)
-    val biometricUnavailable = stringResource(R.string.biometric_unavailable)
-    LaunchedEffect(fragmentActivity, retryRequest) {
-        if (fragmentActivity == null) {
-            message = activityUnavailable
-            return@LaunchedEffect
-        }
-        val gate = com.darkmed.app.core.BiometricGate(fragmentActivity)
-        when (gate.status()) {
-            com.darkmed.app.core.BiometricStatus.Available -> gate.authenticate(
-                activity = fragmentActivity,
-                onSuccess = { unlocked = true },
-                onFailure = { message = it }
-            )
-            com.darkmed.app.core.BiometricStatus.Unavailable -> message = enrollBiometric
-            com.darkmed.app.core.BiometricStatus.Unsupported -> message = biometricUnavailable
-        }
-    }
-    if (unlocked) {
-        DarkMedApp(onWipeCompleted = { unlocked = false })
-    } else {
-        LockedScreen(message = message, onRetry = { retryRequest += 1 })
-    }
-}
-
-@Composable
-private fun LockedScreen(message: String, onRetry: () -> Unit) {
-    Column(Modifier.fillMaxSize().background(DarkBackground).padding(24.dp), verticalArrangement = Arrangement.Center) {
-        Icon(Icons.Default.Lock, contentDescription = null, tint = Accent)
-        Spacer(Modifier.height(14.dp))
-        Text(stringResource(R.string.brand_name), color = Color.White, style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold)
-        Text(message, color = Muted)
-        Spacer(Modifier.height(18.dp))
-        Button(onClick = onRetry) {
-            Text(stringResource(R.string.retry))
-        }
-    }
-}
-
-@Composable
-private fun DarkMedApp(onWipeCompleted: () -> Unit) {
+private fun DarkMedApp() {
     var selected by remember { mutableStateOf("dashboard") }
     val destinations = listOf(
         "dashboard" to stringResource(R.string.nav_dashboard),
@@ -168,7 +119,7 @@ private fun DarkMedApp(onWipeCompleted: () -> Unit) {
                 when (selected) {
                     "dashboard" -> DashboardScreen(Modifier.padding(padding))
                     "browser" -> BrowserScreen(Modifier.padding(padding))
-                    "settings" -> SettingsScreen(Modifier.padding(padding), onWipeCompleted)
+                    "settings" -> SettingsScreen(Modifier.padding(padding))
                     "profiles" -> ProfilesScreen(Modifier.padding(padding))
                     "privacy" -> SecurityCenterScreen(Modifier.padding(padding))
                 }
@@ -253,23 +204,20 @@ private fun BrowserScreen(modifier: Modifier = Modifier) {
 }
 
 @Composable
-private fun SettingsScreen(modifier: Modifier = Modifier, onWipeCompleted: () -> Unit) {
-    val activity = LocalActivity.current
+private fun SettingsScreen(modifier: Modifier = Modifier) {
+    val context = LocalContext.current
     var result by remember { mutableStateOf<String?>(null) }
     var wipeState by remember { mutableStateOf(ClearAllDataState()) }
     val wipeScope = rememberCoroutineScope()
     val wipeFailedFormat = stringResource(R.string.wipe_failed)
     val wipeNotDeletedFormat = stringResource(R.string.wipe_not_deleted)
     val confirmTitle = stringResource(R.string.confirm_clear_title)
-    val strongBiometricRequired = stringResource(R.string.strong_biometric_required)
-    val fragmentActivityUnavailable = stringResource(R.string.fragment_activity_unavailable)
     val wipeCompleted = stringResource(R.string.wipe_completed)
     Column(modifier.fillMaxSize().background(DarkBackground).padding(20.dp).verticalScroll(rememberScrollState())) {
         Text(stringResource(R.string.settings_title), color = Color.White, style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold)
         Spacer(Modifier.height(16.dp))
         DeviceCompatibilityCard()
         Spacer(Modifier.height(12.dp))
-        Text(stringResource(R.string.sensitive_actions_biometric), color = Muted)
         Spacer(Modifier.height(24.dp))
         Card(colors = CardDefaults.cardColors(containerColor = Panel), modifier = Modifier.fillMaxWidth()) {
             Column(Modifier.padding(16.dp)) {
@@ -278,30 +226,12 @@ private fun SettingsScreen(modifier: Modifier = Modifier, onWipeCompleted: () ->
                 Text(stringResource(R.string.clear_all_data_description), color = Muted)
                 Spacer(Modifier.height(14.dp))
                 Button(
-                    enabled = wipeState.phase != ClearAllDataPhase.Authenticating && wipeState.phase != ClearAllDataPhase.Wiping,
+                    enabled = wipeState.phase != ClearAllDataPhase.Wiping,
                     onClick = {
-                        wipeState = ClearAllDataReducer.reduce(wipeState, ClearAllDataEvent.StartAuthentication)
-                        val fragmentActivity = activity as? FragmentActivity
-                        if (fragmentActivity == null) {
-                            wipeState = ClearAllDataReducer.reduce(wipeState, ClearAllDataEvent.AuthenticationFailed(fragmentActivityUnavailable))
-                            result = fragmentActivityUnavailable
-                        } else {
-                            com.darkmed.app.core.BiometricGate(fragmentActivity).authenticate(
-                                activity = fragmentActivity,
-                                title = confirmTitle,
-                                subtitle = strongBiometricRequired,
-                                onSuccess = {
-                                    wipeState = ClearAllDataReducer.reduce(wipeState, ClearAllDataEvent.AuthenticationSucceeded)
-                                },
-                                onFailure = {
-                                    wipeState = ClearAllDataReducer.reduce(wipeState, ClearAllDataEvent.AuthenticationFailed(wipeNotDeletedFormat.format(it)))
-                                    result = wipeNotDeletedFormat.format(it)
-                                }
-                            )
-                        }
+                        wipeState = ClearAllDataReducer.reduce(wipeState, ClearAllDataEvent.StartConfirmation)
                     }
                 ) {
-                    Text(stringResource(R.string.authenticate_and_clear))
+                    Text(stringResource(R.string.clear_all_data))
                 }
                 result?.let {
                     Spacer(Modifier.height(12.dp))
@@ -327,27 +257,19 @@ private fun SettingsScreen(modifier: Modifier = Modifier, onWipeCompleted: () ->
                     enabled = wipeState.phase == ClearAllDataPhase.Confirmation,
                     onClick = {
                         wipeState = ClearAllDataReducer.reduce(wipeState, ClearAllDataEvent.Confirmed)
-                        val fragmentActivity = activity as? FragmentActivity
-                        if (fragmentActivity == null) {
-                            val failure = ClearAllDataEvent.WipeFailed(fragmentActivityUnavailable)
-                            wipeState = ClearAllDataReducer.reduce(wipeState, failure)
-                            result = fragmentActivityUnavailable
-                        } else {
-                            wipeScope.launch {
-                                val wipeResult = withContext(Dispatchers.IO) {
-                                    com.darkmed.app.core.ClearAllDataCoordinator(fragmentActivity).wipeAfterAuthorization()
+                        wipeScope.launch {
+                            val wipeResult = withContext(Dispatchers.IO) {
+                                com.darkmed.app.core.ClearAllDataCoordinator(context).wipeAfterConfirmation()
+                            }
+                            when (wipeResult) {
+                                com.darkmed.app.core.DataWipeResult.Completed -> {
+                                    wipeState = ClearAllDataReducer.reduce(wipeState, ClearAllDataEvent.WipeCompleted)
+                                    result = wipeCompleted
                                 }
-                                when (wipeResult) {
-                                    com.darkmed.app.core.DataWipeResult.Completed -> {
-                                        wipeState = ClearAllDataReducer.reduce(wipeState, ClearAllDataEvent.WipeCompleted)
-                                        result = wipeCompleted
-                                        onWipeCompleted()
-                                    }
-                                    is com.darkmed.app.core.DataWipeResult.Failed -> {
-                                        val message = wipeFailedFormat.format(wipeResult.reason)
-                                        wipeState = ClearAllDataReducer.reduce(wipeState, ClearAllDataEvent.WipeFailed(message))
-                                        result = message
-                                    }
+                                is com.darkmed.app.core.DataWipeResult.Failed -> {
+                                    val message = wipeFailedFormat.format(wipeResult.reason)
+                                    wipeState = ClearAllDataReducer.reduce(wipeState, ClearAllDataEvent.WipeFailed(message))
+                                    result = message
                                 }
                             }
                         }
@@ -482,7 +404,6 @@ private fun SecurityCenterScreen(modifier: Modifier = Modifier) {
         stringResource(R.string.status_routing),
         stringResource(R.string.status_kill_switch),
         stringResource(R.string.status_browser_isolation),
-        stringResource(R.string.status_biometric),
         stringResource(R.string.status_storage)
     )
     LazyColumn(modifier = modifier.fillMaxSize().padding(20.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
