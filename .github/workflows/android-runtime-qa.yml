@@ -77,32 +77,21 @@ jobs:
             adb shell getprop > reports/github_actions_runtime/getprop.txt
             adb shell settings get global airplane_mode_on > reports/github_actions_runtime/airplane_mode_before.txt
             adb logcat -c
-            PCAP_MODE=NOT_AVAILABLE
-            if adb shell command -v tcpdump >/dev/null 2>&1; then
-              adb shell "tcpdump -i any -w /data/local/tmp/darkmed-runtime.pcap -c 500 >/dev/null 2>&1 &" || true
-              PCAP_MODE=AVAILABLE
-            fi
-            echo "tcpdump=$PCAP_MODE" > reports/github_actions_runtime/pcap_status.txt
-            ./gradlew connectedDebugAndroidTest --no-daemon --stacktrace > reports/github_actions_runtime/instrumentation.log 2>&1
-            TEST_RC=$?
-            cat reports/github_actions_runtime/instrumentation.log
+            adb shell "command -v tcpdump >/dev/null 2>&1 && tcpdump -i any -w /data/local/tmp/darkmed-runtime.pcap -c 500 >/dev/null 2>&1 &" || true
+            echo "tcpdump=attempted" > reports/github_actions_runtime/pcap_status.txt
+            ./gradlew connectedDebugAndroidTest --no-daemon --stacktrace > reports/github_actions_runtime/instrumentation.log 2>&1; RC=$?; cat reports/github_actions_runtime/instrumentation.log; echo "$RC" > reports/github_actions_runtime/test_exit_code.txt; exit 0
             adb logcat -d > reports/github_actions_runtime/logcat.txt || true
             adb shell dumpsys meminfo com.darkmed.app > reports/github_actions_runtime/meminfo.txt || true
             adb shell dumpsys package com.darkmed.app > reports/github_actions_runtime/package_state.txt || true
             adb shell dumpsys connectivity > reports/github_actions_runtime/connectivity.txt || true
-            if [ "$PCAP_MODE" = "AVAILABLE" ]; then
-              TCPDUMP_PIDS=$(adb shell pidof tcpdump 2>/dev/null | tr -d '\r' || true)
-              if [ -n "$TCPDUMP_PIDS" ]; then adb shell kill $TCPDUMP_PIDS >/dev/null 2>&1 || true; fi
-              adb pull /data/local/tmp/darkmed-runtime.pcap reports/github_actions_runtime/traffic.pcap >/dev/null 2>&1 || true
-            fi
+            adb shell pidof tcpdump > reports/github_actions_runtime/tcpdump_pids.txt 2>&1 || true
+            adb pull /data/local/tmp/darkmed-runtime.pcap reports/github_actions_runtime/traffic.pcap >/dev/null 2>&1 || true
             adb shell am send-trim-memory com.darkmed.app RUNNING_CRITICAL > reports/github_actions_runtime/trim_memory.txt 2>&1 || true
             adb shell am set-inactive com.darkmed.app true > reports/github_actions_runtime/set_inactive.txt 2>&1 || true
             adb shell dumpsys deviceidle force-idle > reports/github_actions_runtime/force_idle.txt 2>&1 || true
-            if [ "$TEST_RC" -ne 0 ]; then
-              adb exec-out screencap -p > reports/github_actions_runtime/failure.png || true
-              adb bugreport reports/github_actions_runtime/bugreport.zip || true
-            fi
-            exit "$TEST_RC"
+            RC=$(cat reports/github_actions_runtime/test_exit_code.txt 2>/dev/null || echo 2); test "$RC" -eq 0 || adb exec-out screencap -p > reports/github_actions_runtime/failure.png || true
+            RC=$(cat reports/github_actions_runtime/test_exit_code.txt 2>/dev/null || echo 2); test "$RC" -eq 0 || adb bugreport reports/github_actions_runtime/bugreport.zip || true
+            RC=$(cat reports/github_actions_runtime/test_exit_code.txt 2>/dev/null || echo 2); exit "$RC"
 
       - name: Upload runtime evidence
         if: always()
