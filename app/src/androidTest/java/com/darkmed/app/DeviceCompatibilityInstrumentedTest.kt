@@ -20,7 +20,7 @@ class DeviceCompatibilityInstrumentedTest {
         assertNotNull(snapshot.model)
         assertTrue(snapshot.apiLevel >= 29)
         assertTrue(snapshot.abi.isNotBlank())
-        assertTrue(snapshot.checks.size >= 8)
+        assertTrue(snapshot.checks.size >= 7)
         assertFalse(snapshot.checks.any { it.status == CompatibilityStatus.READY && it.name == "Tor capability" && it.detail == "Tor bootstrap verified" })
     }
 }

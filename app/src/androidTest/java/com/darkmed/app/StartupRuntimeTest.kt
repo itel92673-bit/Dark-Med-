@@ -11,10 +11,12 @@ class StartupRuntimeTest {
     @Test
     fun mainActivityReachesResumedWithoutBiometricGate() {
         ActivityScenario.launch(MainActivity::class.java).use { scenario ->
+            var activityClassName = ""
             scenario.onActivity { activity ->
-                assertEquals(androidx.lifecycle.Lifecycle.State.RESUMED, scenario.state)
-                assertEquals(MainActivity::class.java.name, activity.javaClass.name)
+                activityClassName = activity.javaClass.name
             }
+            assertEquals(androidx.lifecycle.Lifecycle.State.RESUMED, scenario.state)
+            assertEquals(MainActivity::class.java.name, activityClassName)
         }
     }
 }
