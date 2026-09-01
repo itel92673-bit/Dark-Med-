@@ -72,7 +72,6 @@ jobs:
           emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
           disable-animations: true
           script: |
-            set -o pipefail
             mkdir -p reports/github_actions_runtime
             adb wait-for-device
             adb shell getprop > reports/github_actions_runtime/getprop.txt
@@ -84,10 +83,9 @@ jobs:
               PCAP_MODE=AVAILABLE
             fi
             echo "tcpdump=$PCAP_MODE" > reports/github_actions_runtime/pcap_status.txt
-            set +e
-            ./gradlew connectedDebugAndroidTest --no-daemon --stacktrace 2>&1 | tee reports/github_actions_runtime/instrumentation.log
-            TEST_RC=${PIPESTATUS[0]}
-            set -e
+            ./gradlew connectedDebugAndroidTest --no-daemon --stacktrace > reports/github_actions_runtime/instrumentation.log 2>&1
+            TEST_RC=$?
+            cat reports/github_actions_runtime/instrumentation.log
             adb logcat -d > reports/github_actions_runtime/logcat.txt || true
             adb shell dumpsys meminfo com.darkmed.app > reports/github_actions_runtime/meminfo.txt || true
             adb shell dumpsys package com.darkmed.app > reports/github_actions_runtime/package_state.txt || true
