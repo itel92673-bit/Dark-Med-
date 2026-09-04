@@ -1,0 +1,10 @@
+test_id,test,device,api,static,runtime,packet_capture,ipv4,ipv6,dns,failure_injection,result,reason
+LEAK-001,TUN/Hev startup failure,local software emulator API34,34,PASS,NOT RUN,NONE,UNKNOWN,UNKNOWN,UNKNOWN,NOT RUN,BLOCKED,APK installation blocked by PackageManagerInternal.freeStorage NPE
+LEAK-002,DNS leak,none,NA,PASS,NOT RUN,NONE,UNKNOWN,UNKNOWN,UNKNOWN,NOT RUN,NOT RUN,No runtime DNS capture or independent resolver evidence
+LEAK-003,IPv6 leak,none,NA,PASS,NOT RUN,NONE,UNKNOWN,UNKNOWN,UNKNOWN,NOT RUN,NOT RUN,No dual-stack runtime or packet capture
+LEAK-004,Reconnect/background,none,NA,PASS,NOT RUN,NONE,UNKNOWN,UNKNOWN,UNKNOWN,NOT RUN,NOT RUN,No Android device runtime
+LEAK-005,UDP/QUIC,none,NA,PASS,NOT RUN,NONE,UNKNOWN,UNKNOWN,UNKNOWN,NOT RUN,NOT RUN,No traffic generator/capture runtime
+LEAK-006,Direct sockets,source repository,NA,PASS,NOT RUN,NONE,UNKNOWN,UNKNOWN,UNKNOWN,NOT RUN,UNKNOWN,Static inventory only; runtime attribution unavailable
+LEAK-007,Tor upstream protection,source repository,NA,PASS,NOT RUN,NONE,UNKNOWN,UNKNOWN,UNKNOWN,NOT RUN,BLOCKED,Callback path inspected; protect=false runtime injection not executed
+LEAK-008,Kill switch,none,NA,PASS,NOT RUN,NONE,UNKNOWN,UNKNOWN,UNKNOWN,NOT RUN,BLOCKED,Android lockdown and direct-egress capture unavailable
+LEAK-009,Tor ControlPort/NEWNYM,none,NA,PASS,NOT RUN,NONE,UNKNOWN,UNKNOWN,UNKNOWN,NOT RUN,NOT RUN,No Tor runtime/control response evidence

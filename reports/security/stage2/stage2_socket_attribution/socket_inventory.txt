@@ -1,0 +1,275 @@
+=== JAVA/KOTLIN OUTBOUND SYMBOLS ===
+app/src/main/java/com/darkmed/app/core/BrowserSessionActivity.kt:15:import android.webkit.WebView
+app/src/main/java/com/darkmed/app/core/BrowserSessionActivity.kt:16:import android.webkit.WebViewClient
+app/src/main/java/com/darkmed/app/core/BrowserSessionActivity.kt:20: * Real WebView host. Each manifest subclass is assigned a dedicated Android
+app/src/main/java/com/darkmed/app/core/BrowserSessionActivity.kt:21: * process so WebView.setDataDirectorySuffix can provide process-level storage
+app/src/main/java/com/darkmed/app/core/BrowserSessionActivity.kt:27:    private lateinit var webView: WebView
+app/src/main/java/com/darkmed/app/core/BrowserSessionActivity.kt:37:        WebViewSessionInitializer.initialize(
+app/src/main/java/com/darkmed/app/core/BrowserSessionActivity.kt:54:        webView = WebView(this)
+app/src/main/java/com/darkmed/app/core/BrowserSessionActivity.kt:55:        webView.webViewClient = object : WebViewClient() {
+app/src/main/java/com/darkmed/app/core/BrowserSessionActivity.kt:56:            override fun shouldOverrideUrlLoading(view: WebView, request: android.webkit.WebResourceRequest): Boolean {
+app/src/main/java/com/darkmed/app/core/BrowserSessionActivity.kt:57:                return !WebViewSecurityPolicy.isAllowedNavigation(request.url)
+app/src/main/java/com/darkmed/app/core/BrowserSessionActivity.kt:63:        val initialUrl = if (requestedUrl != null && WebViewSecurityPolicy.isAllowedNavigation(requestedUrl)) {
+app/src/main/java/com/darkmed/app/core/BrowserSessionIsolation.kt:3:import android.webkit.WebView
+app/src/main/java/com/darkmed/app/core/BrowserSessionIsolation.kt:6: * Session metadata used by the process-level WebView isolation policy.
+app/src/main/java/com/darkmed/app/core/BrowserSessionIsolation.kt:14:object WebViewSessionInitializer {
+app/src/main/java/com/darkmed/app/core/BrowserSessionIsolation.kt:21:            error("WebView data directory is already initialized for another session in this process; use a dedicated Android process")
+app/src/main/java/com/darkmed/app/core/BrowserSessionIsolation.kt:24:            WebView.setDataDirectorySuffix(session.dataDirectorySuffix)
+app/src/main/java/com/darkmed/app/core/DeviceCompatibility.kt:8:import android.webkit.WebView
+app/src/main/java/com/darkmed/app/core/DeviceCompatibility.kt:44:        val webViewVersion = runCatching { WebView.getCurrentWebViewPackage()?.versionName ?: "unavailable" }.getOrDefault("unavailable")
+app/src/main/java/com/darkmed/app/core/DeviceCompatibility.kt:55:            CompatibilityCheck("WebView", if (webViewVersion == "unavailable") CompatibilityStatus.UNSUPPORTED else CompatibilityStatus.READY, webViewVersion),
+app/src/main/java/com/darkmed/app/core/WebViewSecurityPolicy.kt:6:object WebViewSecurityPolicy {
+=== NATIVE OUTBOUND SYMBOLS ===
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/api_lib.c:377:netconn_connect(struct netconn *conn, const ip_addr_t *addr, u16_t port)
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/api_lib.c:409:netconn_disconnect(struct netconn *conn)
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/api_lib.c:922:netconn_sendto(struct netconn *conn, struct netbuf *buf, const ip_addr_t *addr, u16_t port)
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/api_msg.c:1354:lwip_netconn_do_connect(void *m)
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/api_msg.c:1360:    /* This may happen when calling netconn_connect() a second time */
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/api_msg.c:1366:        err = raw_connect(msg->conn->pcb.raw, API_EXPR_REF(msg->msg.bc.ipaddr));
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/api_msg.c:1371:        err = udp_connect(msg->conn->pcb.udp, API_EXPR_REF(msg->msg.bc.ipaddr), msg->msg.bc.port);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/api_msg.c:1383:          err = tcp_connect(msg->conn->pcb.tcp, API_EXPR_REF(msg->msg.bc.ipaddr),
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/api_msg.c:1416:  /* For all other protocols, netconn_connect() calls netconn_apimsg(),
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/api_msg.c:1429:lwip_netconn_do_disconnect(void *m)
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/api_msg.c:1435:    udp_disconnect(msg->conn->pcb.udp);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/api_msg.c:1549:            err = raw_sendto(msg->conn->pcb.raw, msg->msg.b->p, &msg->msg.b->addr);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/api_msg.c:1568:            err = udp_sendto(msg->conn->pcb.udp, msg->msg.b->p, &msg->msg.b->addr, msg->msg.b->port);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/netdb.c:234: * Frees one or more addrinfo structures returned by getaddrinfo(), along with
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/netdb.c:274:lwip_getaddrinfo(const char *nodename, const char *servname,
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:206:#define LWIP_SOCKOPT_CHECK_OPTLEN(sock, optlen, opttype) do { if ((optlen) < sizeof(opttype)) { done_socket(sock); return EINVAL; }}while(0)
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:209:  if ((sock)->conn == NULL) { done_socket(sock); return EINVAL; } }while(0)
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:212:  if (((sock)->conn == NULL) || ((sock)->conn->pcb.tcp == NULL)) { done_socket(sock); return EINVAL; } }while(0)
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:215:  if (NETCONNTYPE_GROUP(netconn_type((sock)->conn)) != netconntype) { done_socket(sock); return ENOPROTOOPT; } }while(0)
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:226:    done_socket(sock); \
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:416:done_socket(struct lwip_sock *sock)
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:445:#define done_socket(sock)
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:461:lwip_socket_dbg_get_socket(int fd)
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:499:tryget_socket(int fd)
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:506:    done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:518:get_socket(int fd)
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:520:  struct lwip_sock *sock = tryget_socket(fd);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:523:      LWIP_DEBUGF(SOCKETS_DEBUG, ("get_socket(%d): invalid\n", fd));
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:536: *                 0 if socket has been created by socket()
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:540:alloc_socket(struct netconn *newconn, int accepted)
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:633:free_socket(struct lwip_sock *sock, int is_tcp)
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:671:  sock = get_socket(s);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:687:    done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:692:  newsock = alloc_socket(newconn, 1);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:696:    done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:711:      free_socket(nsock, 1);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:713:      done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:752:  done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:753:  done_socket(nsock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:765:  sock = get_socket(s);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:773:    done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:780:             set_errno(err_to_errno(ERR_ARG)); done_socket(sock); return -1;);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:801:    done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:807:  done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:820:  sock = get_socket(s);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:843:    done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:847:  free_socket(sock, is_tcp);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:853:lwip_connect(int s, const struct sockaddr *name, socklen_t namelen)
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:858:  sock = get_socket(s);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:866:    done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:872:    LWIP_DEBUGF(SOCKETS_DEBUG, ("lwip_connect(%d, AF_UNSPEC)\n", s));
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:873:    err = netconn_disconnect(sock->conn);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:881:               set_errno(err_to_errno(ERR_ARG)); done_socket(sock); return -1;);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:884:    LWIP_DEBUGF(SOCKETS_DEBUG, ("lwip_connect(%d, addr=", s));
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:896:    err = netconn_connect(sock->conn, &remote_addr, remote_port);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:900:    LWIP_DEBUGF(SOCKETS_DEBUG, ("lwip_connect(%d) failed, err=%d\n", s, err));
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:902:    done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:906:  LWIP_DEBUGF(SOCKETS_DEBUG, ("lwip_connect(%d) succeeded\n", s));
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:908:  done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:928:  sock = get_socket(s);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:945:    done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:950:  done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:1239:lwip_recvfrom(int s, void *mem, size_t len, int flags,
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:1245:  LWIP_DEBUGF(SOCKETS_DEBUG, ("lwip_recvfrom(%d, %p, %"SZT_F", 0x%x, ..)\n", s, mem, len, flags));
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:1246:  sock = get_socket(s);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:1254:    done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:1277:      done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:1287:  done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:1294:  return lwip_recvfrom(s, mem, len, 0, NULL, NULL);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:1317:  return lwip_recvfrom(s, mem, len, flags, NULL, NULL);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:1337:  sock = get_socket(s);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:1349:      done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:1385:    done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:1389:    done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:1403:      done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:1411:    done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:1416:  done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:1432:  sock = get_socket(s);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:1439:    done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:1440:    return lwip_sendto(s, data, size, flags, NULL, 0);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:1443:    done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:1456:  done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:1471:  sock = get_socket(s);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:1477:             set_errno(err_to_errno(ERR_ARG)); done_socket(sock); return -1;);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:1479:             set_errno(err_to_errno(ERR_ARG)); done_socket(sock); return -1;);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:1481:             set_errno(EMSGSIZE); done_socket(sock); return -1;);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:1483:             set_errno(EOPNOTSUPP); done_socket(sock); return -1;);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:1498:    done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:1503:    done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:1517:               set_errno(err_to_errno(ERR_ARG)); done_socket(sock); return -1;);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:1609:    done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:1614:    done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:1619:  done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:1625:lwip_sendto(int s, const void *data, size_t size, int flags,
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:1634:  sock = get_socket(s);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:1641:    done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:1646:    done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:1654:    done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:1661:             set_errno(err_to_errno(ERR_ARG)); done_socket(sock); return -1;);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:1678:  LWIP_DEBUGF(SOCKETS_DEBUG, ("lwip_sendto(%d, data=%p, short_size=%"U16_F", flags=0x%x to=",
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:1720:  done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:1725:lwip_socket(int domain, int type, int protocol)
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:1737:      LWIP_DEBUGF(SOCKETS_DEBUG, ("lwip_socket(%s, SOCK_RAW, %d) = ",
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:1744:      LWIP_DEBUGF(SOCKETS_DEBUG, ("lwip_socket(%s, SOCK_DGRAM, %d) = ",
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:1755:      LWIP_DEBUGF(SOCKETS_DEBUG, ("lwip_socket(%s, SOCK_STREAM, %d) = ",
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:1759:      LWIP_DEBUGF(SOCKETS_DEBUG, ("lwip_socket(%d, %d/UNKNOWN, %d) = -1\n",
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:1771:  i = alloc_socket(conn, 0);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:1779:  done_socket(&sockets[i - LWIP_SOCKET_OFFSET]);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:1925:      done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:1993:        done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:2095:              done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:2100:            done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:2274:            done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:2285:        done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:2355:        done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:2555:    sock = get_socket(s);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:2607:  done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:2710:  sock = get_socket(s);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:2718:      done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:2723:    done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:2736:    done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:2742:  done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:2755:  sock = get_socket(s);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:2764:    done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:2789:  done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:2809:  struct lwip_sock *sock = get_socket(s);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:2821:    done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:2837:    done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:2860:    done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:2878:  done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:2945:    done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:2955:    done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:2975:  struct lwip_sock *sock = tryget_socket(s);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:2982:    done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:2997:            done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:3016:            done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:3097:            done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:3131:            done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:3141:            done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:3173:        done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:3246:        done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:3291:  done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:3299:  struct lwip_sock *sock = get_socket(s);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:3311:    done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:3327:    done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:3352:    done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:3363:  done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:3397:  struct lwip_sock *sock = tryget_socket(s);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:3404:    done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:3425:            done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:3450:            done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:3463:            done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:3483:              done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:3502:            done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:3523:              done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:3647:        done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:3765:        done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:3822:  done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:3829:  struct lwip_sock *sock = get_socket(s);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:3844:        done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:3863:        done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:3887:      done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:3902:      done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:3910:  done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:3922:  struct lwip_sock *sock = get_socket(s);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:3984:  done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:4075:  struct lwip_sock *sock = get_socket(s);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:4087:      done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:4091:  done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:4103:  struct lwip_sock *sock = get_socket(s);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:4120:  done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:4130:  struct lwip_sock *sock = get_socket(s);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:4149:  done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:4163:  struct lwip_sock *sock = get_socket(s);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:4175:      done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:4179:  done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:4191:  struct lwip_sock *sock = get_socket(s);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:4208:  done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:4218:  struct lwip_sock *sock = get_socket(s);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/api/sockets.c:4240:  done_socket(sock);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/core/altcp.c:313: * @see tcp_connect()
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/core/altcp.c:316:altcp_connect(struct altcp_pcb *conn, const ip_addr_t *ipaddr, u16_t port, altcp_connected_fn connected)
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/core/altcp.c:319:    return conn->fns->connect(conn, ipaddr, port, connected);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/core/altcp_tcp.c:272:altcp_tcp_connect(struct altcp_pcb *conn, const ip_addr_t *ipaddr, u16_t port, altcp_connected_fn connected)
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/core/altcp_tcp.c:281:  return tcp_connect(pcb, ipaddr, port, altcp_tcp_connected);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/core/dns.c:869:    err = udp_sendto(dns_pcbs[pcb_idx], p, dst, dst_port);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/core/ipv4/dhcp.c:289:    udp_connect(dhcp_pcb, IP4_ADDR_ANY, LWIP_IANA_PORT_DHCP_SERVER);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/core/ipv4/dhcp.c:1058:    LWIP_DEBUGF(DHCP_DEBUG | LWIP_DBG_TRACE, ("dhcp_discover: sendto(DISCOVER, IP_ADDR_BROADCAST, LWIP_IANA_PORT_DHCP_SERVER)\n"));
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/core/raw.c:218: * @see raw_disconnect()
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/core/raw.c:250: * @see raw_disconnect()
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/core/raw.c:266: * of lwip. Using the raw api you could use raw_sendto() instead
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/core/raw.c:275: * @see raw_disconnect() and raw_sendto()
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/core/raw.c:278:raw_connect(struct raw_pcb *pcb, const ip_addr_t *ipaddr)
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/core/raw.c:304:raw_disconnect(struct raw_pcb *pcb)
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/core/raw.c:354:raw_sendto(struct raw_pcb *pcb, struct pbuf *p, const ip_addr_t *ipaddr)
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/core/raw.c:540: * Send the raw IP packet to the address given by raw_connect()
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/core/raw.c:549:  return raw_sendto(pcb, p, &pcb->remote_ip);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/core/tcp.c:26: * - tcp_connect()
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/core/tcp.c:1066: * The tcp_connect() function returns immediately; it does not wait for
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/core/tcp.c:1075: * The tcp_connect() function can return ERR_MEM if no memory is
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/core/tcp.c:1077: * enqueued successfully, the tcp_connect() function returns ERR_OK.
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/core/tcp.c:1089:tcp_connect(struct tcp_pcb *pcb, const ip_addr_t *ipaddr, u16_t port,
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/core/udp.c:501: * @see udp_disconnect() udp_sendto()
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/core/udp.c:514:  return udp_sendto(pcb, p, &pcb->remote_ip, pcb->remote_port);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/core/udp.c:551: * @see udp_disconnect() udp_send()
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/core/udp.c:591: * @see udp_disconnect() udp_send()
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/core/udp.c:594:udp_sendto(struct udp_pcb *pcb, struct pbuf *p,
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/core/udp.c:602: * Same as udp_sendto(), but with checksum */
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/core/udp.c:695: * @see udp_disconnect() udp_send()
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/core/udp.c:1003: * @see udp_disconnect()
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/core/udp.c:1132: * @see udp_disconnect()
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/core/udp.c:1161: * @see udp_disconnect()
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/core/udp.c:1164:udp_connect(struct udp_pcb *pcb, const ip_addr_t *ipaddr, u16_t port)
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/core/udp.c:1219:udp_disconnect(struct udp_pcb *pcb)
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/netif/ppp/auth.c:566:    devfd = the_channel->connect();
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/netif/ppp/auth.c:607:	the_channel->disconnect();
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/netif/ppp/auth.c:679:	the_channel->disconnect();
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/netif/ppp/ppp.c:204:static void ppp_do_connect(void *arg);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/netif/ppp/ppp.c:275:err_t ppp_connect(ppp_pcb *pcb, u16_t holdoff) {
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/netif/ppp/ppp.c:286:    ppp_do_connect(pcb);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/netif/ppp/ppp.c:459:static void ppp_do_connect(void *arg) {
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/netif/ppp/ppp.c:465:  pcb->link_cb->connect(pcb, pcb->link_ctx_cb);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/netif/ppp/ppp.c:1011:  pcb->link_cb->disconnect(pcb, pcb->link_ctx_cb);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/netif/ppp/pppapi.c:268: * Call ppp_connect() inside the tcpip_thread context.
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/netif/ppp/pppapi.c:271:pppapi_do_ppp_connect(struct tcpip_api_call_data *m)
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/netif/ppp/pppapi.c:277:  return ppp_connect(msg->msg.ppp, msg->msg.msg.connect.holdoff);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/netif/ppp/pppapi.c:281: * Call ppp_connect() in a thread-safe way by running that function inside the
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/netif/ppp/pppapi.c:285:pppapi_connect(ppp_pcb *pcb, u16_t holdoff)
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/netif/ppp/pppoe.c:122:static void pppoe_connect(ppp_pcb *ppp, void *ctx);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/netif/ppp/pppoe.c:123:static void pppoe_disconnect(ppp_pcb *ppp, void *ctx);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/netif/ppp/pppoe.c:127:static void pppoe_abort_connect(struct pppoe_softc *);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/netif/ppp/pppoe.c:865:          pppoe_abort_connect(sc);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/netif/ppp/pppoe.c:904:pppoe_connect(ppp_pcb *ppp, void *ctx)
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/netif/ppp/pppoe.c:962:pppoe_disconnect(ppp_pcb *ppp, void *ctx)
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/netif/ppp/pppoe.c:987:pppoe_abort_connect(struct pppoe_softc *sc)
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/netif/ppp/pppol2tp.c:76:static void pppol2tp_connect(ppp_pcb *ppp, void *ctx);    /* Be a LAC, connect to a LNS. */
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/netif/ppp/pppol2tp.c:77:static void pppol2tp_disconnect(ppp_pcb *ppp, void *ctx);  /* Disconnect */
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/netif/ppp/pppol2tp.c:83:static void pppol2tp_abort_connect(pppol2tp_pcb *l2tp);
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/netif/ppp/pppol2tp.c:261:static void pppol2tp_connect(ppp_pcb *ppp, void *ctx) {
+app/src/main/jni/hev-socks5-tunnel/third-part/lwip/src/netif/ppp/pppol2tp.c:305:  /* Listen to a random source port, we need to do that instead of using udp_connect()
+=== JNI PROTECTION SYMBOLS ===
+app/src/main/jni/hev-socks5-tunnel/third-part/hev-task-system/src/lib/io/socket/hev-task-io-socket.c:22:static HevTaskIOSocketProtect g_protect_callback;
+app/src/main/jni/hev-socks5-tunnel/third-part/hev-task-system/src/lib/io/socket/hev-task-io-socket.c:25:hev_task_io_socket_set_protect_callback (HevTaskIOSocketProtect callback)
+app/src/main/jni/hev-socks5-tunnel/third-part/hev-task-system/src/lib/io/socket/hev-task-io-socket.c:27:    g_protect_callback = callback;
+app/src/main/jni/hev-socks5-tunnel/third-part/hev-task-system/src/lib/io/socket/hev-task-io-socket.c:40:    if (fd >= 0 && g_protect_callback != NULL && !g_protect_callback (fd)) {
+app/src/main/jni/darkmed_tun2socks_jni.cpp:30:    hev_task_io_socket_set_protect_callback(nullptr);
+app/src/main/jni/darkmed_tun2socks_jni.cpp:33:int protect_socket(int fd) {
+app/src/main/jni/darkmed_tun2socks_jni.cpp:44:    const jboolean result = env->CallBooleanMethod(g_protector, g_protect_method, fd);
+app/src/main/jni/darkmed_tun2socks_jni.cpp:91:    hev_task_io_socket_set_protect_callback(protect_socket);
+=== STATIC CONCLUSION ===
+Static inventory cannot prove runtime attribution or leak absence.
+Hev socket creation invokes protect callback; callback false closes fd and returns -3.
+Tor library sockets outside Hev callback remain runtime-unverified.

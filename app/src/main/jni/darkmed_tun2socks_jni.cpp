@@ -13,6 +13,7 @@ extern "C" {
 
 namespace {
 std::mutex g_mutex;
+std::mutex g_protector_mutex;
 std::thread g_worker;
 std::atomic<bool> g_running{false};
 std::atomic<int> g_last_result{0};
@@ -21,16 +22,18 @@ jobject g_protector = nullptr;
 jmethodID g_protect_method = nullptr;
 
 void clear_protector(JNIEnv* env) {
+    std::lock_guard<std::mutex> lock(g_protector_mutex);
+    hev_task_io_socket_set_protect_callback(nullptr);
     if (g_protector != nullptr) {
         env->DeleteGlobalRef(g_protector);
         g_protector = nullptr;
     }
     g_protect_method = nullptr;
     g_vm = nullptr;
-    hev_task_io_socket_set_protect_callback(nullptr);
 }
 
 int protect_socket(int fd) {
+    std::lock_guard<std::mutex> lock(g_protector_mutex);
     if (g_vm == nullptr || g_protector == nullptr || g_protect_method == nullptr) return 0;
     JNIEnv* env = nullptr;
     bool attached = false;
@@ -88,7 +91,10 @@ Java_com_darkmed_app_core_HevTun2Socks_startNative(JNIEnv* env, jobject, jstring
         env->ReleaseStringUTFChars(config_path, path);
         return JNI_FALSE;
     }
-    hev_task_io_socket_set_protect_callback(protect_socket);
+    {
+        std::lock_guard<std::mutex> protector_lock(g_protector_mutex);
+        hev_task_io_socket_set_protect_callback(protect_socket);
+    }
     g_last_result.store(0, std::memory_order_release);
     g_running.store(true, std::memory_order_release);
     try {

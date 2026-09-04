@@ -1,0 +1,41 @@
+{
+  "source_commit": "c7c583863792a47c5e09d841861557509b8785ec",
+  "tested_build": "local working tree after fail-closed state-machine and JNI protector-lifecycle changes; differs from baseline commit",
+  "apk": {
+    "path": "deliverables/stage2/Dark_Med_Stage2_release.apk",
+    "sha256": "972f343f8f7c5fdd2ac7d7e1c865af29b3a62687bb416ffb556c52810fe44022",
+    "signing": "debug/release configuration status remains a release blocker unless production key is supplied"
+  },
+  "local_runtime": {
+    "emulator": "darkmed_api34",
+    "api": 34,
+    "adb": "online intermittently",
+    "kvm": false,
+    "boot_completed": false,
+    "apk_install": "blocked",
+    "install_error": "PackageManagerInternal.freeStorage NullPointerException",
+    "evidence": [
+      "reports/security/stage2/stage2_logs/install_latest.txt",
+      "reports/security/audit_evidence/local_api34_getprop_restart.txt",
+      "reports/security/audit_evidence/local_api34_pm_probe_latest.txt"
+    ]
+  },
+  "build": {
+    "unit_tests": "PASS",
+    "lint_debug": "PASS",
+    "assemble_debug": "PASS",
+    "assemble_release": "PASS",
+    "diff_check": "PASS"
+  },
+  "network_gates": {
+    "vpn_tun": "BLOCKED",
+    "dns_leak": "NOT RUN",
+    "ipv4_leak": "NOT RUN",
+    "ipv6_leak": "NOT RUN",
+    "kill_switch": "BLOCKED",
+    "tor_bootstrap": "NOT RUN",
+    "socks": "NOT RUN",
+    "newnym": "NOT RUN",
+    "packet_capture": "NOT AVAILABLE"
+  }
+}
