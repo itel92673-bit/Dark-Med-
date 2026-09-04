@@ -1,5 +1,6 @@
 {
-  "source_commit": "c7c583863792a47c5e09d841861557509b8785ec",
+  "baseline_commit": "c7c583863792a47c5e09d841861557509b8785ec",
+  "tested_source_commit": "56d0a77f09d20b44487ba297c6ac3052c1190a13",
   "tested_build": "local working tree after fail-closed state-machine and JNI protector-lifecycle changes; differs from baseline commit",
   "apk": {
     "path": "deliverables/stage2/Dark_Med_Stage2_release.apk",

@@ -43,3 +43,9 @@ The machine-readable matrix is `stage2_leak_matrix.csv`. No leak-prevention gate
 ## Security decision
 
 The local code change and regression tests are PASS at the code/build level. They do not prove packet routing, absence of DNS/IP/IPv6 leaks, Tor upstream protection, or kill-switch behavior. The Stage 2 release gate is therefore **NO-GO**. The mandatory next evidence is a stable Android runtime—preferably a physical Android device or a CI emulator with completed boot and network observation—plus packet capture and independently observed external IP/DNS evidence for every mandatory leak test.
+
+## GitHub Actions runtime evidence
+
+GitHub Actions run `33829430812` completed successfully at commit `56d0a77f09d20b44487ba297c6ac3052c1190a13`: [run link](https://github.com/itel92673-bit/Dark-Med-/actions/runs/33829430812). The matrix executed on API 29, 30, 31, 33 and 34. Each API artifact reports six passing instrumentation tests with zero failures, zero errors and zero skipped tests: `DeviceCompatibilityInstrumentedTest`, `PlatformSmokeTest` and `StartupRuntimeTest`.
+
+This is valid runtime evidence for emulator startup/manifest/compatibility smoke coverage, including MainActivity reaching the resumed lifecycle state without a biometric gate. It is not evidence for VPN/TUN packet forwarding, DNS leak absence, IPv4/IPv6 leak absence, Kill Switch, Tor bootstrap, SOCKS, NEWNYM, UDP/QUIC, or packet-level fail-closed behavior. The artifact inventory contains no LEAK-001 through LEAK-009 acceptance tests and no packet capture proving direct egress equals zero.

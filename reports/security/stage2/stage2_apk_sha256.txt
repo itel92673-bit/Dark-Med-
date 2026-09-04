@@ -1,1 +1,1 @@
-b8395d995c7e0b664b50c205688a03bd16c3f346add46a9de32ed623e2c67582  deliverables/stage2/Dark_Med_Stage2_release.apk
+972f343f8f7c5fdd2ac7d7e1c865af29b3a62687bb416ffb556c52810fe44022  deliverables/stage2/Dark_Med_Stage2_release.apk
