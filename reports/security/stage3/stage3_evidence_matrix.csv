@@ -1,0 +1,22 @@
+gate,status,evidence,qualification
+GitHub push path,PASS,gh auth status + repository API permissions + remote commit 7f9755ed52ffa062d671d2c7c3ea3d1399b6d033,Push is proven; no 403 remains in current session
+CI API 29,PASS,run 33938007467 artifact darkmed-runtime-qa-api-29-x86_64-33938007467,6 smoke tests passed; no network acceptance tests
+CI API 30,PASS,run 33938007467 artifact darkmed-runtime-qa-api-30-x86_64-33938007467,6 smoke tests passed; no network acceptance tests
+CI API 31,PASS,run 33938007467 artifact darkmed-runtime-qa-api-31-x86_64-33938007467,6 smoke tests passed; no network acceptance tests
+CI API 33,PASS,run 33938007467 artifact darkmed-runtime-qa-api-33-x86_64-33938007467,6 smoke tests passed; no network acceptance tests
+CI API 34,PASS,run 33938007467 artifact darkmed-runtime-qa-api-34-x86_64-33938007467,6 smoke tests passed; no network acceptance tests
+Dashboard startup,PASS,StartupRuntimeTest in all five artifacts,Emulator runtime evidence only
+Biometric startup removal,PASS,static audit plus StartupRuntimeTest,Not a network proof
+VPN/TUN forwarding,BLOCKED,no independent packet capture,No end-to-end path evidence
+DNS leak absence,NOT RUN,no independent DNS observation and valid pcap,No PASS from addDnsServer configuration
+IPv4 leak absence,NOT RUN,no external IP correlation plus pcap,No direct-egress proof
+IPv6 leak absence,NOT RUN,no dual-stack observation plus pcap,No IPv6 proof
+UDP/QUIC,NOT RUN,no generated traffic and packet observation,Unknown behavior
+Tor bootstrap,NOT RUN,no runtime bootstrap log,Source integration is not runtime proof
+SOCKS probe,NOT RUN,no runtime listener probe,No proof of functional SOCKS
+ControlPort authentication,NOT RUN,no authenticated response,No proof
+NEWNYM,NOT RUN,no authenticated NEWNYM response,No proof
+Kill Switch,BLOCKED,no failure injection with independent egress observation,Application state alone is insufficient
+protect(false) runtime,NOT RUN,static semantics only,Runtime injection absent
+Physical device,BLOCKED,no ADB or physical Android device,Infinix X6532 not tested
+Production signing,BLOCKED,no production keystore,Current APK cannot be certified as production signed
