@@ -6,7 +6,7 @@
 
 ## Repository and GitHub evidence
 
-الـrepository هو [itel92673-bit/Dark-Med-](https://github.com/itel92673-bit/Dark-Med-). الهوية المصادق عليها هي `itel92673-bit`، وGitHub API أظهر صلاحية `push=true` و`admin=true` للمستودع. الـcommit المطلوب `7f9755ed52ffa062d671d2c7c3ea3d1399b6d033` موجود فعلًا على GitHub. الفرع `main` يتقدم عليه حاليًا commit توثيقي هو `3576225d2dff6aa34e2e91bc3795f2dac0905844`، ولا توجد حاجة لإعادة رفع commit 7f لأنه موجود في تاريخ المستودع.
+الـrepository هو [itel92673-bit/Dark-Med-](https://github.com/itel92673-bit/Dark-Med-). الهوية المصادق عليها هي `itel92673-bit`، وGitHub API أظهر صلاحية `push=true` و`admin=true` للمستودع. الـcommit المطلوب `7f9755ed52ffa062d671d2c7c3ea3d1399b6d033` موجود فعلًا على GitHub. الفرع `main` يتقدم عليه حاليًا commit Stage 3 توثيقي هو `42c95387695f2d8d83179c566fe13d668a92ffbe`، ولا توجد حاجة لإعادة رفع commit 7f لأنه موجود في تاريخ المستودع.
 
 ## CI runtime evidence
 
@@ -67,4 +67,4 @@
 
 **NO-GO**. تم إحراز أقصى نتيجة قابلة للإثبات داخل البيئة الحالية: GitHub يعمل، CI يعمل، وAndroid Emulator runtime smoke ناجح على API 29/30/31/33/34. البوابات الأساسية التي تمنع GO هي packet-level network validation، external IPv4/IPv6/DNS observation، runtime Tor/SOCKS/ControlPort evidence، Kill Switch failure injection مع قياس direct egress، واختبار جهاز حقيقي.
 
-لا يتطلب عائق GitHub الحالي تدخلًا إضافيًا؛ التدخل الخارجي الوحيد المتبقي هو توفير Android runtime حقيقي متصل بشبكة مراقبة مستقلة، أو جهاز Infinix X6532/هاتف Android فعلي مع ADB، مع نقطة مراقبة تستطيع إنتاج pcap وexternal-IP/DNS timestamps. بدون ذلك سيبقى القرار NO-GO عمدًا، وليس بسبب توقف التنفيذ.
+تمت إضافة baseline وsocket inventory وstate-machine matrix وpreflight harness وEVIDENCE_MANIFEST وacceptance matrix إلى Stage 3 في commit `42c95387695f2d8d83179c566fe13d668a92ffbe`. لا يتطلب عائق GitHub الحالي تدخلًا إضافيًا؛ التدخل الخارجي الوحيد المتبقي هو توفير Android runtime حقيقي متصل بشبكة مراقبة مستقلة، أو جهاز Infinix X6532/هاتف Android فعلي مع ADB، مع نقطة مراقبة تستطيع إنتاج pcap وexternal-IP/DNS timestamps. بدون ذلك سيبقى القرار NO-GO عمدًا، وليس بسبب توقف التنفيذ.
