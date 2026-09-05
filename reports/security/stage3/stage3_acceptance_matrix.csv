@@ -1,0 +1,13 @@
+test_id,property,status,evidence,apk_sha256,git_commit,environment,reason
+STAGE3-PREFLIGHT,runtime availability,BLOCKED,reports/security/stage3/runtime/preflight_20260905T182942Z.log,,31365de6745dcfa595a53a658fc6c12ce2bcc508,sandbox,ADB emulator tcpdump binaries unavailable
+LEAK-001,VPN/TUN forwarding,BLOCKED,no independent packet capture,b7b992f2eaca85df3bb67e874b751e6f1a6f97ebb80de384002048b3579ce016,31365de6745dcfa595a53a658fc6c12ce2bcc508,GitHub emulator smoke only,end-to-end path not observed
+LEAK-002,DNS leak,NOT PROVEN,no external DNS observation,b7b992f2eaca85df3bb67e874b751e6f1a6f97ebb80de384002048b3579ce016,31365de6745dcfa595a53a658fc6c12ce2bcc508,GitHub emulator smoke only,addDnsServer is not proof
+LEAK-003,IPv4 leak,NOT PROVEN,no external IP plus pcap,b7b992f2eaca85df3bb67e874b751e6f1a6f97ebb80de384002048b3579ce016,31365de6745dcfa595a53a658fc6c12ce2bcc508,GitHub emulator smoke only,no independent egress observation
+LEAK-004,IPv6 leak,NOT PROVEN,no dual-stack pcap/external observer,b7b992f2eaca85df3bb67e874b751e6f1a6f97ebb80de384002048b3579ce016,31365de6745dcfa595a53a658fc6c12ce2bcc508,GitHub emulator smoke only,no IPv6 proof
+LEAK-005,UDP/QUIC,NOT RUN,no generated UDP/QUIC traffic,b7b992f2eaca85df3bb67e874b751e6f1a6f97ebb80de384002048b3579ce016,31365de6745dcfa595a53a658fc6c12ce2bcc508,GitHub emulator smoke only,not exercised
+LEAK-006,Tor bootstrap,NOT RUN,no bootstrap 100% transcript,b7b992f2eaca85df3bb67e874b751e6f1a6f97ebb80de384002048b3579ce016,31365de6745dcfa595a53a658fc6c12ce2bcc508,GitHub emulator smoke only,not exercised
+LEAK-007,SOCKS/ControlPort/NEWNYM,NOT RUN,no authenticated runtime probes,b7b992f2eaca85df3bb67e874b751e6f1a6f97ebb80de384002048b3579ce016,31365de6745dcfa595a53a658fc6c12ce2bcc508,GitHub emulator smoke only,not exercised
+LEAK-008,Kill Switch,BLOCKED,no failure injection plus independent egress,b7b992f2eaca85df3bb67e874b751e6f1a6f97ebb80de384002048b3579ce016,31365de6745dcfa595a53a658fc6c12ce2bcc508,GitHub emulator smoke only,direct egress not observed
+LEAK-009,protect(false),NOT RUN,no Android runtime injection,b7b992f2eaca85df3bb67e874b751e6f1a6f97ebb80de384002048b3579ce016,31365de6745dcfa595a53a658fc6c12ce2bcc508,sandbox,no adb/runtime
+BUILD-001,local regression build,PASS,reports/security/stage3/local/regression_build.log,b7b992f2eaca85df3bb67e874b751e6f1a6f97ebb80de384002048b3579ce016,31365de6745dcfa595a53a658fc6c12ce2bcc508,sandbox,BUILD SUCCESSFUL exit 0
+CI-001,API 29/30/31/33/34 smoke,PASS,run 33983649830,b7b992f2eaca85df3bb67e874b751e6f1a6f97ebb80de384002048b3579ce016,31365de6745dcfa595a53a658fc6c12ce2bcc508,GitHub KVM emulator,6 smoke tests per API

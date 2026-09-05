@@ -1,0 +1,4 @@
+# Dark Med Stage 3 — Socket Inventory Scan
+
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:268:    hev_task_dns_getaddrinfo (name, NULL, &hints, &result);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:268:    hev_task_dns_getaddrinfo (name, NULL, &hints, &result);

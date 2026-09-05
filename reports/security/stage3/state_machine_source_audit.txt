@@ -1,0 +1,586 @@
+===== app/src/main/java/com/darkmed/app/core/ProtectedRouteState.kt =====
+package com.darkmed.app.core
+
+enum class ProtectedRoutePhase {
+    STOPPED,
+    STARTING,
+    TUN_ESTABLISHED,
+    TOR_STARTING,
+    TOR_READY,
+    TUN2SOCKS_STARTING,
+    PROXY_READY,
+    PROTECTED,
+    READY,
+    DEGRADED,
+    STOPPING,
+    FAILED,
+    KILLED
+}
+
+data class ProtectedRouteState(
+    val phase: ProtectedRoutePhase = ProtectedRoutePhase.STOPPED,
+    val tunEstablished: Boolean = false,
+    val torReady: Boolean = false,
+    val proxyReady: Boolean = false,
+    val upstreamProtected: Boolean = false,
+    val fatalReason: String? = null
+) {
+    val isProtected: Boolean
+        get() = phase == ProtectedRoutePhase.READY &&
+            tunEstablished && torReady && proxyReady && upstreamProtected && fatalReason == null
+
+    val isFailClosed: Boolean
+        get() = phase in setOf(
+            ProtectedRoutePhase.DEGRADED,
+            ProtectedRoutePhase.FAILED,
+            ProtectedRoutePhase.KILLED,
+            ProtectedRoutePhase.STOPPING
+        ) || (tunEstablished && !isProtected)
+}
+
+object ProtectedRouteStateMachine {
+    fun starting(): ProtectedRouteState = ProtectedRouteState(phase = ProtectedRoutePhase.STARTING)
+
+    fun torStarting(state: ProtectedRouteState): ProtectedRouteState = state.copy(
+        phase = ProtectedRoutePhase.TOR_STARTING,
+        fatalReason = null
+    )
+
+    fun torReady(state: ProtectedRouteState): ProtectedRouteState = state.copy(
+        phase = ProtectedRoutePhase.TOR_READY,
+        torReady = true,
+        fatalReason = null
+    )
+
+    fun tunEstablished(state: ProtectedRouteState): ProtectedRouteState = state.copy(
+        phase = ProtectedRoutePhase.TUN_ESTABLISHED,
+        tunEstablished = true,
+        fatalReason = null
+    )
+
+    fun proxyStarting(state: ProtectedRouteState): ProtectedRouteState = state.copy(
+        phase = ProtectedRoutePhase.TUN2SOCKS_STARTING,
+        fatalReason = null
+    )
+
+    fun proxyReady(state: ProtectedRouteState, upstreamProtected: Boolean): ProtectedRouteState = state.copy(
+        phase = if (upstreamProtected) ProtectedRoutePhase.READY else ProtectedRoutePhase.DEGRADED,
+        proxyReady = true,
+        upstreamProtected = upstreamProtected,
+        fatalReason = if (upstreamProtected) null else "upstream socket protection was not verified"
+    )
+
+    fun failed(state: ProtectedRouteState, reason: String): ProtectedRouteState = state.copy(
+        phase = ProtectedRoutePhase.FAILED,
+        fatalReason = reason,
+        torReady = false,
+        proxyReady = false,
+        upstreamProtected = false
+    )
+
+    fun killed(state: ProtectedRouteState, reason: String): ProtectedRouteState = state.copy(
+        phase = ProtectedRoutePhase.KILLED,
+        fatalReason = reason,
+        torReady = false,
+        proxyReady = false,
+        upstreamProtected = false
+    )
+
+    fun stopping(state: ProtectedRouteState): ProtectedRouteState = state.copy(
+        phase = ProtectedRoutePhase.STOPPING,
+        fatalReason = null
+    )
+
+    fun stopped(): ProtectedRouteState = ProtectedRouteState()
+}
+===== app/src/main/java/com/darkmed/app/core/SecurityState.kt =====
+package com.darkmed.app.core
+
+sealed interface SecurityState {
+    data object Locked : SecurityState
+    data object Ready : SecurityState
+    data object Starting : SecurityState
+    data object Connected : SecurityState
+    data object Degraded : SecurityState
+    data object Failed : SecurityState
+    data object Stopping : SecurityState
+    data object Lockdown : SecurityState
+}
+===== app/src/main/java/com/darkmed/app/core/FailureInjectionMatrix.kt =====
+package com.darkmed.app.core
+
+enum class FailureScenario {
+    TorStartupFailure,
+    TorCrash,
+    TorTimeout,
+    ControlPortFailure,
+    SocksFailure,
+    VpnPermissionDenied,
+    VpnCrash,
+    TunFailure,
+    WireGuardInvalidConfig,
+    WireGuardHandshakeTimeout,
+    DnsFailure,
+    Ipv6Failure,
+    NetworkDisconnect,
+    ServiceRestart,
+    ProcessDeath,
+    StorageFailure,
+    CorruptedConfig,
+    MissingDependency,
+    MalformedInput,
+    RouteCompilationFailure,
+    ProxyFailure,
+    BrowserFailure
+}
+
+enum class FailureEvidenceStatus {
+    POLICY_EVALUATED,
+    REAL_DEVICE_REQUIRED,
+    NETWORK_REQUIRED
+}
+
+data class FailureInjectionOutcome(
+    val scenario: FailureScenario,
+    val expectedState: SecurityState,
+    val actualPolicyState: SecurityState,
+    val recovery: String,
+    val securityConsequence: String,
+    val evidenceStatus: FailureEvidenceStatus
+) {
+    val directFallbackBlocked: Boolean
+        get() = actualPolicyState == SecurityState.Lockdown || actualPolicyState == SecurityState.Locked
+}
+
+object FailureInjectionMatrix {
+    private val networkScenarios = setOf(
+        FailureScenario.TorStartupFailure,
+        FailureScenario.TorCrash,
+        FailureScenario.TorTimeout,
+        FailureScenario.ControlPortFailure,
+        FailureScenario.SocksFailure,
+        FailureScenario.VpnPermissionDenied,
+        FailureScenario.VpnCrash,
+        FailureScenario.TunFailure,
+        FailureScenario.WireGuardHandshakeTimeout,
+        FailureScenario.DnsFailure,
+        FailureScenario.Ipv6Failure,
+        FailureScenario.NetworkDisconnect,
+        FailureScenario.ServiceRestart,
+        FailureScenario.ProcessDeath,
+        FailureScenario.ProxyFailure,
+        FailureScenario.BrowserFailure
+    )
+
+    fun evaluate(scenario: FailureScenario): FailureInjectionOutcome {
+        val state = SecurityState.Lockdown
+        val evidence = when {
+            scenario == FailureScenario.NetworkDisconnect || scenario == FailureScenario.Ipv6Failure -> FailureEvidenceStatus.NETWORK_REQUIRED
+            scenario in networkScenarios -> FailureEvidenceStatus.REAL_DEVICE_REQUIRED
+            else -> FailureEvidenceStatus.POLICY_EVALUATED
+        }
+        return FailureInjectionOutcome(
+            scenario = scenario,
+            expectedState = state,
+            actualPolicyState = state,
+            recovery = "Explicit authenticated recovery or stop",
+            securityConsequence = "Unprotected traffic is blocked; no direct fallback",
+            evidenceStatus = evidence
+        )
+    }
+
+    fun all(): List<FailureInjectionOutcome> = FailureScenario.entries.map(::evaluate)
+}
+===== app/src/main/java/com/darkmed/app/core/EngineeringContracts.kt =====
+package com.darkmed.app.core
+
+enum class EngineeringAgentId {
+    BUILD_TOOLCHAIN,
+    CORE_ARCHITECTURE,
+    TOR_ENGINE,
+    VPN_ROUTING,
+    WIREGUARD,
+    DNS_LEAKS,
+    KILL_SWITCH,
+    STORAGE_SECURITY,
+    BROWSER_ONION,
+    TOR_ADVANCED_NETWORK,
+    AI_ASSISTANT,
+    AI_MODEL,
+    SECURITY_AUDITOR,
+    TEST_ENGINEER,
+    RELEASE_ENGINEER,
+    ANDROID_COMPATIBILITY,
+    UI_UX_BRANDING,
+    FAILURE_INJECTION,
+    FORENSIC_CODE_AUDITOR,
+    DOCUMENTATION_EVIDENCE,
+    RESEARCH
+}
+
+enum class EngineeringArea {
+    BUILD,
+    ARCHITECTURE,
+    TOR,
+    VPN,
+    WIREGUARD,
+    DNS,
+    KILL_SWITCH,
+    STORAGE,
+    BROWSER,
+    TOR_ADVANCED,
+    ASSISTANT,
+    AI_MODEL,
+    SECURITY,
+    TESTING,
+    RELEASE,
+    ANDROID_COMPATIBILITY,
+    UI_UX,
+    FAILURE_INJECTION,
+    FORENSICS,
+    DOCUMENTATION,
+    RESEARCH
+}
+
+enum class EngineeringStatus {
+    NOT_TESTED,
+    PASS,
+    FAIL,
+    BLOCKED,
+    UNKNOWN,
+    REAL_DEVICE_REQUIRED,
+    NETWORK_REQUIRED,
+    NOT_IMPLEMENTED
+}
+
+enum class EngineeringTool {
+    READ_SOURCE,
+    MODIFY_OWN_SCOPE,
+    RUN_UNIT_TESTS,
+    RUN_BUILD,
+    RUN_LINT,
+    RUN_APK_FORENSICS,
+    RUN_SECURITY_AUDIT,
+    RUN_ANDROID_TEST,
+    RUN_NETWORK_TEST,
+    RUN_DEVICE_TEST,
+    WRITE_REPORT,
+    RESEARCH_OFFICIAL_SOURCE
+}
+
+data class AgentDefinition(
+    val id: EngineeringAgentId,
+    val area: EngineeringArea,
+    val allowedTools: Set<EngineeringTool>,
+    val dependencies: Set<EngineeringAgentId>
+)
+
+object AgentRegistry {
+    private val common = setOf(
+        EngineeringTool.READ_SOURCE,
+        EngineeringTool.MODIFY_OWN_SCOPE,
+        EngineeringTool.RUN_UNIT_TESTS,
+        EngineeringTool.WRITE_REPORT
+    )
+    private val runtime = setOf(EngineeringTool.RUN_DEVICE_TEST, EngineeringTool.RUN_NETWORK_TEST)
+    private val research = setOf(EngineeringTool.RESEARCH_OFFICIAL_SOURCE)
+
+    val definitions: List<AgentDefinition> = listOf(
+        AgentDefinition(EngineeringAgentId.BUILD_TOOLCHAIN, EngineeringArea.BUILD, common + EngineeringTool.RUN_BUILD + EngineeringTool.RUN_LINT, emptySet()),
+        AgentDefinition(EngineeringAgentId.CORE_ARCHITECTURE, EngineeringArea.ARCHITECTURE, common + research, setOf(EngineeringAgentId.BUILD_TOOLCHAIN)),
+        AgentDefinition(EngineeringAgentId.TOR_ENGINE, EngineeringArea.TOR, common + runtime + research, setOf(EngineeringAgentId.CORE_ARCHITECTURE)),
+        AgentDefinition(EngineeringAgentId.VPN_ROUTING, EngineeringArea.VPN, common + runtime + research, setOf(EngineeringAgentId.CORE_ARCHITECTURE)),
+        AgentDefinition(EngineeringAgentId.WIREGUARD, EngineeringArea.WIREGUARD, common + runtime + research, setOf(EngineeringAgentId.VPN_ROUTING)),
+        AgentDefinition(EngineeringAgentId.DNS_LEAKS, EngineeringArea.DNS, common + runtime + research, setOf(EngineeringAgentId.VPN_ROUTING)),
+        AgentDefinition(EngineeringAgentId.KILL_SWITCH, EngineeringArea.KILL_SWITCH, common + runtime + research, setOf(EngineeringAgentId.VPN_ROUTING, EngineeringAgentId.DNS_LEAKS)),
+        AgentDefinition(EngineeringAgentId.STORAGE_SECURITY, EngineeringArea.STORAGE, common + runtime + research, emptySet()),
+        AgentDefinition(EngineeringAgentId.BROWSER_ONION, EngineeringArea.BROWSER, common + runtime + research, setOf(EngineeringAgentId.VPN_ROUTING)),
+        AgentDefinition(EngineeringAgentId.TOR_ADVANCED_NETWORK, EngineeringArea.TOR_ADVANCED, common + runtime + research, setOf(EngineeringAgentId.TOR_ENGINE)),
+        AgentDefinition(EngineeringAgentId.AI_ASSISTANT, EngineeringArea.ASSISTANT, common, setOf(EngineeringAgentId.CORE_ARCHITECTURE)),
+        AgentDefinition(EngineeringAgentId.AI_MODEL, EngineeringArea.AI_MODEL, common + research, setOf(EngineeringAgentId.AI_ASSISTANT)),
+        AgentDefinition(EngineeringAgentId.SECURITY_AUDITOR, EngineeringArea.SECURITY, common + research + EngineeringTool.RUN_APK_FORENSICS + EngineeringTool.RUN_SECURITY_AUDIT, setOf(EngineeringAgentId.BUILD_TOOLCHAIN)),
+        AgentDefinition(EngineeringAgentId.TEST_ENGINEER, EngineeringArea.TESTING, common + EngineeringTool.RUN_BUILD + EngineeringTool.RUN_LINT + EngineeringTool.RUN_ANDROID_TEST + EngineeringTool.RUN_APK_FORENSICS, setOf(EngineeringAgentId.BUILD_TOOLCHAIN)),
+        AgentDefinition(EngineeringAgentId.RELEASE_ENGINEER, EngineeringArea.RELEASE, common + EngineeringTool.RUN_BUILD + EngineeringTool.RUN_APK_FORENSICS, setOf(EngineeringAgentId.TEST_ENGINEER, EngineeringAgentId.SECURITY_AUDITOR)),
+        AgentDefinition(EngineeringAgentId.ANDROID_COMPATIBILITY, EngineeringArea.ANDROID_COMPATIBILITY, common + runtime + research, setOf(EngineeringAgentId.BUILD_TOOLCHAIN)),
+        AgentDefinition(EngineeringAgentId.UI_UX_BRANDING, EngineeringArea.UI_UX, common, emptySet()),
+        AgentDefinition(EngineeringAgentId.FAILURE_INJECTION, EngineeringArea.FAILURE_INJECTION, common + EngineeringTool.RUN_UNIT_TESTS + EngineeringTool.RUN_DEVICE_TEST + EngineeringTool.RUN_NETWORK_TEST, setOf(EngineeringAgentId.CORE_ARCHITECTURE)),
+        AgentDefinition(EngineeringAgentId.FORENSIC_CODE_AUDITOR, EngineeringArea.FORENSICS, common + research, setOf(EngineeringAgentId.CORE_ARCHITECTURE)),
+        AgentDefinition(EngineeringAgentId.DOCUMENTATION_EVIDENCE, EngineeringArea.DOCUMENTATION, common, emptySet()),
+        AgentDefinition(EngineeringAgentId.RESEARCH, EngineeringArea.RESEARCH, setOf(EngineeringTool.READ_SOURCE, EngineeringTool.RESEARCH_OFFICIAL_SOURCE, EngineeringTool.WRITE_REPORT), emptySet())
+    )
+
+    fun definition(id: EngineeringAgentId): AgentDefinition = definitions.first { it.id == id }
+}
+
+data class EvidenceRecord(
+    val id: String,
+    val agent: EngineeringAgentId,
+    val component: String,
+    val before: String,
+    val finding: String,
+    val rootCause: String,
+    val research: String,
+    val proposedDesign: String,
+    val change: String,
+    val filesModified: List<String>,
+    val tests: List<String>,
+    val commands: List<String>,
+    val result: EngineeringStatus,
+    val evidence: List<String>,
+    val limitations: List<String>,
+    val nextAction: String
+)
+
+data class ProjectState(
+    val statuses: Map<EngineeringArea, EngineeringStatus> = EngineeringArea.entries.associateWith { EngineeringStatus.NOT_TESTED },
+    val evidence: List<EvidenceRecord> = emptyList(),
+    val blockers: List<String> = emptyList()
+)
+
+enum class OrchestratorDecision {
+    ACCEPTED,
+    REJECTED_UNAUTHORIZED_TOOL,
+    BLOCKED_DEPENDENCY,
+    REJECTED_INVALID_EVIDENCE
+}
+
+data class AgentSubmission(val decision: OrchestratorDecision, val reason: String, val state: ProjectState)
+
+enum class ReleaseDecision { RELEASE_ALLOWED, RELEASE_BLOCKED }
+
+class MasterEngineeringOrchestrator(initialState: ProjectState = ProjectState()) {
+    var state: ProjectState = initialState
+        private set
+
+    fun submit(agent: EngineeringAgentId, tool: EngineeringTool, evidence: EvidenceRecord): AgentSubmission {
+        val definition = AgentRegistry.definition(agent)
+        if (tool !in definition.allowedTools) {
+            return AgentSubmission(OrchestratorDecision.REJECTED_UNAUTHORIZED_TOOL, "Tool is outside agent scope", state)
+        }
+        val requiredText = listOf(
+            evidence.id,
+            evidence.component,
+            evidence.before,
+            evidence.finding,
+            evidence.rootCause,
+            evidence.research,
+            evidence.proposedDesign,
+            evidence.change,
+            evidence.nextAction
+        )
+        val completeEvidence = evidence.agent == agent &&
+            requiredText.all { it.isNotBlank() } &&
+            evidence.filesModified.isNotEmpty() &&
+            evidence.tests.isNotEmpty() &&
+            evidence.commands.isNotEmpty() &&
+            evidence.evidence.isNotEmpty() &&
+            evidence.limitations.isNotEmpty()
+        val runtimePassWithoutProof = tool in setOf(EngineeringTool.RUN_DEVICE_TEST, EngineeringTool.RUN_NETWORK_TEST) &&
+            evidence.result == EngineeringStatus.PASS &&
+            evidence.evidence.none { item ->
+                item.contains("real device", ignoreCase = true) ||
+                    item.contains("network verified", ignoreCase = true) ||
+                    item.contains("network test", ignoreCase = true)
+            }
+        if (!completeEvidence || runtimePassWithoutProof) {
+            return AgentSubmission(OrchestratorDecision.REJECTED_INVALID_EVIDENCE, "Evidence contract is incomplete or runtime PASS is unproven", state)
+        }
+        val dependenciesReady = definition.dependencies.all { dependency ->
+            state.statuses[AgentRegistry.definition(dependency).area] == EngineeringStatus.PASS
+        }
+        if (!dependenciesReady) {
+            return AgentSubmission(OrchestratorDecision.BLOCKED_DEPENDENCY, "Dependencies are not PASS", state)
+        }
+        state = state.copy(
+            statuses = state.statuses + (definition.area to evidence.result),
+            evidence = state.evidence + evidence
+        )
+        return AgentSubmission(OrchestratorDecision.ACCEPTED, "Evidence accepted", state)
+    }
+
+    fun releaseGate(): ReleaseDecision {
+        val allPass = EngineeringArea.entries.all { state.statuses[it] == EngineeringStatus.PASS }
+        val completeEvidence = state.evidence.isNotEmpty() && state.evidence.all {
+            it.tests.isNotEmpty() && it.commands.isNotEmpty() && it.evidence.isNotEmpty() && it.limitations.isNotEmpty()
+        }
+        val noBlockers = state.blockers.isEmpty()
+        val signedArtifact = state.evidence.any {
+            it.result == EngineeringStatus.PASS &&
+                it.evidence.any { evidence -> evidence.contains("SHA-256", ignoreCase = true) } &&
+                it.evidence.any { evidence -> evidence.contains("signature", ignoreCase = true) }
+        }
+        return if (allPass && noBlockers && completeEvidence && signedArtifact) ReleaseDecision.RELEASE_ALLOWED else ReleaseDecision.RELEASE_BLOCKED
+    }
+}
+===== app/src/main/java/com/darkmed/app/core/DarkMedVpnService.kt =====
+package com.darkmed.app.core
+
+import android.app.Notification
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.content.Context
+import android.content.Intent
+import android.net.VpnService
+import android.os.Build
+import android.os.Handler
+import android.os.IBinder
+import android.os.Looper
+import android.os.ParcelFileDescriptor
+import java.io.File
+
+class DarkMedVpnService : VpnService() {
+    private var tunnelFd: Int? = null
+    private var engine: HevTun2Socks? = null
+    @Volatile
+    private var routeState: ProtectedRouteState = ProtectedRouteStateMachine.stopped()
+    private val monitor = Handler(Looper.getMainLooper())
+    private val engineMonitor = object : Runnable {
+        override fun run() {
+            val activeEngine = engine
+            if (activeEngine != null && !activeEngine.isRunning()) {
+                routeState = ProtectedRouteStateMachine.failed(routeState, "tun2socks worker stopped")
+                updateNotification("Dark Med BLOCKED: tunnel engine stopped")
+                return
+            }
+            if (activeEngine != null) monitor.postDelayed(this, ENGINE_POLL_MS)
+        }
+    }
+
+    override fun onCreate() {
+        super.onCreate()
+        createNotificationChannel()
+        if (Build.VERSION.SDK_INT >= 29) {
+            startForeground(NOTIFICATION_ID, notification(), android.content.pm.ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE)
+        } else {
+            startForeground(NOTIFICATION_ID, notification())
+        }
+    }
+
+    override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+        when (intent?.action) {
+            ACTION_START -> startTunnel(intent.getStringExtra(EXTRA_CONFIG_PATH))
+            ACTION_STOP -> {
+                stopTunnel()
+                stopForeground(STOP_FOREGROUND_REMOVE)
+                stopSelf()
+            }
+        }
+        return START_NOT_STICKY
+    }
+
+    override fun onRevoke() {
+        stopTunnel()
+        stopSelf()
+        super.onRevoke()
+    }
+
+    override fun onDestroy() {
+        stopTunnel()
+        super.onDestroy()
+    }
+
+    override fun onBind(intent: Intent?): IBinder? = super.onBind(intent)
+
+    private fun startTunnel(configPath: String?) {
+        if (tunnelFd != null || configPath == null) return
+        routeState = ProtectedRouteStateMachine.starting()
+        updateNotification("Dark Med VPN: starting protected chain")
+        val config = runCatching { File(configPath).canonicalFile }.getOrElse {
+            routeState = ProtectedRouteStateMachine.failed(routeState, "invalid tunnel configuration path")
+            updateNotification("Dark Med BLOCKED: invalid tunnel configuration")
+            return
+        }
+        val allowedRoots = listOf(filesDir.canonicalFile, cacheDir.canonicalFile)
+        if (allowedRoots.none { root -> config.path.startsWith(root.path + File.separator) }) {
+            routeState = ProtectedRouteStateMachine.failed(routeState, "tunnel configuration outside app storage")
+            updateNotification("Dark Med BLOCKED: invalid tunnel configuration")
+            return
+        }
+
+        val descriptor = try {
+            Builder()
+                .setSession("Dark Med TUN to SOCKS")
+                .setBlocking(false)
+                .setMtu(1500)
+                .addAddress("198.18.0.1", 15)
+                .addRoute("0.0.0.0", 0)
+                .addDnsServer("198.18.0.2")
+                .addAddress("fc00::1", 7)
+                .addRoute("::", 0)
+                .establish()
+        } catch (error: Throwable) {
+            routeState = ProtectedRouteStateMachine.failed(routeState, "VPN establish failed: ${error.javaClass.simpleName}")
+            updateNotification("Dark Med BLOCKED: VPN unavailable")
+            return
+        } ?: run {
+            routeState = ProtectedRouteStateMachine.failed(routeState, "VPN establish returned no descriptor")
+            updateNotification("Dark Med BLOCKED: VPN unavailable")
+            return
+        }
+
+        routeState = ProtectedRouteStateMachine.tunEstablished(routeState)
+        val fd = descriptor.detachFd()
+        tunnelFd = fd
+        val candidate = try {
+            HevTun2Socks()
+        } catch (_: Throwable) {
+            null
+        }
+        routeState = ProtectedRouteStateMachine.proxyStarting(routeState)
+        if (candidate != null && candidate.start(config.path, fd, this)) {
+            engine = candidate
+            routeState = ProtectedRouteStateMachine.proxyReady(routeState, upstreamProtected = false)
+            updateNotification("Dark Med BLOCKED: upstream protection unverified")
+            monitor.post(engineMonitor)
+        } else {
+            routeState = ProtectedRouteStateMachine.failed(routeState, "tun2socks native start failed")
+            updateNotification("Dark Med BLOCKED: tunnel engine unavailable")
+        }
+    }
+
+    private fun stopTunnel() {
+        routeState = ProtectedRouteStateMachine.stopping(routeState)
+        monitor.removeCallbacks(engineMonitor)
+        val activeEngine = engine
+        activeEngine?.stop()
+        engine = null
+        if (activeEngine == null) {
+            tunnelFd?.let { fd ->
+                runCatching { ParcelFileDescriptor.adoptFd(fd).close() }
+            }
+        }
+        tunnelFd = null
+        routeState = ProtectedRouteStateMachine.stopped()
+    }
+
+    fun securityState(): ProtectedRouteState = routeState
+
+    private fun updateNotification(text: String) {
+        getSystemService(NotificationManager::class.java)?.notify(NOTIFICATION_ID, notification(text))
+    }
+
+    private fun createNotificationChannel() {
+        getSystemService(NotificationManager::class.java)
+            .createNotificationChannel(NotificationChannel(CHANNEL_ID, "Dark Med VPN", NotificationManager.IMPORTANCE_LOW))
+    }
+
+    private fun notification(text: String = "TUN routing is active only after a verified route"): Notification = Notification.Builder(this, CHANNEL_ID)
+        .setSmallIcon(android.R.drawable.stat_sys_warning)
+        .setContentTitle("Dark Med VPN")
+        .setContentText(text)
+        .setOngoing(true)
+        .build()
+
+    companion object {
+        const val ACTION_START = "com.darkmed.app.action.START_TUN2SOCKS"
+        const val ACTION_STOP = "com.darkmed.app.action.STOP_TUN2SOCKS"
+        const val EXTRA_CONFIG_PATH = "com.darkmed.app.extra.TUN2SOCKS_CONFIG_PATH"
+        private const val CHANNEL_ID = "darkmed_vpn"
+        private const val NOTIFICATION_ID = 902
+        private const val ENGINE_POLL_MS = 500L
+
+        fun startIntent(context: Context, configPath: String): Intent = Intent(context, DarkMedVpnService::class.java)
+            .setAction(ACTION_START)
+            .putExtra(EXTRA_CONFIG_PATH, configPath)
+    }
+}

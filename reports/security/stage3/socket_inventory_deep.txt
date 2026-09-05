@@ -1,0 +1,857 @@
+# Dark Med Stage 3 — Deep Socket Inventory
+
+app/src/main/java/com/darkmed/app/core/DarkMedVpnService.kt:134:                runCatching { ParcelFileDescriptor.adoptFd(fd).close() }
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:107:        close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:116:        close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:172:        close (self->fd);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:305:        close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:314:        close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-logger.c:50:        close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:69:    res = setsockopt (fd, IPPROTO_IPV6, IPV6_V6ONLY, &zero, sizeof (zero));
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:71:        close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:81:        setsockopt (fd, SOL_SOCKET, SO_RCVBUF, &res, sizeof (res));
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-server.c:373:        close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-server.c:385:        close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-server.c:424:    res = setsockopt (fd, SOL_SOCKET, SO_REUSEADDR, &one, sizeof (one));
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-server.c:428:        close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-server.c:436:        close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-server.c:462:    res = bind (sock, (struct sockaddr *)src, alen);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-server.c:633:        close (self->fds[0]);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-server.c:637:        close (self->fds[1]);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-udp.c:37:        res = recv (self->fd, &buf, sizeof (buf), 0);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-udp.c:276:        if (connect (fd, saddr, alen) < 0)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5.c:86:        close (self->fd);
+app/src/main/jni/hev-socks5-tunnel/src/misc/hev-logger.c:49:        close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/misc/hev-utils.c:81:    return setsockopt (fd, SOL_SOCKET, SO_MARK, &mark, sizeof (mark));
+app/src/main/jni/hev-socks5-tunnel/src/misc/hev-utils.c:83:    return setsockopt (fd, SOL_SOCKET, SO_USER_COOKIE, &mark, sizeof (mark));
+app/src/main/jni/hev-socks5-tunnel/src/misc/hev-utils.c:97:    setsockopt (fd, IPPROTO_TCP, TCP_FASTOPEN_CONNECT, &one, sizeof (one));
+app/src/main/jni/hev-socks5-tunnel/src/hev-socks5-session-udp.c:52:        res = recv (self->fd, &buf, sizeof (buf), 0);
+app/src/main/jni/hev-socks5-tunnel/src/hev-socks5-tunnel.c:564:        close (event_fds[0]);
+app/src/main/jni/hev-socks5-tunnel/src/hev-socks5-tunnel.c:568:        close (event_fds[1]);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-freebsd.c:55:    sfd = socket (AF_INET, SOCK_DGRAM, 0);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-freebsd.c:62:    close (sfd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-freebsd.c:75:    close (tfd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-freebsd.c:85:    close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-freebsd.c:87:    fd = socket (AF_INET, SOCK_STREAM, 0);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-freebsd.c:94:    close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-freebsd.c:103:    fd = socket (AF_INET, SOCK_STREAM, 0);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-freebsd.c:110:    close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-freebsd.c:122:    fd = socket (AF_INET, SOCK_STREAM, 0);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-freebsd.c:138:    close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-freebsd.c:151:    fd = socket (AF_INET, SOCK_DGRAM, 0);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-freebsd.c:174:    close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-freebsd.c:189:    fd = socket (AF_INET6, SOCK_DGRAM, 0);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-freebsd.c:213:    close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-linux.c:59:    close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-linux.c:67:    close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-linux.c:76:    fd = socket (AF_INET, SOCK_STREAM, 0);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-linux.c:83:    close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-linux.c:95:    fd = socket (AF_INET, SOCK_STREAM, 0);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-linux.c:111:    close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-linux.c:124:    fd = socket (AF_INET, SOCK_STREAM, 0);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-linux.c:147:    close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-linux.c:160:    fd = socket (AF_INET6, SOCK_STREAM, 0);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-linux.c:179:    close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-macos.c:53:    fd = socket (PF_SYSTEM, SOCK_DGRAM, SYSPROTO_CONTROL);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-macos.c:71:    res = connect (fd, (struct sockaddr *)&sc, sizeof (sc));
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-macos.c:79:    res = getsockopt (fd, SYSPROTO_CONTROL, UTUN_OPT_IFNAME, tun_name, &len);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-macos.c:86:    close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-macos.c:97:    close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-macos.c:107:    fd = socket (AF_INET, SOCK_STREAM, 0);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-macos.c:114:    close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-macos.c:126:    fd = socket (AF_INET, SOCK_STREAM, 0);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-macos.c:142:    close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-macos.c:156:    fd = socket (AF_INET, SOCK_DGRAM, 0);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-macos.c:179:    close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-macos.c:198:    fd = socket (AF_INET6, SOCK_DGRAM, 0);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-macos.c:222:    close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-netbsd.c:57:    close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-netbsd.c:67:    close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-netbsd.c:69:    fd = socket (AF_INET, SOCK_STREAM, 0);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-netbsd.c:76:    close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-netbsd.c:85:    fd = socket (AF_INET, SOCK_STREAM, 0);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-netbsd.c:92:    close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-netbsd.c:104:    fd = socket (AF_INET, SOCK_STREAM, 0);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-netbsd.c:120:    close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-netbsd.c:133:    fd = socket (AF_INET, SOCK_DGRAM, 0);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-netbsd.c:156:    close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-netbsd.c:171:    fd = socket (AF_INET6, SOCK_DGRAM, 0);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-netbsd.c:195:    close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:107:        close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:116:        close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:172:        close (self->fd);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:305:        close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:314:        close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-logger.c:50:        close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:69:    res = setsockopt (fd, IPPROTO_IPV6, IPV6_V6ONLY, &zero, sizeof (zero));
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:71:        close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:81:        setsockopt (fd, SOL_SOCKET, SO_RCVBUF, &res, sizeof (res));
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-server.c:373:        close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-server.c:385:        close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-server.c:424:    res = setsockopt (fd, SOL_SOCKET, SO_REUSEADDR, &one, sizeof (one));
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-server.c:428:        close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-server.c:436:        close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-server.c:462:    res = bind (sock, (struct sockaddr *)src, alen);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-server.c:633:        close (self->fds[0]);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-server.c:637:        close (self->fds[1]);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-udp.c:37:        res = recv (self->fd, &buf, sizeof (buf), 0);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-udp.c:276:        if (connect (fd, saddr, alen) < 0)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5.c:86:        close (self->fd);
+app/src/main/jni/hev-socks5-tunnel/src/misc/hev-logger.c:49:        close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/misc/hev-utils.c:81:    return setsockopt (fd, SOL_SOCKET, SO_MARK, &mark, sizeof (mark));
+app/src/main/jni/hev-socks5-tunnel/src/misc/hev-utils.c:83:    return setsockopt (fd, SOL_SOCKET, SO_USER_COOKIE, &mark, sizeof (mark));
+app/src/main/jni/hev-socks5-tunnel/src/misc/hev-utils.c:97:    setsockopt (fd, IPPROTO_TCP, TCP_FASTOPEN_CONNECT, &one, sizeof (one));
+app/src/main/jni/hev-socks5-tunnel/src/hev-socks5-session-udp.c:52:        res = recv (self->fd, &buf, sizeof (buf), 0);
+app/src/main/jni/hev-socks5-tunnel/src/hev-socks5-tunnel.c:564:        close (event_fds[0]);
+app/src/main/jni/hev-socks5-tunnel/src/hev-socks5-tunnel.c:568:        close (event_fds[1]);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-freebsd.c:55:    sfd = socket (AF_INET, SOCK_DGRAM, 0);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-freebsd.c:62:    close (sfd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-freebsd.c:75:    close (tfd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-freebsd.c:85:    close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-freebsd.c:87:    fd = socket (AF_INET, SOCK_STREAM, 0);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-freebsd.c:94:    close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-freebsd.c:103:    fd = socket (AF_INET, SOCK_STREAM, 0);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-freebsd.c:110:    close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-freebsd.c:122:    fd = socket (AF_INET, SOCK_STREAM, 0);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-freebsd.c:138:    close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-freebsd.c:151:    fd = socket (AF_INET, SOCK_DGRAM, 0);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-freebsd.c:174:    close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-freebsd.c:189:    fd = socket (AF_INET6, SOCK_DGRAM, 0);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-freebsd.c:213:    close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-linux.c:59:    close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-linux.c:67:    close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-linux.c:76:    fd = socket (AF_INET, SOCK_STREAM, 0);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-linux.c:83:    close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-linux.c:95:    fd = socket (AF_INET, SOCK_STREAM, 0);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-linux.c:111:    close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-linux.c:124:    fd = socket (AF_INET, SOCK_STREAM, 0);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-linux.c:147:    close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-linux.c:160:    fd = socket (AF_INET6, SOCK_STREAM, 0);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-linux.c:179:    close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-macos.c:53:    fd = socket (PF_SYSTEM, SOCK_DGRAM, SYSPROTO_CONTROL);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-macos.c:71:    res = connect (fd, (struct sockaddr *)&sc, sizeof (sc));
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-macos.c:79:    res = getsockopt (fd, SYSPROTO_CONTROL, UTUN_OPT_IFNAME, tun_name, &len);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-macos.c:86:    close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-macos.c:97:    close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-macos.c:107:    fd = socket (AF_INET, SOCK_STREAM, 0);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-macos.c:114:    close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-macos.c:126:    fd = socket (AF_INET, SOCK_STREAM, 0);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-macos.c:142:    close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-macos.c:156:    fd = socket (AF_INET, SOCK_DGRAM, 0);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-macos.c:179:    close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-macos.c:198:    fd = socket (AF_INET6, SOCK_DGRAM, 0);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-macos.c:222:    close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-netbsd.c:57:    close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-netbsd.c:67:    close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-netbsd.c:69:    fd = socket (AF_INET, SOCK_STREAM, 0);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-netbsd.c:76:    close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-netbsd.c:85:    fd = socket (AF_INET, SOCK_STREAM, 0);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-netbsd.c:92:    close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-netbsd.c:104:    fd = socket (AF_INET, SOCK_STREAM, 0);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-netbsd.c:120:    close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-netbsd.c:133:    fd = socket (AF_INET, SOCK_DGRAM, 0);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-netbsd.c:156:    close (fd);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-netbsd.c:171:    fd = socket (AF_INET6, SOCK_DGRAM, 0);
+app/src/main/jni/hev-socks5-tunnel/src/hev-tunnel-netbsd.c:195:    close (fd);
+
+## JNI protect references
+app/src/main/jni/hev-socks5-tunnel/include/hev-socks5-tunnel.h:20: * hev_socks5_tunnel_main:
+app/src/main/jni/hev-socks5-tunnel/include/hev-socks5-tunnel.h:22: * @tun_fd: tunnel file descriptor
+app/src/main/jni/hev-socks5-tunnel/include/hev-socks5-tunnel.h:24: * Start and run the socks5 tunnel, this function will blocks until the
+app/src/main/jni/hev-socks5-tunnel/include/hev-socks5-tunnel.h:25: * hev_socks5_tunnel_quit is called or an error occurs.
+app/src/main/jni/hev-socks5-tunnel/include/hev-socks5-tunnel.h:31:int hev_socks5_tunnel_main (const char *config_path, int tun_fd);
+app/src/main/jni/hev-socks5-tunnel/include/hev-socks5-tunnel.h:34: * hev_socks5_tunnel_main_from_file:
+app/src/main/jni/hev-socks5-tunnel/include/hev-socks5-tunnel.h:36: * @tun_fd: tunnel file descriptor
+app/src/main/jni/hev-socks5-tunnel/include/hev-socks5-tunnel.h:38: * Start and run the socks5 tunnel, this function will blocks until the
+app/src/main/jni/hev-socks5-tunnel/include/hev-socks5-tunnel.h:39: * hev_socks5_tunnel_quit is called or an error occurs.
+app/src/main/jni/hev-socks5-tunnel/include/hev-socks5-tunnel.h:45:int hev_socks5_tunnel_main_from_file (const char *config_path, int tun_fd);
+app/src/main/jni/hev-socks5-tunnel/include/hev-socks5-tunnel.h:48: * hev_socks5_tunnel_main_from_str:
+app/src/main/jni/hev-socks5-tunnel/include/hev-socks5-tunnel.h:51: * @tun_fd: tunnel file descriptor
+app/src/main/jni/hev-socks5-tunnel/include/hev-socks5-tunnel.h:53: * Start and run the socks5 tunnel, this function will blocks until the
+app/src/main/jni/hev-socks5-tunnel/include/hev-socks5-tunnel.h:54: * hev_socks5_tunnel_quit is called or an error occurs.
+app/src/main/jni/hev-socks5-tunnel/include/hev-socks5-tunnel.h:60:int hev_socks5_tunnel_main_from_str (const unsigned char *config_str,
+app/src/main/jni/hev-socks5-tunnel/include/hev-socks5-tunnel.h:61:                                     unsigned int config_len, int tun_fd);
+app/src/main/jni/hev-socks5-tunnel/include/hev-socks5-tunnel.h:64: * hev_socks5_tunnel_quit:
+app/src/main/jni/hev-socks5-tunnel/include/hev-socks5-tunnel.h:66: * Stop the socks5 tunnel.
+app/src/main/jni/hev-socks5-tunnel/include/hev-socks5-tunnel.h:70:void hev_socks5_tunnel_quit (void);
+app/src/main/jni/hev-socks5-tunnel/include/hev-socks5-tunnel.h:73: * hev_socks5_tunnel_stats:
+app/src/main/jni/hev-socks5-tunnel/include/hev-socks5-tunnel.h:83:void hev_socks5_tunnel_stats (size_t *tx_packets, size_t *tx_bytes,
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-authenticator.h:3: Name        : hev-socks5-authenticator.h
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-authenticator.h:10:#ifndef __HEV_SOCKS5_AUTHENTICATOR_H__
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-authenticator.h:11:#define __HEV_SOCKS5_AUTHENTICATOR_H__
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-authenticator.h:16:#include "hev-socks5-user.h"
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-authenticator.h:22:#define HEV_SOCKS5_AUTHENTICATOR(p) ((HevSocks5Authenticator *)p)
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-authenticator.h:23:#define HEV_SOCKS5_AUTHENTICATOR_CLASS(p) ((HevSocks5AuthenticatorClass *)p)
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-authenticator.h:24:#define HEV_SOCKS5_AUTHENTICATOR_TYPE (hev_socks5_authenticator_class ())
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-authenticator.h:42:HevObjectClass *hev_socks5_authenticator_class (void);
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-authenticator.h:44:int hev_socks5_authenticator_construct (HevSocks5Authenticator *self);
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-authenticator.h:46:HevSocks5Authenticator *hev_socks5_authenticator_new (void);
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-authenticator.h:48:int hev_socks5_authenticator_add (HevSocks5Authenticator *self,
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-authenticator.h:51:int hev_socks5_authenticator_del (HevSocks5Authenticator *self,
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-authenticator.h:54:HevSocks5User *hev_socks5_authenticator_get (HevSocks5Authenticator *self,
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-authenticator.h:58:void hev_socks5_authenticator_clear (HevSocks5Authenticator *self);
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-authenticator.h:64:#endif /* __HEV_SOCKS5_AUTHENTICATOR_H__ */
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-client-tcp.h:3: Name        : hev-socks5-client-tcp.h
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-client-tcp.h:10:#ifndef __HEV_SOCKS5_CLIENT_TCP_H__
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-client-tcp.h:11:#define __HEV_SOCKS5_CLIENT_TCP_H__
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-client-tcp.h:13:#include "hev-socks5-tcp.h"
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-client-tcp.h:14:#include "hev-socks5-proto.h"
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-client-tcp.h:16:#include "hev-socks5-client.h"
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-client-tcp.h:22:#define HEV_SOCKS5_CLIENT_TCP(p) ((HevSocks5ClientTCP *)p)
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-client-tcp.h:23:#define HEV_SOCKS5_CLIENT_TCP_CLASS(p) ((HevSocks5ClientTCPClass *)p)
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-client-tcp.h:24:#define HEV_SOCKS5_CLIENT_TCP_TYPE (hev_socks5_client_tcp_class ())
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-client-tcp.h:43:HevObjectClass *hev_socks5_client_tcp_class (void);
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-client-tcp.h:45:int hev_socks5_client_tcp_construct (HevSocks5ClientTCP *self,
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-client-tcp.h:48:HevSocks5ClientTCP *hev_socks5_client_tcp_new_name (const char *name, int port);
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-client-tcp.h:49:HevSocks5ClientTCP *hev_socks5_client_tcp_new_ipv4 (const void *ipv4, int port);
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-client-tcp.h:50:HevSocks5ClientTCP *hev_socks5_client_tcp_new_ipv6 (const void *ipv6, int port);
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-client-tcp.h:56:#endif /* __HEV_SOCKS5_CLIENT_TCP_H__ */
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-client-udp.h:3: Name        : hev-socks5-client-udp.h
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-client-udp.h:10:#ifndef __HEV_SOCKS5_CLIENT_UDP_H__
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-client-udp.h:11:#define __HEV_SOCKS5_CLIENT_UDP_H__
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-client-udp.h:13:#include "hev-socks5-udp.h"
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-client-udp.h:15:#include "hev-socks5-client.h"
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-client-udp.h:21:#define HEV_SOCKS5_CLIENT_UDP(p) ((HevSocks5ClientUDP *)p)
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-client-udp.h:22:#define HEV_SOCKS5_CLIENT_UDP_CLASS(p) ((HevSocks5ClientUDPClass *)p)
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-client-udp.h:23:#define HEV_SOCKS5_CLIENT_UDP_TYPE (hev_socks5_client_udp_class ())
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-client-udp.h:42:HevObjectClass *hev_socks5_client_udp_class (void);
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-client-udp.h:44:int hev_socks5_client_udp_construct (HevSocks5ClientUDP *self,
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-client-udp.h:47:HevSocks5ClientUDP *hev_socks5_client_udp_new (HevSocks5Type type);
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-client-udp.h:53:#endif /* __HEV_SOCKS5_CLIENT_UDP_H__ */
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-client.h:3: Name        : hev-socks5-client.h
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-client.h:10:#ifndef __HEV_SOCKS5_CLIENT_H__
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-client.h:11:#define __HEV_SOCKS5_CLIENT_H__
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-client.h:13:#include "hev-socks5.h"
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-client.h:14:#include "hev-socks5-proto.h"
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-client.h:20:#define HEV_SOCKS5_CLIENT(p) ((HevSocks5Client *)p)
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-client.h:21:#define HEV_SOCKS5_CLIENT_CLASS(p) ((HevSocks5ClientClass *)p)
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-client.h:22:#define HEV_SOCKS5_CLIENT_TYPE (hev_socks5_client_class ())
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-client.h:42:    HevSocks5Addr *(*get_upstream_addr) (HevSocks5Client *self);
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-client.h:43:    int (*set_upstream_addr) (HevSocks5Client *self, HevSocks5Addr *addr);
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-client.h:46:HevObjectClass *hev_socks5_client_class (void);
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-client.h:48:int hev_socks5_client_construct (HevSocks5Client *self, HevSocks5Type type);
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-client.h:50:int hev_socks5_client_connect (HevSocks5Client *self, const char *addr,
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-client.h:53:int hev_socks5_client_handshake (HevSocks5Client *self, int pipeline);
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-client.h:55:void hev_socks5_client_set_auth (HevSocks5Client *self, const char *user,
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-client.h:62:#endif /* __HEV_SOCKS5_CLIENT_H__ */
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-logger.h:3: Name        : hev-socks5-logger.h
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-logger.h:10:#ifndef __HEV_SOCKS5_LOGGER_H__
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-logger.h:11:#define __HEV_SOCKS5_LOGGER_H__
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-logger.h:21:    HEV_SOCKS5_LOGGER_DEBUG,
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-logger.h:22:    HEV_SOCKS5_LOGGER_INFO,
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-logger.h:23:    HEV_SOCKS5_LOGGER_WARN,
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-logger.h:24:    HEV_SOCKS5_LOGGER_ERROR,
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-logger.h:25:    HEV_SOCKS5_LOGGER_UNSET,
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-logger.h:28:int hev_socks5_logger_init (HevSocks5LoggerLevel level, const char *path);
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-logger.h:29:void hev_socks5_logger_fini (void);
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-logger.h:35:#endif /* __HEV_SOCKS5_LOGGER_H__ */
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-misc.h:3: Name        : hev-socks5-misc.h
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-misc.h:10:#ifndef __HEV_SOCKS5_MISC_H__
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-misc.h:11:#define __HEV_SOCKS5_MISC_H__
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-misc.h:17:#include "hev-socks5-proto.h"
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-misc.h:23:int hev_socks5_task_io_yielder (HevTaskYieldType type, void *data);
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-misc.h:25:void hev_socks5_set_connect_timeout (int timeout);
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-misc.h:26:void hev_socks5_set_tcp_timeout (int timeout);
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-misc.h:27:void hev_socks5_set_udp_timeout (int timeout);
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-misc.h:29:void hev_socks5_set_task_stack_size (int stack_size);
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-misc.h:30:void hev_socks5_set_udp_recv_buffer_size (int buffer_size);
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-misc.h:31:void hev_socks5_set_udp_copy_buffer_nums (int nums);
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-misc.h:33:int hev_socks5_addr_len (const HevSocks5Addr *addr);
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-misc.h:34:int hev_socks5_addr_from_name (HevSocks5Addr *addr, const char *name, int port);
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-misc.h:35:int hev_socks5_addr_from_ipv4 (HevSocks5Addr *addr, const void *ipv4, int port);
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-misc.h:36:int hev_socks5_addr_from_ipv6 (HevSocks5Addr *addr, const void *ipv6, int port);
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-misc.h:37:int hev_socks5_addr_from_sockaddr6 (HevSocks5Addr *addr,
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-misc.h:38:                                    struct sockaddr_in6 *saddr);
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-misc.h:39:int hev_socks5_addr_into_sockaddr6 (const HevSocks5Addr *addr,
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-misc.h:40:                                    struct sockaddr_in6 *saddr, int *family);
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-misc.h:41:int hev_socks5_name_into_sockaddr6 (const char *host, int port,
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-misc.h:42:                                    struct sockaddr_in6 *saddr, int *family);
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-misc.h:48:#endif /* __HEV_SOCKS5_MISC_H__ */
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-proto.h:3: Name        : hev-socks5-proto.h
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-proto.h:10:#ifndef __HEV_SOCKS5_PROTO_H__
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-proto.h:11:#define __HEV_SOCKS5_PROTO_H__
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-proto.h:33:    HEV_SOCKS5_VERSION_5 = 5,
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-proto.h:38:    HEV_SOCKS5_AUTH_METHOD_NONE = 0,
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-proto.h:39:    HEV_SOCKS5_AUTH_METHOD_USER = 2,
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-proto.h:40:    HEV_SOCKS5_AUTH_METHOD_DENY = 255,
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-proto.h:45:    HEV_SOCKS5_AUTH_VERSION_1 = 1,
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-proto.h:50:    HEV_SOCKS5_REQ_CMD_CONNECT = 1,
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-proto.h:51:    HEV_SOCKS5_REQ_CMD_UDP_ASC = 3,
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-proto.h:52:    HEV_SOCKS5_REQ_CMD_FWD_UDP = 5,
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-proto.h:57:    HEV_SOCKS5_RES_REP_SUCC = 0,
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-proto.h:58:    HEV_SOCKS5_RES_REP_FAIL = 1,
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-proto.h:59:    HEV_SOCKS5_RES_REP_HOST = 4,
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-proto.h:60:    HEV_SOCKS5_RES_REP_IMPL = 7,
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-proto.h:61:    HEV_SOCKS5_RES_REP_ADDR = 8,
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-proto.h:66:    HEV_SOCKS5_ADDR_TYPE_IPV4 = 1,
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-proto.h:67:    HEV_SOCKS5_ADDR_TYPE_IPV6 = 4,
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-proto.h:68:    HEV_SOCKS5_ADDR_TYPE_NAME = 3,
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-proto.h:135:#endif /* __HEV_SOCKS5_PROTO_H__ */
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-server.h:3: Name        : hev-socks5-server.h
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-server.h:10:#ifndef __HEV_SOCKS5_SERVER_H__
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-server.h:11:#define __HEV_SOCKS5_SERVER_H__
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-server.h:15:#include "hev-socks5.h"
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-server.h:16:#include "hev-socks5-tcp.h"
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-server.h:17:#include "hev-socks5-udp.h"
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-server.h:18:#include "hev-socks5-user.h"
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-server.h:19:#include "hev-socks5-authenticator.h"
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-server.h:25:#define HEV_SOCKS5_SERVER(p) ((HevSocks5Server *)p)
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-server.h:26:#define HEV_SOCKS5_SERVER_CLASS(p) ((HevSocks5ServerClass *)p)
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-server.h:27:#define HEV_SOCKS5_SERVER_TYPE (hev_socks5_server_class ())
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-server.h:50:    int (*binder) (HevSocks5Server *self, int sock, struct sockaddr_in6 *src);
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-server.h:56:HevObjectClass *hev_socks5_server_class (void);
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-server.h:58:int hev_socks5_server_construct (HevSocks5Server *self, int fd);
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-server.h:60:HevSocks5Server *hev_socks5_server_new (int fd);
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-server.h:62:void hev_socks5_server_set_auth (HevSocks5Server *self,
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-server.h:65:int hev_socks5_server_run (HevSocks5Server *self);
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-server.h:71:#endif /* __HEV_SOCKS5_SERVER_H__ */
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-tcp.h:3: Name        : hev-socks5-tcp.h
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-tcp.h:10:#ifndef __HEV_SOCKS5_TCP_H__
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-tcp.h:11:#define __HEV_SOCKS5_TCP_H__
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-tcp.h:17:#define HEV_SOCKS5_TCP(p) ((HevSocks5TCP *)p)
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-tcp.h:18:#define HEV_SOCKS5_TCP_IFACE(p) ((HevSocks5TCPIface *)p)
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-tcp.h:19:#define HEV_SOCKS5_TCP_TYPE (hev_socks5_tcp_iface ())
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-tcp.h:29:void *hev_socks5_tcp_iface (void);
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-tcp.h:31:int hev_socks5_tcp_splice (HevSocks5TCP *self, int fd);
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-tcp.h:37:#endif /* __HEV_SOCKS5_TCP_H__ */
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-udp.h:3: Name        : hev-socks5-udp.h
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-udp.h:10:#ifndef __HEV_SOCKS5_UDP_H__
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-udp.h:11:#define __HEV_SOCKS5_UDP_H__
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-udp.h:13:#include "hev-socks5-proto.h"
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-udp.h:19:#define HEV_SOCKS5_UDP(p) ((HevSocks5UDP *)p)
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-udp.h:20:#define HEV_SOCKS5_UDP_IFACE(p) ((HevSocks5UDPIface *)p)
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-udp.h:21:#define HEV_SOCKS5_UDP_TYPE (hev_socks5_udp_iface ())
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-udp.h:40:void *hev_socks5_udp_iface (void);
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-udp.h:42:int hev_socks5_udp_get_fd (HevSocks5UDP *self);
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-udp.h:44:int hev_socks5_udp_sendmmsg (HevSocks5UDP *self, HevSocks5UDPMsg *msgv,
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-udp.h:46:int hev_socks5_udp_recvmmsg (HevSocks5UDP *self, HevSocks5UDPMsg *msgv,
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-udp.h:49:int hev_socks5_udp_splice (HevSocks5UDP *self, int fd);
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-udp.h:55:#endif /* __HEV_SOCKS5_UDP_H__ */
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-user.h:3: Name        : hev-socks5-user.h
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-user.h:10:#ifndef __HEV_SOCKS5_USER_H__
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-user.h:11:#define __HEV_SOCKS5_USER_H__
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-user.h:21:#define HEV_SOCKS5_USER(p) ((HevSocks5User *)p)
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-user.h:22:#define HEV_SOCKS5_USER_CLASS(p) ((HevSocks5UserClass *)p)
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-user.h:23:#define HEV_SOCKS5_USER_TYPE (hev_socks5_user_class ())
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-user.h:48:HevObjectClass *hev_socks5_user_class (void);
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-user.h:50:int hev_socks5_user_construct (HevSocks5User *self, const char *name,
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-user.h:54:HevSocks5User *hev_socks5_user_new (const char *name, unsigned int name_len,
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-user.h:57:int hev_socks5_user_check (HevSocks5User *self, const char *pass,
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5-user.h:64:#endif /* __HEV_SOCKS5_USER_H__ */
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5.h:3: Name        : hev-socks5.h
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5.h:10:#ifndef __HEV_SOCKS5_H__
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5.h:11:#define __HEV_SOCKS5_H__
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5.h:14:#include <sys/socket.h>
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5.h:22:#define HEV_SOCKS5(p) ((HevSocks5 *)p)
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5.h:23:#define HEV_SOCKS5_CLASS(p) ((HevSocks5Class *)p)
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5.h:24:#define HEV_SOCKS5_TYPE (hev_socks5_class ())
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5.h:33:    HEV_SOCKS5_TYPE_NONE,
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5.h:34:    HEV_SOCKS5_TYPE_TCP,
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5.h:35:    HEV_SOCKS5_TYPE_UDP_IN_TCP,
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5.h:36:    HEV_SOCKS5_TYPE_UDP_IN_UDP,
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5.h:41:    HEV_SOCKS5_ADDR_FAMILY_IPV4 = AF_INET,
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5.h:42:    HEV_SOCKS5_ADDR_FAMILY_IPV6 = AF_INET6,
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5.h:43:    HEV_SOCKS5_ADDR_FAMILY_UNSPEC = AF_UNSPEC,
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5.h:61:    int (*binder) (HevSocks5 *self, int sock, const struct sockaddr *dest);
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5.h:64:HevObjectClass *hev_socks5_class (void);
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5.h:66:int hev_socks5_construct (HevSocks5 *self, HevSocks5Type type);
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5.h:68:int hev_socks5_get_timeout (HevSocks5 *self);
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5.h:69:void hev_socks5_set_timeout (HevSocks5 *self, int timeout);
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5.h:71:HevSocks5AddrFamily hev_socks5_get_addr_family (HevSocks5 *self);
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5.h:72:void hev_socks5_set_addr_family (HevSocks5 *self, HevSocks5AddrFamily family);
+app/src/main/jni/hev-socks5-tunnel/src/core/include/hev-socks5.h:78:#endif /* __HEV_SOCKS5_H__ */
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-authenticator.c:3: Name        : hev-socks5-authenticator.c
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-authenticator.c:14:#include "hev-socks5-logger-priv.h"
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-authenticator.c:16:#include "hev-socks5-authenticator.h"
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-authenticator.c:19:hev_socks5_authenticator_new (void)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-authenticator.c:28:    res = hev_socks5_authenticator_construct (self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-authenticator.c:34:    LOG_D ("%p socks5 authenticator new", self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-authenticator.c:40:hev_socks5_authenticator_add (HevSocks5Authenticator *self, HevSocks5User *user)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-authenticator.c:73:hev_socks5_authenticator_del (HevSocks5Authenticator *self, const char *name,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-authenticator.c:105:hev_socks5_authenticator_get (HevSocks5Authenticator *self, const char *name,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-authenticator.c:134:hev_socks5_authenticator_clear (HevSocks5Authenticator *self)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-authenticator.c:148:hev_socks5_authenticator_construct (HevSocks5Authenticator *self)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-authenticator.c:156:    LOG_D ("%p socks5 authenticator construct", self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-authenticator.c:158:    HEV_OBJECT (self)->klass = HEV_SOCKS5_AUTHENTICATOR_TYPE;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-authenticator.c:164:hev_socks5_authenticator_destruct (HevObject *base)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-authenticator.c:166:    HevSocks5Authenticator *self = HEV_SOCKS5_AUTHENTICATOR (base);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-authenticator.c:168:    LOG_D ("%p socks5 authenticator destruct", self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-authenticator.c:170:    hev_socks5_authenticator_clear (self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-authenticator.c:177:hev_socks5_authenticator_class (void)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-authenticator.c:187:        okptr->destruct = hev_socks5_authenticator_destruct;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-authenticator.h:3: Name        : hev-socks5-authenticator.h
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-authenticator.h:10:#ifndef __HEV_SOCKS5_AUTHENTICATOR_H__
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-authenticator.h:11:#define __HEV_SOCKS5_AUTHENTICATOR_H__
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-authenticator.h:16:#include "hev-socks5-user.h"
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-authenticator.h:22:#define HEV_SOCKS5_AUTHENTICATOR(p) ((HevSocks5Authenticator *)p)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-authenticator.h:23:#define HEV_SOCKS5_AUTHENTICATOR_CLASS(p) ((HevSocks5AuthenticatorClass *)p)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-authenticator.h:24:#define HEV_SOCKS5_AUTHENTICATOR_TYPE (hev_socks5_authenticator_class ())
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-authenticator.h:42:HevObjectClass *hev_socks5_authenticator_class (void);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-authenticator.h:44:int hev_socks5_authenticator_construct (HevSocks5Authenticator *self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-authenticator.h:46:HevSocks5Authenticator *hev_socks5_authenticator_new (void);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-authenticator.h:48:int hev_socks5_authenticator_add (HevSocks5Authenticator *self,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-authenticator.h:51:int hev_socks5_authenticator_del (HevSocks5Authenticator *self,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-authenticator.h:54:HevSocks5User *hev_socks5_authenticator_get (HevSocks5Authenticator *self,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-authenticator.h:58:void hev_socks5_authenticator_clear (HevSocks5Authenticator *self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-authenticator.h:64:#endif /* __HEV_SOCKS5_AUTHENTICATOR_H__ */
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.c:3: Name        : hev-socks5-client-tcp.c
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.c:14:#include "hev-socks5-misc-priv.h"
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.c:15:#include "hev-socks5-logger-priv.h"
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.c:17:#include "hev-socks5-client-tcp.h"
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.c:20:hev_socks5_client_tcp_new_name (const char *name, int port)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.c:30:    hev_socks5_addr_from_name (&addr, name, port);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.c:31:    res = hev_socks5_client_tcp_construct (self, &addr);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.c:37:    LOG_D ("%p socks5 client tcp new name", self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.c:43:hev_socks5_client_tcp_new_ipv4 (const void *ipv4, int port)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.c:53:    hev_socks5_addr_from_ipv4 (&addr, ipv4, port);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.c:54:    res = hev_socks5_client_tcp_construct (self, &addr);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.c:60:    LOG_D ("%p socks5 client tcp new ipv4", self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.c:66:hev_socks5_client_tcp_new_ipv6 (const void *ipv6, int port)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.c:76:    hev_socks5_addr_from_ipv6 (&addr, ipv6, port);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.c:77:    res = hev_socks5_client_tcp_construct (self, &addr);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.c:83:    LOG_D ("%p socks5 client tcp new ipv6", self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.c:89:hev_socks5_client_tcp_get_upstream_addr (HevSocks5Client *base)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.c:91:    HevSocks5ClientTCP *self = HEV_SOCKS5_CLIENT_TCP (base);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.c:101:hev_socks5_client_tcp_set_upstream_addr (HevSocks5Client *base,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.c:108:hev_socks5_client_tcp_construct (HevSocks5ClientTCP *self,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.c:113:    res = hev_socks5_client_construct (&self->base, HEV_SOCKS5_TYPE_TCP);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.c:117:    LOG_D ("%p socks5 client tcp construct", self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.c:119:    HEV_OBJECT (self)->klass = HEV_SOCKS5_CLIENT_TCP_TYPE;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.c:121:    res = hev_socks5_addr_len (addr);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.c:131:        str = hev_socks5_addr_into_str (self->addr, buf, sizeof (buf));
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.c:132:        LOG_I ("%p socks5 client tcp -> %s", self, str);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.c:139:hev_socks5_client_tcp_destruct (HevObject *base)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.c:141:    HevSocks5ClientTCP *self = HEV_SOCKS5_CLIENT_TCP (base);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.c:143:    LOG_D ("%p socks5 client tcp destruct", self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.c:148:    HEV_SOCKS5_CLIENT_TYPE->destruct (base);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.c:152:hev_socks5_client_tcp_iface (HevObject *base, void *type)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.c:160:hev_socks5_client_tcp_class (void)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.c:170:        memcpy (kptr, HEV_SOCKS5_CLIENT_TYPE, sizeof (HevSocks5ClientClass));
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.c:173:        okptr->destruct = hev_socks5_client_tcp_destruct;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.c:174:        okptr->iface = hev_socks5_client_tcp_iface;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.c:176:        ckptr = HEV_SOCKS5_CLIENT_CLASS (kptr);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.c:177:        ckptr->get_upstream_addr = hev_socks5_client_tcp_get_upstream_addr;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.c:178:        ckptr->set_upstream_addr = hev_socks5_client_tcp_set_upstream_addr;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.c:181:        memcpy (tiptr, HEV_SOCKS5_TCP_TYPE, sizeof (HevSocks5TCPIface));
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.h:3: Name        : hev-socks5-client-tcp.h
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.h:10:#ifndef __HEV_SOCKS5_CLIENT_TCP_H__
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.h:11:#define __HEV_SOCKS5_CLIENT_TCP_H__
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.h:13:#include "hev-socks5-tcp.h"
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.h:14:#include "hev-socks5-proto.h"
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.h:16:#include "hev-socks5-client.h"
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.h:22:#define HEV_SOCKS5_CLIENT_TCP(p) ((HevSocks5ClientTCP *)p)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.h:23:#define HEV_SOCKS5_CLIENT_TCP_CLASS(p) ((HevSocks5ClientTCPClass *)p)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.h:24:#define HEV_SOCKS5_CLIENT_TCP_TYPE (hev_socks5_client_tcp_class ())
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.h:43:HevObjectClass *hev_socks5_client_tcp_class (void);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.h:45:int hev_socks5_client_tcp_construct (HevSocks5ClientTCP *self,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.h:48:HevSocks5ClientTCP *hev_socks5_client_tcp_new_name (const char *name, int port);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.h:49:HevSocks5ClientTCP *hev_socks5_client_tcp_new_ipv4 (const void *ipv4, int port);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.h:50:HevSocks5ClientTCP *hev_socks5_client_tcp_new_ipv6 (const void *ipv6, int port);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.h:56:#endif /* __HEV_SOCKS5_CLIENT_TCP_H__ */
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:3: Name        : hev-socks5-client-udp.c
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:15:#include <hev-task-io-socket.h>
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:18:#include "hev-socks5-misc-priv.h"
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:19:#include "hev-socks5-logger-priv.h"
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:21:#include "hev-socks5-client-udp.h"
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:23:#define task_io_yielder hev_socks5_task_io_yielder
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:26:hev_socks5_client_udp_new (HevSocks5Type type)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:35:    res = hev_socks5_client_udp_construct (self, type);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:41:    LOG_D ("%p socks5 client udp new", self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:47:hev_socks5_client_udp_get_upstream_addr (HevSocks5Client *base)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:52:    family = hev_socks5_get_addr_family (HEV_SOCKS5 (base));
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:55:    case HEV_SOCKS5_ADDR_FAMILY_IPV4:
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:58:            addr->atype = HEV_SOCKS5_ADDR_TYPE_IPV4;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:60:    case HEV_SOCKS5_ADDR_FAMILY_IPV6:
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:63:            addr->atype = HEV_SOCKS5_ADDR_TYPE_IPV6;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:73:hev_socks5_client_udp_set_upstream_addr (HevSocks5Client *base,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:76:    HevSocks5ClientUDP *self = HEV_SOCKS5_CLIENT_UDP (base);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:77:    struct sockaddr_in6 saddr;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:78:    struct sockaddr *sadp;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:84:    if (HEV_SOCKS5 (base)->type != HEV_SOCKS5_TYPE_UDP_IN_UDP)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:88:    addr_family = hev_socks5_get_addr_family (HEV_SOCKS5 (self));
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:89:    res = hev_socks5_addr_into_sockaddr6 (addr, &saddr, &addr_family);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:91:        LOG_W ("%p socks5 client udp addr", self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:95:    fd = hev_socks5_socket (SOCK_DGRAM);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:97:        LOG_E ("%p socks5 client udp socket", self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:101:    sadp = (struct sockaddr *)&saddr;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:103:    res = klass->binder (HEV_SOCKS5 (self), fd, sadp);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:105:        LOG_W ("%p socks5 client udp bind", self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:111:    res = hev_task_io_socket_connect (fd, sadp, sizeof (saddr), task_io_yielder,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:114:        LOG_I ("%p socks5 client udp connect", self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:120:    HEV_SOCKS5 (self)->udp_associated = 1;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:127:hev_socks5_client_udp_get_fd (HevSocks5UDP *self)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:131:    switch (HEV_SOCKS5 (self)->type) {
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:132:    case HEV_SOCKS5_TYPE_UDP_IN_TCP:
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:133:        fd = HEV_SOCKS5 (self)->fd;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:135:    case HEV_SOCKS5_TYPE_UDP_IN_UDP:
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:136:        fd = HEV_SOCKS5_CLIENT_UDP (self)->fd;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:146:hev_socks5_client_udp_construct (HevSocks5ClientUDP *self, HevSocks5Type type)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:150:    res = hev_socks5_client_construct (&self->base, type);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:154:    LOG_I ("%p socks5 client udp construct", self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:156:    HEV_OBJECT (self)->klass = HEV_SOCKS5_CLIENT_UDP_TYPE;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:164:hev_socks5_client_udp_destruct (HevObject *base)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:166:    HevSocks5ClientUDP *self = HEV_SOCKS5_CLIENT_UDP (base);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:168:    LOG_D ("%p socks5 client udp destruct", self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:175:    HEV_SOCKS5_CLIENT_TYPE->destruct (base);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:179:hev_socks5_client_udp_iface (HevObject *base, void *type)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:187:hev_socks5_client_udp_class (void)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:197:        memcpy (kptr, HEV_SOCKS5_CLIENT_TYPE, sizeof (HevSocks5ClientClass));
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:200:        okptr->destruct = hev_socks5_client_udp_destruct;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:201:        okptr->iface = hev_socks5_client_udp_iface;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:203:        ckptr = HEV_SOCKS5_CLIENT_CLASS (kptr);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:204:        ckptr->get_upstream_addr = hev_socks5_client_udp_get_upstream_addr;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:205:        ckptr->set_upstream_addr = hev_socks5_client_udp_set_upstream_addr;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:208:        memcpy (uiptr, HEV_SOCKS5_UDP_TYPE, sizeof (HevSocks5UDPIface));
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c:209:        uiptr->get_fd = hev_socks5_client_udp_get_fd;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.h:3: Name        : hev-socks5-client-udp.h
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.h:10:#ifndef __HEV_SOCKS5_CLIENT_UDP_H__
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.h:11:#define __HEV_SOCKS5_CLIENT_UDP_H__
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.h:13:#include "hev-socks5-udp.h"
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.h:15:#include "hev-socks5-client.h"
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.h:21:#define HEV_SOCKS5_CLIENT_UDP(p) ((HevSocks5ClientUDP *)p)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.h:22:#define HEV_SOCKS5_CLIENT_UDP_CLASS(p) ((HevSocks5ClientUDPClass *)p)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.h:23:#define HEV_SOCKS5_CLIENT_UDP_TYPE (hev_socks5_client_udp_class ())
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.h:42:HevObjectClass *hev_socks5_client_udp_class (void);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.h:44:int hev_socks5_client_udp_construct (HevSocks5ClientUDP *self,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.h:47:HevSocks5ClientUDP *hev_socks5_client_udp_new (HevSocks5Type type);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.h:53:#endif /* __HEV_SOCKS5_CLIENT_UDP_H__ */
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:3: Name        : hev-socks5-client.c
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:15:#include <hev-task-io-socket.h>
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:18:#include "hev-socks5-misc-priv.h"
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:19:#include "hev-socks5-logger-priv.h"
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:21:#include "hev-socks5-client.h"
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:27:#define task_io_yielder hev_socks5_task_io_yielder
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:30:hev_socks5_client_write_auth_methods (HevSocks5Client *self)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:35:    LOG_D ("%p socks5 client write auth methods", self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:37:    auth.ver = HEV_SOCKS5_VERSION_5;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:40:        auth.methods[0] = HEV_SOCKS5_AUTH_METHOD_NONE;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:42:        auth.methods[0] = HEV_SOCKS5_AUTH_METHOD_USER;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:44:    res = hev_task_io_socket_send (HEV_SOCKS5 (self)->fd, &auth, 3,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:48:        LOG_I ("%p socks5 client write auth methods", self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:56:hev_socks5_client_write_auth_creds (HevSocks5Client *self)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:63:    LOG_D ("%p socks5 client write auth creds", self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:68:    ub[0] = HEV_SOCKS5_AUTH_VERSION_1;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:82:    res = hev_task_io_socket_sendmsg (HEV_SOCKS5 (self)->fd, &mh,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:86:        LOG_I ("%p socks5 client write auth creds", self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:94:hev_socks5_client_write_request (HevSocks5Client *self)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:104:    LOG_D ("%p socks5 client write request", self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:106:    req.ver = HEV_SOCKS5_VERSION_5;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:109:    switch (HEV_SOCKS5 (self)->type) {
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:110:    case HEV_SOCKS5_TYPE_TCP:
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:111:        req.cmd = HEV_SOCKS5_REQ_CMD_CONNECT;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:113:    case HEV_SOCKS5_TYPE_UDP_IN_TCP:
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:114:        req.cmd = HEV_SOCKS5_REQ_CMD_FWD_UDP;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:116:    case HEV_SOCKS5_TYPE_UDP_IN_UDP:
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:117:        req.cmd = HEV_SOCKS5_REQ_CMD_UDP_ASC;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:127:    addr = klass->get_upstream_addr (self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:130:    case HEV_SOCKS5_ADDR_TYPE_IPV4:
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:133:    case HEV_SOCKS5_ADDR_TYPE_IPV6:
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:136:    case HEV_SOCKS5_ADDR_TYPE_NAME:
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:140:        LOG_I ("%p socks5 client req.atype %u", self, addr->atype);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:149:    ret = hev_task_io_socket_sendmsg (HEV_SOCKS5 (self)->fd, &mh, MSG_WAITALL,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:152:        LOG_I ("%p socks5 client write request", self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:162:hev_socks5_client_read_auth_method (HevSocks5Client *self)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:167:    LOG_D ("%p socks5 client read auth method", self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:169:    res = hev_task_io_socket_recv (HEV_SOCKS5 (self)->fd, &auth, 2, MSG_WAITALL,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:172:        LOG_I ("%p socks5 client read auth", self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:176:    if (auth.ver != HEV_SOCKS5_VERSION_5) {
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:177:        LOG_I ("%p socks5 client auth.ver %u", self, auth.ver);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:185:hev_socks5_client_read_auth_creds (HevSocks5Client *self)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:190:    LOG_D ("%p socks5 client read auth creds", self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:192:    ret = hev_task_io_socket_recv (HEV_SOCKS5 (self)->fd, &res, 2, MSG_WAITALL,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:195:        LOG_I ("%p socks5 client read auth creds", self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:199:    if (res.ver != HEV_SOCKS5_AUTH_VERSION_1) {
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:200:        LOG_I ("%p socks5 client auth.res.ver %u", self, res.ver);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:204:    if (res.rep != HEV_SOCKS5_RES_REP_SUCC) {
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:205:        LOG_I ("%p socks5 client auth.res.rep %u", self, res.rep);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:209:    LOG_D ("%p socks5 client auth done", self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:215:hev_socks5_client_read_response (HevSocks5Client *self)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:222:    LOG_D ("%p socks5 client read response", self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:224:    ret = hev_task_io_socket_recv (HEV_SOCKS5 (self)->fd, &res, 4, MSG_WAITALL,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:227:        LOG_I ("%p socks5 client read response", self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:231:    if (res.ver != HEV_SOCKS5_VERSION_5) {
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:232:        LOG_I ("%p socks5 client res.ver %u", self, res.ver);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:236:    if (res.rep != HEV_SOCKS5_RES_REP_SUCC) {
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:237:        LOG_I ("%p socks5 client res.rep %u", self, res.rep);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:242:    case HEV_SOCKS5_ADDR_TYPE_IPV4:
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:245:    case HEV_SOCKS5_ADDR_TYPE_IPV6:
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:249:        LOG_I ("%p socks5 client res.atype %u", self, res.addr.atype);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:253:    ret = hev_task_io_socket_recv (HEV_SOCKS5 (self)->fd, &res.addr.ipv4,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:256:        LOG_I ("%p socks5 client read addr", self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:261:    ret = klass->set_upstream_addr (self, &res.addr);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:263:        LOG_W ("%p socks5 client set upstream addr", self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:271:hev_socks5_client_connect (HevSocks5Client *self, const char *addr, int port)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:274:    struct sockaddr_in6 saddr;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:275:    struct sockaddr *sap;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:280:    LOG_D ("%p socks5 client connect [%s]:%d", self, addr, port);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:282:    timeout = hev_socks5_get_connect_timeout ();
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:283:    hev_socks5_set_timeout (HEV_SOCKS5 (self), timeout);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:286:    addr_family = hev_socks5_get_addr_family (HEV_SOCKS5 (self));
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:287:    res = hev_socks5_name_into_sockaddr6 (addr, port, &saddr, &addr_family);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:289:        LOG_I ("%p socks5 client resolve [%s]:%d", self, addr, port);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:293:    fd = hev_socks5_socket (SOCK_STREAM);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:295:        LOG_E ("%p socks5 client socket", self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:299:    sap = (struct sockaddr *)&saddr;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:301:    res = klass->binder (HEV_SOCKS5 (self), fd, sap);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:303:        LOG_W ("%p socks5 client bind", self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:309:    res = hev_task_io_socket_connect (fd, sap, sizeof (saddr), task_io_yielder,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:312:        LOG_I ("%p socks5 client connect", self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:318:    HEV_SOCKS5 (self)->fd = fd;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:319:    hev_socks5_set_addr_family (HEV_SOCKS5 (self), addr_family);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:320:    LOG_D ("%p socks5 client connect server fd %d", self, fd);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:326:hev_socks5_client_handshake_standard (HevSocks5Client *self)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:330:    LOG_D ("%p socks5 client handshake standard", self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:332:    res = hev_socks5_client_write_auth_methods (self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:336:    res = hev_socks5_client_read_auth_method (self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:340:    if (res == HEV_SOCKS5_AUTH_METHOD_USER) {
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:341:        res = hev_socks5_client_write_auth_creds (self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:345:        res = hev_socks5_client_read_auth_creds (self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:348:    } else if (res != HEV_SOCKS5_AUTH_METHOD_NONE) {
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:349:        LOG_I ("%p socks5 client auth method %d", self, res);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:353:    res = hev_socks5_client_write_request (self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:357:    res = hev_socks5_client_read_response (self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:365:hev_socks5_client_handshake_pipeline (HevSocks5Client *self)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:369:    LOG_D ("%p socks5 client handshake pipeline", self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:371:    res = hev_socks5_client_write_auth_methods (self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:375:    res = hev_socks5_client_write_auth_creds (self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:379:    res = hev_socks5_client_write_request (self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:383:    res = hev_socks5_client_read_auth_method (self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:387:    if (res == HEV_SOCKS5_AUTH_METHOD_USER) {
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:388:        res = hev_socks5_client_read_auth_creds (self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:391:    } else if (res != HEV_SOCKS5_AUTH_METHOD_NONE) {
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:392:        LOG_I ("%p socks5 client auth method %d", self, res);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:396:    res = hev_socks5_client_read_response (self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:404:hev_socks5_client_handshake (HevSocks5Client *self, int pipeline)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:409:    timeout = hev_socks5_get_tcp_timeout ();
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:410:    hev_socks5_set_timeout (HEV_SOCKS5 (self), timeout);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:413:        res = hev_socks5_client_handshake_pipeline (self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:415:        res = hev_socks5_client_handshake_standard (self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:417:    switch (HEV_SOCKS5 (self)->type) {
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:418:    case HEV_SOCKS5_TYPE_UDP_IN_TCP:
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:419:    case HEV_SOCKS5_TYPE_UDP_IN_UDP:
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:420:        timeout = hev_socks5_get_udp_timeout ();
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:421:        hev_socks5_set_timeout (HEV_SOCKS5 (self), timeout);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:431:hev_socks5_client_set_auth (HevSocks5Client *self, const char *user,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:434:    LOG_D ("%p socks5 client set auth", self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:441:hev_socks5_client_construct (HevSocks5Client *self, HevSocks5Type type)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:445:    res = hev_socks5_construct (&self->base, type);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:449:    LOG_D ("%p socks5 client construct", self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:451:    HEV_OBJECT (self)->klass = HEV_SOCKS5_CLIENT_TYPE;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:457:hev_socks5_client_destruct (HevObject *base)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:459:    HevSocks5Client *self = HEV_SOCKS5_CLIENT (base);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:461:    LOG_D ("%p socks5 client destruct", self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:463:    HEV_SOCKS5_TYPE->destruct (base);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:467:hev_socks5_client_class (void)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:474:        memcpy (kptr, HEV_SOCKS5_TYPE, sizeof (HevSocks5Class));
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.c:477:        okptr->destruct = hev_socks5_client_destruct;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.h:3: Name        : hev-socks5-client.h
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.h:10:#ifndef __HEV_SOCKS5_CLIENT_H__
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.h:11:#define __HEV_SOCKS5_CLIENT_H__
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.h:13:#include "hev-socks5.h"
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.h:14:#include "hev-socks5-proto.h"
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.h:20:#define HEV_SOCKS5_CLIENT(p) ((HevSocks5Client *)p)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.h:21:#define HEV_SOCKS5_CLIENT_CLASS(p) ((HevSocks5ClientClass *)p)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.h:22:#define HEV_SOCKS5_CLIENT_TYPE (hev_socks5_client_class ())
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.h:42:    HevSocks5Addr *(*get_upstream_addr) (HevSocks5Client *self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.h:43:    int (*set_upstream_addr) (HevSocks5Client *self, HevSocks5Addr *addr);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.h:46:HevObjectClass *hev_socks5_client_class (void);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.h:48:int hev_socks5_client_construct (HevSocks5Client *self, HevSocks5Type type);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.h:50:int hev_socks5_client_connect (HevSocks5Client *self, const char *addr,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.h:53:int hev_socks5_client_handshake (HevSocks5Client *self, int pipeline);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.h:55:void hev_socks5_client_set_auth (HevSocks5Client *self, const char *user,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-client.h:62:#endif /* __HEV_SOCKS5_CLIENT_H__ */
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-logger-priv.h:3: Name        : hev-socks5-logger-priv.h
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-logger-priv.h:10:#ifndef __HEV_SOCKS5_LOGGER_PRIV_H__
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-logger-priv.h:11:#define __HEV_SOCKS5_LOGGER_PRIV_H__
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-logger-priv.h:13:#include "hev-socks5-logger.h"
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-logger-priv.h:19:#define LOG_D(fmt...) hev_socks5_logger_log (HEV_SOCKS5_LOGGER_DEBUG, fmt)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-logger-priv.h:20:#define LOG_I(fmt...) hev_socks5_logger_log (HEV_SOCKS5_LOGGER_INFO, fmt)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-logger-priv.h:21:#define LOG_W(fmt...) hev_socks5_logger_log (HEV_SOCKS5_LOGGER_WARN, fmt)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-logger-priv.h:22:#define LOG_E(fmt...) hev_socks5_logger_log (HEV_SOCKS5_LOGGER_ERROR, fmt)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-logger-priv.h:24:#define LOG_ON() hev_socks5_logger_enabled (HEV_SOCKS5_LOGGER_UNSET)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-logger-priv.h:25:#define LOG_ON_D() hev_socks5_logger_enabled (HEV_SOCKS5_LOGGER_DEBUG)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-logger-priv.h:26:#define LOG_ON_I() hev_socks5_logger_enabled (HEV_SOCKS5_LOGGER_INFO)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-logger-priv.h:27:#define LOG_ON_W() hev_socks5_logger_enabled (HEV_SOCKS5_LOGGER_WARN)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-logger-priv.h:28:#define LOG_ON_E() hev_socks5_logger_enabled (HEV_SOCKS5_LOGGER_ERROR)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-logger-priv.h:30:int hev_socks5_logger_enabled (HevSocks5LoggerLevel level);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-logger-priv.h:31:void hev_socks5_logger_log (HevSocks5LoggerLevel level, const char *fmt, ...);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-logger-priv.h:37:#endif /* __HEV_SOCKS5_LOGGER_PRIV_H__ */
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-logger.c:3: Name        : hev-socks5-logger.c
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-logger.c:19:#include "hev-socks5-logger.h"
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-logger.c:20:#include "hev-socks5-logger-priv.h"
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-logger.c:26:hev_socks5_logger_init (HevSocks5LoggerLevel level, const char *path)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-logger.c:47:hev_socks5_logger_fini (void)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-logger.c:54:hev_socks5_logger_enabled (HevSocks5LoggerLevel level)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-logger.c:63:hev_socks5_logger_log (HevSocks5LoggerLevel level, const char *fmt, ...)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-logger.c:88:    case HEV_SOCKS5_LOGGER_DEBUG:
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-logger.c:91:    case HEV_SOCKS5_LOGGER_INFO:
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-logger.c:94:    case HEV_SOCKS5_LOGGER_WARN:
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-logger.c:97:    case HEV_SOCKS5_LOGGER_ERROR:
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-logger.c:100:    case HEV_SOCKS5_LOGGER_UNSET:
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-logger.h:3: Name        : hev-socks5-logger.h
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-logger.h:10:#ifndef __HEV_SOCKS5_LOGGER_H__
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-logger.h:11:#define __HEV_SOCKS5_LOGGER_H__
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-logger.h:21:    HEV_SOCKS5_LOGGER_DEBUG,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-logger.h:22:    HEV_SOCKS5_LOGGER_INFO,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-logger.h:23:    HEV_SOCKS5_LOGGER_WARN,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-logger.h:24:    HEV_SOCKS5_LOGGER_ERROR,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-logger.h:25:    HEV_SOCKS5_LOGGER_UNSET,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-logger.h:28:int hev_socks5_logger_init (HevSocks5LoggerLevel level, const char *path);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-logger.h:29:void hev_socks5_logger_fini (void);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-logger.h:35:#endif /* __HEV_SOCKS5_LOGGER_H__ */
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc-priv.h:3: Name        : hev-socks5-misc-priv.h
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc-priv.h:10:#ifndef __HEV_SOCKS5_MISC_PRIV_H__
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc-priv.h:11:#define __HEV_SOCKS5_MISC_PRIV_H__
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc-priv.h:18:#include "hev-socks5-misc.h"
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc-priv.h:19:#include "hev-socks5-proto.h"
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc-priv.h:25:int hev_socks5_socket (int type);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc-priv.h:27:const char *hev_socks5_addr_into_str (const HevSocks5Addr *addr, char *buf,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc-priv.h:30:int hev_socks5_get_connect_timeout (void);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc-priv.h:31:int hev_socks5_get_tcp_timeout (void);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc-priv.h:32:int hev_socks5_get_udp_timeout (void);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc-priv.h:34:int hev_socks5_get_task_stack_size (void);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc-priv.h:35:int hev_socks5_get_udp_copy_buffer_nums (void);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc-priv.h:41:#endif /* __HEV_SOCKS5_MISC_PRIV_H__ */
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:3: Name        : hev-socks5-misc.c
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:17:#include <hev-task-io-socket.h>
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:21:#include "hev-socks5.h"
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:22:#include "hev-socks5-logger-priv.h"
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:24:#include "hev-socks5-misc.h"
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:25:#include "hev-socks5-misc-priv.h"
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:36:hev_socks5_task_io_yielder (HevTaskYieldType type, void *data)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:60:hev_socks5_socket (int type)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:65:    fd = hev_task_io_socket_socket (AF_INET6, type, 0);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:69:    res = setsockopt (fd, IPPROTO_IPV6, IPV6_V6ONLY, &zero, sizeof (zero));
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:81:        setsockopt (fd, SOL_SOCKET, SO_RCVBUF, &res, sizeof (res));
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:88:hev_socks5_addr_into_str (const HevSocks5Addr *addr, char *buf, int len)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:95:    case HEV_SOCKS5_ADDR_TYPE_IPV4:
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:99:    case HEV_SOCKS5_ADDR_TYPE_IPV6:
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:103:    case HEV_SOCKS5_ADDR_TYPE_NAME:
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:118:hev_socks5_addr_len (const HevSocks5Addr *addr)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:121:    case HEV_SOCKS5_ADDR_TYPE_IPV4:
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:123:    case HEV_SOCKS5_ADDR_TYPE_IPV6:
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:125:    case HEV_SOCKS5_ADDR_TYPE_NAME:
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:133:hev_socks5_addr_from_name (HevSocks5Addr *addr, const char *name, int _port)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:136:    addr->atype = HEV_SOCKS5_ADDR_TYPE_NAME;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:144:hev_socks5_addr_from_ipv4 (HevSocks5Addr *addr, const void *ipv4, int port)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:146:    addr->atype = HEV_SOCKS5_ADDR_TYPE_IPV4;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:153:hev_socks5_addr_from_ipv6 (HevSocks5Addr *addr, const void *ipv6, int port)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:155:    addr->atype = HEV_SOCKS5_ADDR_TYPE_IPV6;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:162:hev_socks5_addr_from_sockaddr6 (HevSocks5Addr *addr, struct sockaddr_in6 *saddr)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:165:        addr->atype = HEV_SOCKS5_ADDR_TYPE_IPV4;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:171:    addr->atype = HEV_SOCKS5_ADDR_TYPE_IPV6;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:178:hev_socks5_ipv4_into_sockaddr6 (const HevSocks5Addr *addr,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:179:                                struct sockaddr_in6 *saddr)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:190:hev_socks5_ipv6_into_sockaddr6 (const HevSocks5Addr *addr,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:191:                                struct sockaddr_in6 *saddr)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:199:hev_socks5_addr_into_sockaddr6 (const HevSocks5Addr *addr,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:200:                                struct sockaddr_in6 *saddr, int *family)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:203:    case HEV_SOCKS5_ADDR_TYPE_IPV4: {
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:204:        hev_socks5_ipv4_into_sockaddr6 (addr, saddr);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:205:        *family = HEV_SOCKS5_ADDR_FAMILY_IPV4;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:208:    case HEV_SOCKS5_ADDR_TYPE_IPV6: {
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:209:        hev_socks5_ipv6_into_sockaddr6 (addr, saddr);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:210:        *family = HEV_SOCKS5_ADDR_FAMILY_IPV6;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:213:    case HEV_SOCKS5_ADDR_TYPE_NAME: {
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:219:        return hev_socks5_name_into_sockaddr6 (name, ntohs (port), saddr,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:230:hev_socks5_name_resolve_ipv4 (const char *name, struct sockaddr_in6 *saddr)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:246:hev_socks5_name_resolve_ipv6 (const char *name, struct sockaddr_in6 *saddr)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:258:hev_socks5_name_resolve_name (const char *name, struct sockaddr_in6 *saddr,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:266:    hints.ai_socktype = SOCK_STREAM;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:274:        struct sockaddr_in *sa = (struct sockaddr_in *)result->ai_addr;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:279:        *family = HEV_SOCKS5_ADDR_FAMILY_IPV4;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:283:        struct sockaddr_in6 *sa = (struct sockaddr_in6 *)result->ai_addr;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:285:        *family = HEV_SOCKS5_ADDR_FAMILY_IPV6;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:297:hev_socks5_name_into_sockaddr6 (const char *name, int port,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:298:                                struct sockaddr_in6 *saddr, int *family)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:305:    res = hev_socks5_name_resolve_ipv4 (name, saddr);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:307:        *family = HEV_SOCKS5_ADDR_FAMILY_IPV4;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:311:    res = hev_socks5_name_resolve_ipv6 (name, saddr);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:313:        *family = HEV_SOCKS5_ADDR_FAMILY_IPV6;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:317:    res = hev_socks5_name_resolve_name (name, saddr, family);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:322:hev_socks5_set_connect_timeout (int timeout)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:328:hev_socks5_get_connect_timeout (void)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:334:hev_socks5_set_tcp_timeout (int timeout)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:340:hev_socks5_get_tcp_timeout (void)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:346:hev_socks5_set_udp_timeout (int timeout)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:352:hev_socks5_get_udp_timeout (void)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:358:hev_socks5_set_task_stack_size (int stack_size)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:364:hev_socks5_get_task_stack_size (void)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:370:hev_socks5_set_udp_recv_buffer_size (int buffer_size)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:376:hev_socks5_set_udp_copy_buffer_nums (int nums)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c:382:hev_socks5_get_udp_copy_buffer_nums (void)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.h:3: Name        : hev-socks5-misc.h
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.h:10:#ifndef __HEV_SOCKS5_MISC_H__
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.h:11:#define __HEV_SOCKS5_MISC_H__
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.h:17:#include "hev-socks5-proto.h"
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.h:23:int hev_socks5_task_io_yielder (HevTaskYieldType type, void *data);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.h:25:void hev_socks5_set_connect_timeout (int timeout);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.h:26:void hev_socks5_set_tcp_timeout (int timeout);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.h:27:void hev_socks5_set_udp_timeout (int timeout);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.h:29:void hev_socks5_set_task_stack_size (int stack_size);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.h:30:void hev_socks5_set_udp_recv_buffer_size (int buffer_size);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.h:31:void hev_socks5_set_udp_copy_buffer_nums (int nums);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.h:33:int hev_socks5_addr_len (const HevSocks5Addr *addr);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.h:34:int hev_socks5_addr_from_name (HevSocks5Addr *addr, const char *name, int port);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.h:35:int hev_socks5_addr_from_ipv4 (HevSocks5Addr *addr, const void *ipv4, int port);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.h:36:int hev_socks5_addr_from_ipv6 (HevSocks5Addr *addr, const void *ipv6, int port);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.h:37:int hev_socks5_addr_from_sockaddr6 (HevSocks5Addr *addr,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.h:38:                                    struct sockaddr_in6 *saddr);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.h:39:int hev_socks5_addr_into_sockaddr6 (const HevSocks5Addr *addr,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.h:40:                                    struct sockaddr_in6 *saddr, int *family);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.h:41:int hev_socks5_name_into_sockaddr6 (const char *host, int port,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.h:42:                                    struct sockaddr_in6 *saddr, int *family);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-misc.h:48:#endif /* __HEV_SOCKS5_MISC_H__ */
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-proto.h:3: Name        : hev-socks5-proto.h
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-proto.h:10:#ifndef __HEV_SOCKS5_PROTO_H__
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-proto.h:11:#define __HEV_SOCKS5_PROTO_H__
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-proto.h:33:    HEV_SOCKS5_VERSION_5 = 5,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-proto.h:38:    HEV_SOCKS5_AUTH_METHOD_NONE = 0,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-proto.h:39:    HEV_SOCKS5_AUTH_METHOD_USER = 2,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-proto.h:40:    HEV_SOCKS5_AUTH_METHOD_DENY = 255,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-proto.h:45:    HEV_SOCKS5_AUTH_VERSION_1 = 1,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-proto.h:50:    HEV_SOCKS5_REQ_CMD_CONNECT = 1,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-proto.h:51:    HEV_SOCKS5_REQ_CMD_UDP_ASC = 3,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-proto.h:52:    HEV_SOCKS5_REQ_CMD_FWD_UDP = 5,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-proto.h:57:    HEV_SOCKS5_RES_REP_SUCC = 0,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-proto.h:58:    HEV_SOCKS5_RES_REP_FAIL = 1,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-proto.h:59:    HEV_SOCKS5_RES_REP_HOST = 4,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-proto.h:60:    HEV_SOCKS5_RES_REP_IMPL = 7,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-proto.h:61:    HEV_SOCKS5_RES_REP_ADDR = 8,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-proto.h:66:    HEV_SOCKS5_ADDR_TYPE_IPV4 = 1,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-proto.h:67:    HEV_SOCKS5_ADDR_TYPE_IPV6 = 4,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-proto.h:68:    HEV_SOCKS5_ADDR_TYPE_NAME = 3,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-proto.h:135:#endif /* __HEV_SOCKS5_PROTO_H__ */
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-server.c:3: Name        : hev-socks5-server.c
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-server.c:15:#include <hev-task-io-socket.h>
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-server.c:18:#include "hev-socks5-proto.h"
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-server.c:19:#include "hev-socks5-misc-priv.h"
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-server.c:20:#include "hev-socks5-logger-priv.h"
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-server.c:22:#include "hev-socks5-server.h"
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-server.c:24:#define task_io_yielder hev_socks5_task_io_yielder
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-server.c:27:hev_socks5_server_new (int fd)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-server.c:36:    res = hev_socks5_server_construct (self, fd);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-server.c:42:    LOG_D ("%p socks5 server new", self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-server.c:48:hev_socks5_server_set_auth (HevSocks5Server *self, HevSocks5Authenticator *auth)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-server.c:58:hev_socks5_server_read_auth_method (HevSocks5Server *self)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-server.c:65:    LOG_D ("%p socks5 server read auth method", self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-server.c:67:    res = hev_task_io_socket_recv (HEV_SOCKS5 (self)->fd, &auth, 2, MSG_WAITALL,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-server.c:70:        LOG_I ("%p socks5 server read auth method", self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-server.c:74:    if (auth.ver != HEV_SOCKS5_VERSION_5) {
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-server.c:75:        LOG_I ("%p socks5 server auth.ver %u", self, auth.ver);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-server.c:79:    res = hev_task_io_socket_recv (HEV_SOCKS5 (self)->fd, &auth.methods,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-server.c:83:        LOG_I ("%p socks5 server read auth methods", self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-server.c:88:        method = HEV_SOCKS5_AUTH_METHOD_USER;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-server.c:90:        method = HEV_SOCKS5_AUTH_METHOD_NONE;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-server.c:104:hev_socks5_server_write_auth_method (HevSocks5Server *self, int auth_method)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-server.c:109:    LOG_D ("%p socks5 server write auth method", self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-server.c:111:    auth.ver = HEV_SOCKS5_VERSION_5;
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-server.c:114:    res = hev_task_io_socket_send (HEV_SOCKS5 (self)->fd, &auth, 2, MSG_WAITALL,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-server.c:117:        LOG_I ("%p socks5 server write auth method", self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-server.c:125:hev_socks5_server_read_auth_user (HevSocks5Server *self)
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-server.c:134:    LOG_D ("%p socks5 server read auth user", self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-server.c:136:    res = hev_task_io_socket_recv (HEV_SOCKS5 (self)->fd, head, 2, MSG_WAITALL,
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-server.c:139:        LOG_I ("%p socks5 server read auth user.ver", self);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-server.c:144:        LOG_I ("%p socks5 server auth user.ver %u", self, head[0]);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-server.c:150:        LOG_I ("%p socks5 server auth user.nlen %u", self, nlen);
+app/src/main/jni/hev-socks5-tunnel/src/core/src/hev-socks5-server.c:154:    res = hev_task_io_socket_recv (HEV_SOCKS5 (self)->fd, name, nlen + 1,
