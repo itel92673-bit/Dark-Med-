@@ -6,11 +6,11 @@
 
 ## Repository and GitHub evidence
 
-الـrepository هو [itel92673-bit/Dark-Med-](https://github.com/itel92673-bit/Dark-Med-). الهوية المصادق عليها هي `itel92673-bit`، وGitHub API أظهر صلاحية `push=true` و`admin=true` للمستودع. الـcommit المطلوب `7f9755ed52ffa062d671d2c7c3ea3d1399b6d033` موجود فعلًا على GitHub. الفرع `main` يتقدم عليه حاليًا commit توثيقي هو `2b641c3afe99bc2900f042f394737bb7c69a2659`، ولا توجد حاجة لإعادة رفع commit 7f لأنه موجود في تاريخ المستودع.
+الـrepository هو [itel92673-bit/Dark-Med-](https://github.com/itel92673-bit/Dark-Med-). الهوية المصادق عليها هي `itel92673-bit`، وGitHub API أظهر صلاحية `push=true` و`admin=true` للمستودع. الـcommit المطلوب `7f9755ed52ffa062d671d2c7c3ea3d1399b6d033` موجود فعلًا على GitHub. الفرع `main` يتقدم عليه حاليًا commit توثيقي هو `3576225d2dff6aa34e2e91bc3795f2dac0905844`، ولا توجد حاجة لإعادة رفع commit 7f لأنه موجود في تاريخ المستودع.
 
 ## CI runtime evidence
 
-تم تشغيل workflow فعليًا عبر [GitHub Actions run 33938007467](https://github.com/itel92673-bit/Dark-Med-/actions/runs/33938007467) على source commit `2b641c3afe99bc2900f042f394737bb7c69a2659`. اكتملت الخلايا الخمس بنجاح، مع تفعيل KVM ونجاح خطوة emulator instrumentation ورفع runtime evidence في كل خلية.
+تم تشغيل workflow فعليًا عبر [GitHub Actions run 33938007467](https://github.com/itel92673-bit/Dark-Med-/actions/runs/33938007467) على source commit `2b641c3afe99bc2900f042f394737bb7c69a2659`. كما أُعيد تشغيله بعد آخر توثيق عبر [run 33983649830](https://github.com/itel92673-bit/Dark-Med-/actions/runs/33983649830) على commit `3576225d2dff6aa34e2e91bc3795f2dac0905844`، واكتملت الخلايا الخمس بنجاح في التشغيلين، مع تفعيل KVM ونجاح خطوة emulator instrumentation ورفع runtime evidence في كل خلية.
 
 | API | Instrumentation result | Evidence |
 |---:|---|---|
@@ -27,7 +27,7 @@
 | Gate | Status | Reason |
 |---|---|---|
 | GitHub authentication and push path | PASS | GitHub API أظهر صلاحيات push، والـrepository متاح والـcommits قابلة للقراءة |
-| CI matrix API 29/30/31/33/34 | PASS | run 33938007467 اكتمل بنجاح في الخلايا الخمس |
+| CI matrix API 29/30/31/33/34 | PASS | runs 33938007467 و33983649830 اكتمل كل منهما بنجاح في الخلايا الخمس |
 | KVM-enabled Android Emulator | PASS | كل job سجّل نجاح خطوة Enable KVM ونجاح emulator instrumentation |
 | Dashboard/MainActivity startup | PASS | StartupRuntimeTest نجح في الخلايا الخمس ووصل إلى RESUMED |
 | Biometric removal from startup | PASS | static audit سابق + StartupRuntimeTest الناجح |
@@ -48,7 +48,7 @@
 
 ## Important artifact qualification
 
-ملف `pcap_status.txt` في artifacts الحالية يحتوي فقط على `tcpdump=attempted`. هذا يثبت محاولة الأداة، ولا يثبت وجود capture لحزم التطبيق أو عدم وجود direct egress. لذلك لم يتم احتساب packet capture كدليل PASS. كما أن ملفات instrumentation تثبت نجاح ستة اختبارات smoke فقط، ولا تحتوي أسماء أو نتائج `LEAK` أو `Tor bootstrap` أو `Kill Switch`.
+ملف `pcap_status.txt` في artifacts الخاصة بالتشغيلين يحتوي فقط على `tcpdump=attempted`. هذا يثبت محاولة الأداة، ولا يثبت وجود capture لحزم التطبيق أو عدم وجود direct egress. لذلك لم يتم احتساب packet capture كدليل PASS. كما أن ملفات instrumentation تثبت نجاح ستة اختبارات smoke فقط، ولا تحتوي أسماء أو نتائج `LEAK` أو `Tor bootstrap` أو `Kill Switch`.
 
 ## APK status
 
