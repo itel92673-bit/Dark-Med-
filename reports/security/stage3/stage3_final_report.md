@@ -52,7 +52,16 @@
 
 ## APK status
 
-آخر SHA-256 المقدم للـDebug APK هو `7fa127a3c457b9c16e78e4904b71cc0852039728d8e4f0e97fda939c77043467`. أما artifact Stage 2 المرفق سابقًا فكان `Dark_Med_Stage2_release.apk` بالـSHA-256 `972f343f8f7c5fdd2ac7d7e1c865af29b3a62687bb416ffb556c52810fe44022`. لا يجوز خلط الأدلة بينهما. لم يتم اعتماد أي APK كـRelease GO لأن التوقيع الإنتاجي واختبارات الشبكة الحقيقية غير مثبتين.
+تم تنفيذ local regression build على source الحالي بالأهداف `testDebugUnitTest lintDebug assembleDebug assembleRelease`، وكانت النتيجة **BUILD SUCCESSFUL** مع exit code `0`.
+
+تم إنتاج APKs جديدة لهذه الجولة:
+
+| File | SHA-256 | Qualification |
+|---|---|---|
+| `Dark_Med_Stage3_debug.apk` | `c7e845b9cc53a7be52a817431ea2a45a6abf3dea7e5f6b8637a76f0f2588b20f` | Debug build، غير صالح كـproduction release |
+| `Dark_Med_Stage3_release_unsigned_or_debugsigned.apk` | `b7b992f2eaca85df3bb67e874b751e6f1a6f97ebb80de384002048b3579ce016` | Release variant مبني محليًا، لكن production signing غير مثبت |
+
+أما artifact Stage 2 المرفق سابقًا فكان `Dark_Med_Stage2_release.apk` بالـSHA-256 `972f343f8f7c5fdd2ac7d7e1c865af29b3a62687bb416ffb556c52810fe44022`. كما أن SHA-256 `7fa127a3c457b9c16e78e4904b71cc0852039728d8e4f0e97fda939c77043467` لا يجوز اعتماده في هذه الجولة دون وجود ملف APK مطابق والتحقق منه مباشرة. لم يتم اعتماد أي APK كـRelease GO لأن التوقيع الإنتاجي واختبارات الشبكة الحقيقية غير مثبتين.
 
 ## Final status
 
